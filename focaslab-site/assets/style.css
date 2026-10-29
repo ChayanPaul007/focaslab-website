@@ -5,6 +5,7 @@
   --max:1180px; --r:14px;
   color-scheme:light;
 }
+.person .ph .init{z-index:0!important}.person .ph img{position:relative;z-index:1}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --paper:#0e0f11; --paper-2:#17181b; --ink:#ecebe6; --ink-2:#c5c3bc; --muted:#8d8b84; --line:#2a2b2f;
   --accent:#ff6a4d; --accent-soft:rgba(255,106,77,.14); --safe:#4fc3a1; color-scheme:dark;}}
