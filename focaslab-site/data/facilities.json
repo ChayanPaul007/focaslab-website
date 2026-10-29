@@ -1,0 +1,29 @@
+[
+  {"group": "Ground robots", "items": [
+    {"name": "TurtleBot 3", "image": "https://lh3.googleusercontent.com/sitesv/AG8ngQVdYDdR7nAFCFP_9TgzGzXIXk0onqrL-0UHdrmlcUPR55Hi99v33E_Q78skPwt3oJ1ese9WoEG3g4meUydrsGRl0AO6eVynKU75eGvdEWjat6DlzmcITJJ4YoFttf9Bqc909_HBU82SAssdaYklb_0kJCLhvrgc_6cUZ4N-fGtI8uw4jizWYbOp7xJqtWxqCQlT0nnCmDdGpaZdkuED0QXa1YLgJRR41772yiuJ4f8=w1280"},
+    {"name": "TurtleBot 4", "image": "https://lh3.googleusercontent.com/sitesv/AG8ngQVuF4qXK1219VNABEkg3HXQdB-9Y3wP7zY3WFrm65_iOVBSEo-yC5Yucw2T1tkWr-XCUIL--TwiIwRqbexgbRISF38OBY-TGj3VYWG4nGmlwkZILm7UVbaRL5vHq2lSSRTwXcIcrwHN4N4TffyaBgJYKc976Sv4YFL4Ubv4h83QAOcqFdIYh7OpXAsf0s9kcsitijt8YvY9envF52Aa0vStEBB0MdOEzcn4GGcygnQ=w1280"},
+    {"name": "AgileX LIMO", "image": "https://lh3.googleusercontent.com/sitesv/AG8ngQUtFsIukQuanqftrFNRmUTVu9NZ0W8txpjxTDD6sVn9FpOHTPEa18xQwsyBiAJxPNO0mUlh6v4TDrT7QFkv5pMmRTioD1_VHTP2BA9ehzZ8foCW2n6TVC3flOh81PfFBPAt9JYE6FQSSEmYolo0ZWx5SiZ0Dk1e_Y4PLYxrX2Rz4_eIhOW-mNtZIxQHiVQl5EzTI7jqqpoW6B5NcB6mH5vK37DVWKshQl_IV7qG=w1280"},
+    {"name": "Husky A300", "image": "https://lh3.googleusercontent.com/sitesv/AG8ngQXm3xSCe1xhNkbOH5K5y76r4U4L8ajhfx7xs5InTSBusO_VZtc1KoyUdKuaxL25s9bT2qPenEoVfiSnlPcP67WS5gsBq-iwEG_1e9DvON3NyrRkcwCZMfJMFGdbkhle8WkMPtbx9BIRwIB5o6rLnlnycsTvqgdYvVaYlG0kW-_4RLz84VC1j18SI6wwbZIVNivHBJR_X7dg5OYIFtFCmrtLoNR90Z_HxD9o5z3E9OY=w1280"},
+    {"name": "Jackal UGV", "image": "https://lh3.googleusercontent.com/sitesv/AG8ngQWgWbzZllTKbFB3bpM2vEf4Tekwz7zwe0ygXHBplh7MDTG1vFHvqef23GGrmutrFScdBjEuLcN4lSxKScvI-ylKCt_Bxck5lcZD4oyn8D7XZrRhBw9XjsfpJHvmY4xhm7N2dhPmuAZS_aFDbdZxHsCVj3yWTLUk3TVdiw5fEvob5ZFeYWsnucJp3CI6CJdei1y1ypBza_vmNt1IDGfWX6lSqXwdN85O6Inn7HV_mvY=w1280"},
+    {"name": "ARMBOT ground robot", "image": "https://lh3.googleusercontent.com/sitesv/AG8ngQURfP8s4-zjYtPiWTDJDAzjX0vV-7SDDQyKwK5MDn5vyeYGFaQz7i0AOWt1RwvQOjUAbDJkUbCG24MvqyIr1zT5T-7f-0Yh87KdGm2rK8iJEucEkgmyXMvVyyTZ19szC8LgePTrp8wFo0YQV0JaOIQqUm4OPAyFrJd6-r6Us1dowEVUEyD5K0h3NUZp06Felj7JVyMs-IaRZod7MLyN1NspzRRu-AUAPvhJUDapvjY=w1280"}
+  ]},
+  {"group": "Manipulators", "items": [
+    {"name": "Franka Research 3", "image": "https://lh3.googleusercontent.com/sitesv/AG8ngQUiUerdAxND8T1HNBteEO0ptTMptTa1fLcDMla5LlAs90YUA8632tyla7BPFA8TjjmrVuw-UHRaglxx-qfPFU6AfEIJ3UmNZr8SBYGe3aGCDNGZTByib0JmVZN2HEEqPXG1-90YB7bkPvElqyjRMUaU6CyHpyt5LxXZHqLNvjkLtX6WcFY8dnsfY6Kz_TLG2qOYAL6Iy4f_J5vCCeKhwSShnZ0AOZrg0xiObw11lYI=w1280"},
+    {"name": "Kawada NEXTAGE", "image": "https://lh3.googleusercontent.com/sitesv/AG8ngQVDi7MO7wRodGlhCi0eGDdP2HDfOzqcZlk4zTBN98xBgiF7JEXZO28t1cbqfgZKlVutPTL_kbrzZb6Q29eDk7pkLOvtBM1ocEKjFenmWROr3pgZKmKCZ8Fi4mSgScCuXXcRpYvK2zeEhmVo0zAFa3aGGGHnBKZeKNBlj0qprVX0ziVu98q89OXte2o7ybP2br38m35qjRqjT7d2KFlAebPDKP-bFmQzUuFGcGDTwiY=w1280"},
+    {"name": "ReactorX 200", "image": "https://lh3.googleusercontent.com/sitesv/AG8ngQWpnFmv_AFDivB5PZM7RkZgF2LDihFzXxbnF5-ZCMwDV5bYxLB3Vhjjxi8xohFYU6c6nYBlgSyow3DX62NlG7fzugN2Wtfoa4nfU92_M2DwPKJ1_ZG3Lt7A06xPHcrB5jHYRDd2a_Myxd2sOY157XtjPIyqQbV7sufO-ECIp9NIGhMYO-ancPlF3ry3qcFeGV8_hRsJpN0LbM2jYIkEBIpWgVUWtBifkNEaRgcZ=w1280"},
+    {"name": "Aduza Hexa-4 parallel manipulator", "image": "https://lh3.googleusercontent.com/sitesv/AG8ngQVVrNkEMfFdBzGSx69wEQqR_rlPjAL-pW7gjFsF3F550UGCdVPgADh4FyglAI04B7v8vAyniYDBS9BsH937Qa0bmwZAhsJtSJ_YAEaFvNVq2XEVVKtoELr9_QlwSscyT4V15Qjxbm-Hq1Xd0c4NTU-po_iFUW1vT9e9n4gbJKfsGjmFSua2qVyDnd31cRLescrYZ20dqXWcyXHoez3qpSBVCIEQF4i2KrvePsgoMAg=w1280"},
+    {"name": "Addverb manipulator", "image": "https://lh3.googleusercontent.com/sitesv/AG8ngQW540w50u_7c5mWWag-6qEFijuo-ZGevEijKvVG7g2LFUAls_AmrFNVUfMTRmQarl_H1vW-vjkZn1bloSGLFeaNU0GQzL6x_iokbhuKGrPMnUUUndl5VoCTjjPKXM9YL6_Uo8gPZ49aAjp-mzqC5oOTT8GhISNTQyHAI4iN0nvJgUXvOOx7S32toiMNWatzY9YjFHKnmYfXs3IjSw1mUe9Wne-VjXZw-5S5TMgfhNc=w1280"}
+  ]},
+  {"group": "Mobile manipulators", "items": [
+    {"name": "LIMO Cobot", "image": "https://lh3.googleusercontent.com/sitesv/AG8ngQXiNheO65GCgzHFgzKijiruXRZD5E6PhuRDZzOs_Vpjz8BGiYWMmUekSeIm-m4fGSS8FE0cO0W6SkshMbMD9SfYQoZ_t6lR1VrRM61dPwWkg8pnCueSrjhgPE9KKpnfBPuQoWFQYY8EHXOTwN3oqHn79PR_O8Q-DoIWqDbtmAr6xdVor_GO9MrF1RdQNFF5NZAgrb9HMpmvDINwC1ITDjRsy6T8U_ccrXAxQ3vzXww=w1280"},
+    {"name": "Hello Robot Stretch 3", "image": "https://lh3.googleusercontent.com/sitesv/AG8ngQUuECfGjy-94VkUS457ynE3mXnyzuUII74EyPf1VaHIqvPKT3QV90DSHvU0QsKVgoVpinFDn5gdzk1kx44EQePLNEVhJ1yF_dY1fEjQk68OxseiVZcl-96pS13P6kV-iQkAjI2K64W5QYas-QcxAmLC2bT6ML-9o7AHd2EM2GVIdnhZEJip6Lw0LD4dr39wxSSaW9NfyL_JhzhCSvrLobRZIseHLVuCAXflHr4HdLU=w1280"},
+    {"name": "AgileX Cobot S", "image": "https://lh3.googleusercontent.com/sitesv/AG8ngQVzMJtVgqH_rX9IqfSz3Y9nZ9HgatHWHH1we7mIIRDfQEOBVdtmemDWYRAA9iI1Af-h3xrBoyZj0sCY8pJts7mEN-yyDMiB_tIufqA5xalp8s9WE17GxPM3C6YrdXAmBpCCXdcs_T6PtvLOH59XlP4P0zIbAxBhCE2ti_lqCeIvXcDNU1vuDn6LBtxDCdwPNweY143q6y1ocTtSOyN80HmUtbmzxX92wL2-z_KoKUc=w1280"}
+  ]},
+  {"group": "Aerial robots", "items": [
+    {"name": "Crazyflie swarm", "image": "https://lh3.googleusercontent.com/sitesv/AG8ngQWJ4kFMk9nnIu_2cKpHB7CpQR8-zxX708a37TG-1yOG5uJiKcUPXb8MSHlz2my3uBgI4lBFtZGmd--d3D39As0K15v8Ryqm-Tx056A7tHv_t2MMeYpWf3iPQprnAp3UKSw1bcaSnJTsWADQJ7IMpwdjj5up-O4VfL_29v5TV68GkxyRZJ5G2_MUNYF6vNnLUCoxfEZduxdw0VIvp2jxtWe_1c3SWNg2_fXO3OFu=w1280"}
+  ]},
+  {"group": "Infrastructure", "items": [
+    {"name": "PhaseSpace motion capture", "image": "https://lh3.googleusercontent.com/sitesv/AG8ngQUY5SenRyy-39Qb_wVCq5_UpPD1XOB4PkB-ugLypX8cWcbxzpWPgfl5BMSPsol-hIyCYPVS3QnADEiC5j4jtpZk6dkopaEpzVhb6oMLuV9-7HQ21hcVzNO4k3O5JEUmJBIqABG1mPLVAF55-tF0D2LTKo521kj_gaDIvfJC0WhEKMmpEpNb3hXg2_GmKNk=w1280"},
+    {"name": "3D printing", "image": "https://lh3.googleusercontent.com/sitesv/AG8ngQWimA35jPpR2gt3nMjB7toGtxBpYUYcd8CGKrTDGslx8dq1WsBKfLzMHy8Fs7MQMuoXrtzcnJHr7DHtYnWILh1tHMcAmSfCUk06p3xWvFGwAob3Te_m2ihdPtzcGp8TXRVkEvpkkWcDCX8l-IUxDVXB9s5MyW3_yjT2kPyZDO6bXrBTY9m5otDCQCGtXgdQExJVvFbYA8AuRv097ILQ8iuDVRm-gXD7DDbVb7z9lI=w1280"}
+  ]}
+]

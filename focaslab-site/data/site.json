@@ -1,0 +1,51 @@
+{
+  "name": "FOCAS Lab",
+  "full_name": "Formal Control and Autonomous Systems Lab",
+  "department": "Department of Cyber-Physical Systems",
+  "institute": "Indian Institute of Science, Bengaluru",
+  "tagline": "Safe autonomy, with proofs.",
+  "intro": "We design controllers for robots and cyber-physical systems that come with formal guarantees: robust, reliable, and safe by construction. Our work spans theory and hardware, from temporal-logic specifications and spatiotemporal tubes to learning-based control and multi-robot systems.",
+  "scholar_id": "Szd98jUAAAAJ",
+  "email": "pushpak@iisc.ac.in",
+  "hr_email": "hr.focas@iisc.ac.in",
+  "address": ["FOCAS Lab, Department of Cyber-Physical Systems", "TCS Smart X Hub, Indian Institute of Science", "Bengaluru, Karnataka 560012, India"],
+  "map": "https://www.google.com/maps/search/?api=1&query=TCS+Smart+X+Hub+IISc+Bengaluru",
+  "links": {
+    "github": "https://github.com/FocasLab",
+    "youtube": "https://www.youtube.com/channel/UC-M-WAAge3C6cv_aCga9N2Q",
+    "scholar": "https://scholar.google.com/citations?user=Szd98jUAAAAJ&hl=en"
+  },
+  "news": [
+    {"date": "2026", "text": "Dr. Ratnangshu Das receives the Prof. Satish Dhawan Award."},
+    {"date": "Aug 2026", "text": "Ratnangshu Das defends his PhD thesis, “Scalable and Approximation-free Control of Safety-critical Systems for Temporal Logic Specifications.”"},
+    {"date": "2026", "text": "Seven papers accepted at the IFAC World Congress 2026."},
+    {"date": "2025", "text": "Paper accepted in IEEE Transactions on Control of Network Systems."},
+    {"date": "2025", "text": "Five papers accepted at the Indian Control Conference (ICC) 2025."},
+    {"date": "2025", "text": "Technical note accepted in IEEE Transactions on Automatic Control."},
+    {"date": "2025", "text": "Four papers accepted at the 64th IEEE Conference on Decision and Control (CDC)."},
+    {"date": "2025", "text": "Paper accepted at IROS 2025."},
+    {"date": "2025", "text": "Four papers accepted at the 23rd European Control Conference (ECC)."},
+    {"date": "2025", "text": "Paper accepted at the American Control Conference (ACC) 2025."},
+    {"date": "2024", "text": "Ratnangshu Das wins the Best Paper Award at the 10th Indian Control Conference."},
+    {"date": "2024", "text": "Two papers accepted at ICRA 2024."},
+    {"date": "2023", "text": "Three papers accepted at the 62nd IEEE CDC."},
+    {"date": "2023", "text": "Paper accepted at IROS 2023."},
+    {"date": "2023", "text": "Dr. Pankaj K. Mishra wins the Best Presentation Award at the 14th EECS Research Students Symposium, IISc."}
+  ],
+  "research": [
+    {"id": "safe-autonomy", "title": "Safe Autonomy", "kicker": "Correct-by-construction", "text": "Autonomous cars, aircraft and robots promise fewer collisions and less congestion, but only if their safety and correctness can be certified. We synthesize controllers with formal guarantees for complex tasks given as temporal-logic specifications.", "video": "DTSIa1ccz6o", "more": "https://www.focaslab.com/research/safe-autonomy"},
+    {"id": "learning", "title": "Learning-based Control", "kicker": "Data with guarantees", "text": "Many cyber-physical systems lack precise models. We use data-driven and machine-learning methods, such as neural certificates, Gaussian processes and conformal prediction, to give probabilistic and formal guarantees for unknown dynamical systems.", "more": "https://www.focaslab.com/research/learning_control"},
+    {"id": "multi-robot", "title": "Multi-Robot Systems", "kicker": "Distributed coordination", "text": "Teams of robots must reach consensus, hold formations, stay connected and avoid collisions using distributed resources. We develop scalable, provably safe controllers for multi-agent systems under sensing and communication constraints.", "image": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72s-fuIwdoxtw-dvBEVBZjgiMdzXaJ_ErlPYb4Waoia7g0CMOple40SPCAPeSxbUBL0qpWxdM-DEK4UdwYqnkFgCfOpa7htJ5MQ28KwY0TgUk57p4Km9wGmEMb5Pij6osSJCPgdaIiYFXKAy4KSc4C8yQWYtWmY57sQ8B8tWZLULZtpWuQ5TZcjLB6eiKXWt3enQPfYmHqeKP8WiPrhxR81LJ48E7_XkG93gV_YJcvk=w1280"},
+    {"id": "constrained", "title": "Constrained Nonlinear Control", "kicker": "Funnels & tubes", "text": "Performance limits, input saturation, physical stops and safety specifications all constrain real systems. We design approximation-free, real-time controllers, including funnel and spatiotemporal-tube methods, that respect these constraints by construction.", "more": "https://www.focaslab.com/research/constrained_control"},
+    {"id": "cps", "title": "Cyber-Physical Systems", "kicker": "Hybrid & symbolic", "text": "CPS couple computation with physical processes, giving hybrid models with discrete transitions and continuous dynamics. We build symbolic abstractions and compositional synthesis methods that keep controller design tractable at scale.", "image": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72uZFQ9rM2uXVtf7rm6ClNX36fsFJ9_H07TIbYcsJwvqJYcjwdcsnH9yCS8Q2Em2Ig08G3y5hGksKmPxuqYUuNAj8mqmWGEJyZ-1WSwhNaf4EDrcfYdF-OBYGae3cdhZ0b4k5WpX7YC8wrje45VL7dQ8oWEnw3P1C2MxuwWQJAFo2phfebsGiw6-R85GSpJiiZUpnPg-ELlLXDwOq8aWS2mPq1_m91MKfYkS92wleEA=w1280", "more": "https://www.focaslab.com/research/control_cps"}
+  ],
+  "courses": [
+    {"code": "CP 241", "title": "Applied Linear and Nonlinear Control", "note": "MathWorks–IISc collaboration", "text": "A postgraduate course linking advanced control theory to robots, with MATLAB, Simulink, ROS 2 and motion-capture experiments. It covers linear and nonlinear dynamics, stability theory, optimal control and safety-critical control, and ends with controllers running on mobile robots and manipulators.", "link": "https://github.com/FocasLab/CP-241-Applied-linear-and-non-linear-control"}
+  ],
+  "openings": [
+    {"title": "PhD / M.Tech (Research)", "text": "Apply to the Department of Cyber-Physical Systems through IISc admissions. Windows open in March–April and September–October.", "action": "admissions.iisc.ac.in", "href": "https://admissions.iisc.ac.in"},
+    {"title": "Postdoctoral research", "text": "For PhD holders, including those who have submitted their thesis, with experience in control, robotics, formal methods, ML or RL. Funding routes include the IoE / C. V. Raman PDF, NPDF and DS Kothari fellowships.", "action": "pushpak@iisc.ac.in", "href": "mailto:pushpak@iisc.ac.in"},
+    {"title": "Research internships", "text": "For undergraduates in EE, ECE, CS, ME, robotics or applied mathematics. The INSA Summer Research Fellowship and FAST-SF usually open in October–November.", "action": "hr.focas@iisc.ac.in", "href": "mailto:hr.focas@iisc.ac.in"},
+    {"title": "IISc UG research & M.Tech thesis", "text": "For current IISc undergraduates and M.Tech students looking for a project or thesis.", "action": "hr.focas@iisc.ac.in", "href": "mailto:hr.focas@iisc.ac.in"}
+  ]
+}
