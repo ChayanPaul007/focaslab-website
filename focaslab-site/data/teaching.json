@@ -1,0 +1,154 @@
+{
+  "courses": [
+    {
+      "code": "CP 241",
+      "title": "Applied Linear and Nonlinear Control",
+      "note": "MathWorks–IISc collaboration",
+      "text": "A postgraduate course linking advanced control theory to robots, with MATLAB, Simulink, ROS 2 and motion-capture experiments. It covers linear and nonlinear dynamics, stability theory, optimal control and safety-critical control, and ends with controllers running on mobile robots and manipulators.",
+      "link": "https://github.com/FocasLab/CP-241-Applied-linear-and-non-linear-control",
+      "topics": [
+        "ODE solvers: Euler, RK2, RK4",
+        "MATLAB live scripts and the inverted pendulum",
+        "Phase portraits",
+        "Stability of systems",
+        "PID controllers",
+        "State feedback: pole placement and LQR",
+        "Model predictive control"
+      ],
+      "link_label": "Lab code and live scripts on GitHub"
+    },
+    {
+      "code": "CP 275",
+      "title": "Formal Analysis and Control of Autonomous Systems",
+      "note": "Graduate course · Dept. of CPS",
+      "text": "The formal side of autonomy: modelling systems so they can be reasoned about, stating requirements precisely in temporal logic, verifying them, and synthesising controllers that meet them by construction. Lab sessions turn these ideas into working code.",
+      "topics": [
+        "Transition systems and abstractions",
+        "Temporal logic specifications",
+        "Verification",
+        "Correct-by-construction controller synthesis"
+      ],
+      "link": "https://github.com/FocasLab/CP275-Formal-Analysis-and-Control",
+      "link_label": "Lab code on GitHub"
+    }
+  ],
+  "code": [
+    {
+      "group": "Research code",
+      "note": "Implementations that accompany our papers",
+      "items": [
+        [
+          "Real-time spatiotemporal tubes for dynamic unsafe sets",
+          "MATLAB · RA-L 2025",
+          "https://github.com/FocasLab/Real-Time-Spatiotemporal-Tubes-for-Dynamic-Unsafe-Sets"
+        ],
+        [
+          "Spatiotemporal tubes for STL tasks",
+          "STL_STT",
+          "https://github.com/FocasLab/STL_STT"
+        ],
+        [
+          "Spatiotemporal tubes for differential-drive robots",
+          "DifferentialDriveSTT",
+          "https://github.com/FocasLab/DifferentialDriveSTT"
+        ],
+        [
+          "Tubes for uncertain unsafe sets",
+          "STT-for-Uncertain-Unsafe-Set",
+          "https://github.com/FocasLab/STT-for-Uncertain-Unsafe-Set"
+        ],
+        [
+          "Socially aware multi-agent control",
+          "STT-for-SA-MAS",
+          "https://github.com/FocasLab/STT-for-SA-MAS"
+        ],
+        [
+          "Reinforcement learning for STL with funnels",
+          "RL-for-STL",
+          "https://github.com/FocasLab/Reinforcement-Learning-for-Signal-Temporal-Logic-using-Funnel-Based-Approach"
+        ],
+        [
+          "Gaussian-process funnel controller",
+          "Simulation",
+          "https://github.com/FocasLab/Gaussian-Process-Funnel-Controller-Simulation"
+        ],
+        [
+          "Imitation learning from mixed-skill demonstrations",
+          "ICRA 2026",
+          "https://github.com/FocasLab/ICRA-IL-2026"
+        ]
+      ]
+    },
+    {
+      "group": "Robot software",
+      "note": "ROS / ROS 2 stacks for the lab's platforms",
+      "items": [
+        [
+          "PhaseSpace motion capture for ROS",
+          "phasespace-mocap-ros",
+          "https://github.com/FocasLab/phasespace-mocap-ros"
+        ],
+        [
+          "F1TENTH competition stack",
+          "focaslab_f1tenth",
+          "https://github.com/FocasLab/focaslab_f1tenth"
+        ],
+        [
+          "Outdoor mobile robot",
+          "focaslab_outdoor_robot",
+          "https://github.com/FocasLab/focaslab_outdoor_robot"
+        ],
+        [
+          "Autonomous exploration",
+          "autonomous_exploration",
+          "https://github.com/FocasLab/autonomous_exploration"
+        ],
+        [
+          "Hello Robot Stretch (ROS 2)",
+          "stretch_ros2",
+          "https://github.com/FocasLab/stretch_ros2"
+        ],
+        [
+          "Drone flight controller",
+          "Drone_Flight_Controller",
+          "https://github.com/FocasLab/Drone_Flight_Controller"
+        ]
+      ]
+    },
+    {
+      "group": "Tools",
+      "note": "",
+      "items": [
+        [
+          "SCOTS: symbolic controller synthesis",
+          "SCOTS",
+          "https://github.com/FocasLab/SCOTS"
+        ]
+      ]
+    }
+  ],
+  "highlights": [
+    {
+      "title": "Motion-capture arena",
+      "text": "A PhaseSpace system tracks robots in real time, so every controller is tested against ground truth. Our ROS driver is open source."
+    },
+    {
+      "title": "F1TENTH racing",
+      "text": "Students build and race a 1:10-scale autonomous car, and the full software stack is on GitHub."
+    },
+    {
+      "title": "Taught with MathWorks",
+      "text": "CP 241 is a MathWorks–IISc collaboration, and every lab runs on real robots, not only in simulation."
+    },
+    {
+      "title": "Award-winning work",
+      "text": "Best Paper at the Indian Control Conference 2024, the Prof. Satish Dhawan Award, and Best Presentation at the IISc EECS Symposium 2023."
+    },
+    {
+      "title": "Experiments on video",
+      "text": "Watch the robots run our controllers on the lab's YouTube channel.",
+      "link": "https://www.youtube.com/channel/UC-M-WAAge3C6cv_aCga9N2Q",
+      "link_label": "YouTube ↗"
+    }
+  ]
+}

@@ -45,18 +45,6 @@
       "title": "PhD Scholars",
       "members": [
         {
-          "name": "Manan Tayal",
-          "since": "2021",
-          "note": "PMRF · co-advised with Dr. Shishir Kolathaya",
-          "topics": "Safety-critical systems, robotics, control",
-          "photo": "assets/img/c5ba2baaf2ea.png",
-          "links": {
-            "web": "https://tayalmanan28.github.io/",
-            "scholar": "https://scholar.google.com/citations?user=jWWQhY8AAAAJ&hl=en",
-            "linkedin": "https://www.linkedin.com/in/manan-tayal/"
-          }
-        },
-        {
           "name": "Sangeerth P",
           "since": "2022",
           "note": "Siemens PhD Fellow",
@@ -76,17 +64,6 @@
           "photo": "assets/img/aa2cc355c05f.jpg",
           "links": {
             "linkedin": "https://www.linkedin.com/in/vaishnavi-j4"
-          }
-        },
-        {
-          "name": "Ratnangshu Das",
-          "since": "2023",
-          "note": "PMRF",
-          "topics": "Robotics, dynamics, control",
-          "photo": "assets/img/89fc773689ee.jpg",
-          "links": {
-            "scholar": "https://scholar.google.com/citations?user=miRvKrsAAAAJ&hl=en",
-            "linkedin": "https://www.linkedin.com/in/ratnangshu-d-11955a107/"
           }
         },
         {
@@ -253,6 +230,21 @@
     }
   ],
   "alumni": [
+    {
+      "group": "PhD",
+      "members": [
+        [
+          "Dr. Manan Tayal",
+          "PhD 2026",
+          "PMRF · co-advised with Dr. Shishir Kolathaya"
+        ],
+        [
+          "Dr. Ratnangshu Das",
+          "PhD 2026",
+          "PMRF · Prof. Satish Dhawan Award"
+        ]
+      ]
+    },
     {
       "group": "Postdocs",
       "members": [

@@ -14,13 +14,13 @@ function toggleTheme() {
 }
 
 /* ---------- shell ---------- */
-const LOGO = `<svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="M2 5 C12 5 16 13 30 14.5" stroke="var(--accent)" stroke-width="2"/><path d="M2 27 C12 27 16 19 30 17.5" stroke="var(--accent)" stroke-width="2"/><path d="M3 20 C9 9 15 21 29 16" stroke="var(--ink)" stroke-width="1.6"/><circle cx="29" cy="16" r="2.2" fill="var(--ink)"/></svg>`;
-const NAV = [['index.html', 'Home', 'home'], ['research.html', 'Research', 'research'], ['people.html', 'People', 'people'], ['publications.html', 'Publications', 'publications'], ['facilities.html', 'Facilities', 'facilities'], ['join.html', 'Join', 'join']];
+const logo = (name, alt) => `<img class="logo-light" src="assets/img/${name}.png" alt="${alt}"><img class="logo-dark" src="assets/img/${name}-dark.png" alt="" aria-hidden="true">`;
+const NAV = [['index.html', 'Home', 'home'], ['research.html', 'Research', 'research'], ['people.html', 'People', 'people'], ['publications.html', 'Publications', 'publications'], ['facilities.html', 'Facilities', 'facilities'], ['teaching.html', 'Teaching', 'teaching'], ['join.html', 'Join', 'join']];
 
 function shell(site) {
   document.body.insertAdjacentHTML('afterbegin', `
   <header class="nav"><div class="wrap">
-    <a class="brand" href="index.html">${LOGO}<span>FOCAS<br><small>IISc · CPS</small></span></a>
+    <a class="brand" href="index.html" aria-label="FOCAS Lab home">${logo('focas-mark', 'FOCAS')}<small>IISc<br>CPS</small></a>
     <nav class="links" id="links">${NAV.map(([h, l, k]) => `<a href="${h}" class="${k === PAGE ? 'active' : ''}">${l}</a>`).join('')}</nav>
     <div style="display:flex;gap:8px">
       <button class="icon-btn" id="theme" aria-label="Toggle theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
@@ -29,14 +29,27 @@ function shell(site) {
   </div></header>`);
   document.body.insertAdjacentHTML('beforeend', `
   <footer><div class="wrap">
-    <div><div class="big">FOCAS <em class="accent">Lab</em></div><p>${esc(site.full_name)}<br>${esc(site.department)}<br>${esc(site.institute)}</p></div>
+    <div><div class="big">${logo('focas-logo', 'FOCAS: Formal Control &amp; Autonomous Systems Lab')}</div><p>${esc(site.full_name)}<br>${esc(site.department)}<br>${esc(site.institute)}</p></div>
     <div><h5>Visit</h5><p>${site.address.map(esc).join('<br>')}</p><a href="${site.map}" target="_blank" rel="noopener">Open in Maps ↗</a></div>
     <div><h5>Elsewhere</h5><a href="mailto:${site.email}">${site.email}</a><a href="${site.links.scholar}" target="_blank" rel="noopener">Google Scholar ↗</a><a href="${site.links.github}" target="_blank" rel="noopener">GitHub ↗</a><a href="${site.links.youtube}" target="_blank" rel="noopener">YouTube ↗</a></div>
-    <div class="base mono"><span>© ${new Date().getFullYear()} FOCAS Lab, IISc Bengaluru</span><span>Publications sync weekly from Google Scholar</span></div>
+    <div class="base mono"><span>© ${new Date().getFullYear()} FOCAS Lab, IISc Bengaluru</span><span>${esc(site.department)} · IISc</span></div>
   </div></footer>`);
   $('#theme').onclick = toggleTheme;
   $('#burger').onclick = () => $('#links').classList.toggle('open');
   const nav = $('.nav'); addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 8), { passive: true });
+}
+
+/* stat tiles: [value, label, suffix?]; numbers count up when they scroll into view */
+const statsHTML = list => list.map(([v, l, suf]) => `<div class="stat rv"><b data-n="${v}">${Number(v).toLocaleString()}${suf ? `<sup>${suf}</sup>` : ''}</b><span class="mono">${l}</span></div>`).join('');
+function countUp() {
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const io = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return; io.unobserve(e.target);
+    const b = e.target, n = +b.dataset.n, sup = b.querySelector('sup')?.outerHTML || '', t0 = performance.now();
+    const step = t => { const k = Math.min(1, (t - t0) / 1400), v = Math.round(n * (1 - Math.pow(1 - k, 3))); b.innerHTML = v.toLocaleString() + sup; if (k < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  }), { threshold: .4 });
+  document.querySelectorAll('[data-n]').forEach(b => io.observe(b));
 }
 
 function reveal() {
@@ -90,8 +103,7 @@ const pages = {
     const items = prepPubs(pub).filter(p => !p.dup);
     const members = 1 + ppl.groups.reduce((n, g) => n + g.members.length, 0) + ppl.lists.reduce((n, g) => n + g.members.length, 0);
     const robots = fac.filter(g => g.group !== 'Infrastructure').reduce((n, g) => n + g.items.length, 0);
-    $('#stats').innerHTML = [[items.length, 'Publications'], [pub.profile.citations.toLocaleString(), 'Citations'], [members, 'Members'], [robots, 'Robots']]
-      .map(([v, l]) => `<div class="stat"><b>${v}</b><span class="mono">${l}</span></div>`).join('');
+    $('#stats').innerHTML = statsHTML([[items.length, 'Publications'], [pub.profile.citations, 'Citations', '+'], [pub.profile.h_index, 'h-index'], [members, 'Members'], [robots, 'Robots']]);
     $('#themes').innerHTML = site.research.map((r, i) => `
       <a class="theme rv" href="research.html#${r.id}">
         <span class="num">0${i + 1}</span>
@@ -106,16 +118,24 @@ const pages = {
   },
 
   async research(site) {
+    const pubs = prepPubs(await get('publications')).filter(p => !p.dup)
+      .sort((a, b) => (a.kind === 'preprint') - (b.kind === 'preprint') || (b.year || 0) - (a.year || 0) || b.citations - a.citations);
+    const used = new Set();
     $('#rlist').innerHTML = site.research.map((r, i) => {
-      const media = r.video ? `<iframe src="https://www.youtube-nocookie.com/embed/${r.video}" title="${esc(r.title)}" loading="lazy" allowfullscreen></iframe>`
-        : r.image ? `<img loading="lazy" src="${r.image}" alt="${esc(r.title)}">`
-          : `<canvas data-glyph="${i}"></canvas>`;
+      const re = new RegExp(r.match, 'i');
+      const sel = pubs.filter(p => !used.has(p.key) && re.test(p.title)).slice(0, 3);
+      sel.forEach(p => used.add(p.key));
       return `<article class="rcard rv" id="${r.id}">
-        <div><span class="mono">0${i + 1} · ${esc(r.kicker)}</span><h2>${esc(r.title)}</h2><p>${esc(r.text)}</p>
-        ${r.more ? `<a class="more" href="${r.more}" target="_blank" rel="noopener">Read more on the archive site ↗</a>` : ''}</div>
-        <div class="media">${media}</div></article>`;
+        <div>
+          <span class="mono">0${i + 1} · ${esc(r.kicker)}</span><h2>${esc(r.title)}</h2><p>${esc(r.text)}</p>
+          <ul class="points">${r.points.map(t => `<li>${esc(t)}</li>`).join('')}</ul>
+          <div class="tags">${r.tags.map(t => `<span class="tag">${esc(t)}</span>`).join('')}</div>
+          ${sel.length ? `<div class="selected"><span class="mono">Selected papers</span>${sel.map(p => `<a href="${p.url}" target="_blank" rel="noopener">${esc(p.title)}<small>${esc(p.kind === 'preprint' ? 'Preprint' : (p.venue || '').replace(/[,\s\d…-]*$/, '') || LABEL[p.kind])}${p.year ? ' · ' + p.year : ''}</small></a>`).join('')}</div>` : ''}
+          <div class="code">${(r.repos || []).map(([l, h]) => `<a href="${h}" target="_blank" rel="noopener">⌥ ${esc(l)}</a>`).join('')}${r.video ? `<a href="https://www.youtube.com/watch?v=${r.video}" target="_blank" rel="noopener">▶ Watch a demo</a>` : ''}</div>
+        </div>
+        <div class="media viz"><canvas data-viz="${r.viz}" role="img" aria-label="${esc(r.title)} animation"></canvas><span class="cap mono" data-cap></span></div></article>`;
     }).join('');
-    document.querySelectorAll('canvas[data-glyph]').forEach(glyph);
+    window.FOCAS_VIZ?.();
   },
 
   async people() {
@@ -143,13 +163,8 @@ const pages = {
     const all = prepPubs(data);
     const st = { q: '', kind: 'all', year: 'all', dedupe: true };
     const years = [...new Set(all.map(p => p.year).filter(Boolean))].sort((a, b) => b - a);
-    const upd = new Date(data.updated);
-    $('#sync').innerHTML = `
-      <span class="mono"><span class="dot"></span>Synced from Google Scholar · ${upd.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' })}</span>
-      <span class="mono">${data.profile.citations.toLocaleString()} citations</span>
-      <span class="mono">h-index ${data.profile.h_index}</span>
-      <span class="mono">i10 ${data.profile.i10_index}</span>
-      <a class="mono" style="border-bottom:1px solid var(--accent)" href="https://scholar.google.com/citations?user=${data.scholar_id}&hl=en" target="_blank" rel="noopener">Profile ↗</a>`;
+    $('#metrics').innerHTML = statsHTML([[all.filter(p => !p.dup).length, 'Papers'], [data.profile.citations, 'Citations', '+'], [data.profile.h_index, 'h-index'], [data.profile.i10_index, 'i10-index']]) +
+      `<a class="stat link" href="https://scholar.google.com/citations?user=${data.scholar_id}&hl=en" target="_blank" rel="noopener"><b>→</b><span class="mono">Google Scholar profile</span></a>`;
     const kinds = ['all', 'journal', 'conference', 'preprint'];
     $('#tools').innerHTML = `<input type="search" id="q" placeholder="Search titles, authors, venues…" aria-label="Search publications">
       ${kinds.map(k => `<button class="chip" data-k="${k}">${k === 'all' ? 'All' : LABEL[k]}<small></small></button>`).join('')}
@@ -180,32 +195,27 @@ const pages = {
 
   async join(site) {
     $('#open').innerHTML = site.openings.map(o => `<div class="rv"><h3>${esc(o.title)}</h3><p>${esc(o.text)}</p><a href="${o.href}" target="_blank" rel="noopener">${esc(o.action)} →</a></div>`).join('');
-    $('#courses').innerHTML = site.courses.map(c => `<div class="course rv"><div><div class="code">${esc(c.code)}</div><span class="mono">${esc(c.note)}</span></div>
-      <div><h3 class="serif" style="font-size:30px;line-height:1.1">${esc(c.title)}</h3><p style="color:var(--ink-2);margin:10px 0 14px">${esc(c.text)}</p>
-      <a class="mono" style="border-bottom:1px solid var(--accent)" href="${c.link}" target="_blank" rel="noopener">Course materials on GitHub ↗</a></div></div>`).join('');
+  },
+
+  async teaching() {
+    const [t, fac] = await Promise.all([get('teaching'), get('facilities')]);
+    const robots = fac.filter(g => g.group !== 'Infrastructure').reduce((n, g) => n + g.items.length, 0);
+    $('#tstats').innerHTML = statsHTML([[t.courses.length, 'Graduate courses'], [t.code.reduce((n, g) => n + g.items.length, 0), 'Open-source repositories'], [robots, 'Robot platforms']]);
+    $('#courses').innerHTML = t.courses.map(c => `<div class="course rv"><div><div class="ccode">${esc(c.code)}</div><span class="mono">${esc(c.note)}</span></div>
+      <div><h3>${esc(c.title)}</h3><p>${esc(c.text)}</p>
+      ${c.topics ? `<ul class="points">${c.topics.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
+      <div class="code"><a href="${c.link}" target="_blank" rel="noopener">⌥ ${esc(c.link_label || 'Course materials on GitHub')} ↗</a></div></div></div>`).join('');
+    $('#code').innerHTML = t.code.map(g => `<div class="group"><h3>${esc(g.group)} <span class="mono">${esc(g.note)}</span></h3><div class="plain repos">
+      ${g.items.map(([n, m, h]) => `<a href="${h}" target="_blank" rel="noopener"><span>${esc(n)}</span><span class="mono">${esc(m)} ↗</span></a>`).join('')}</div></div>`).join('');
+    $('#highlights').innerHTML = t.highlights.map((h, i) => `<div class="rv"><span class="mono">0${i + 1}</span><h3>${esc(h.title)}</h3><p>${esc(h.text)}</p>
+      ${h.link ? `<a href="${h.link}" target="_blank" rel="noopener">${esc(h.link_label)}</a>` : ''}</div>`).join('');
   }
 };
-
-/* small static tube glyph for research cards without media */
-function glyph(cv) {
-  const r = cv.getBoundingClientRect(), d = Math.min(devicePixelRatio || 1, 2), W = r.width, H = r.height, c = cv.getContext('2d');
-  cv.width = W * d; cv.height = H * d; c.scale(d, d);
-  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
-  const seed = +cv.dataset.glyph, rho = t => .1 + .5 * Math.exp(-3 * t);
-  const mid = t => .25 * Math.sin(t * (4 + seed) + seed) * (1 - t);
-  const X = t => 20 + t * (W - 40), Y = x => H / 2 - x * H * .42;
-  c.fillStyle = css('--accent'); c.globalAlpha = .14; c.beginPath();
-  for (let i = 0; i <= 100; i++) c.lineTo(X(i / 100), Y(mid(i / 100) + rho(i / 100)));
-  for (let i = 100; i >= 0; i--) c.lineTo(X(i / 100), Y(mid(i / 100) - rho(i / 100)));
-  c.fill(); c.globalAlpha = 1; c.strokeStyle = css('--accent'); c.lineWidth = 1.4;
-  [1, -1].forEach(s => { c.beginPath(); for (let i = 0; i <= 100; i++) c.lineTo(X(i / 100), Y(mid(i / 100) + s * rho(i / 100))); c.stroke(); });
-  c.strokeStyle = css('--ink'); c.lineWidth = 1.8; c.beginPath();
-  for (let i = 0; i <= 100; i++) { const t = i / 100; c.lineTo(X(t), Y(mid(t) + rho(t) * .7 * Math.exp(-2 * t) * Math.cos(9 * t + seed))); } c.stroke();
-}
 
 (async () => {
   const site = await get('site');
   shell(site);
   try { await pages[PAGE]?.(site); } catch (e) { console.error(e); }
   reveal();
+  countUp();
 })();

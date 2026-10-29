@@ -83,50 +83,177 @@
   ],
   "research": [
     {
-      "id": "safe-autonomy",
-      "title": "Safe Autonomy",
-      "kicker": "Correct-by-construction",
-      "text": "Autonomous cars, aircraft and robots promise fewer collisions and less congestion, but only if their safety and correctness can be certified. We synthesize controllers with formal guarantees for complex tasks given as temporal-logic specifications.",
-      "video": "DTSIa1ccz6o",
-      "more": "https://www.focaslab.com/research/safe-autonomy"
+      "id": "tubes",
+      "title": "Spatiotemporal Tubes",
+      "kicker": "Real-time, approximation-free control",
+      "viz": "tubes",
+      "text": "Our flagship approach. A spatiotemporal tube is a time-varying region the system must stay inside; we design tubes that avoid obstacles and reach targets on deadline, and a closed-form controller that keeps the system in the tube, with no model approximation and no online optimisation.",
+      "points": [
+        "Prescribed-time reach–avoid–stay tasks with a formal guarantee",
+        "Static, moving and uncertain unsafe sets, updated in real time",
+        "Unknown dynamics and input constraints, from Euler–Lagrange robots to articulated vehicles",
+        "Applications beyond robotics, such as a provably safe artificial pancreas"
+      ],
+      "tags": [
+        "Closed-form control",
+        "Reach–avoid–stay",
+        "Unknown dynamics",
+        "Real time"
+      ],
+      "match": "spatiotemporal tube|safety tube",
+      "repos": [
+        [
+          "Real-time STT for dynamic unsafe sets",
+          "https://github.com/FocasLab/Real-Time-Spatiotemporal-Tubes-for-Dynamic-Unsafe-Sets"
+        ],
+        [
+          "STL with STT",
+          "https://github.com/FocasLab/STL_STT"
+        ],
+        [
+          "STT for differential drive",
+          "https://github.com/FocasLab/DifferentialDriveSTT"
+        ]
+      ],
+      "video": "DTSIa1ccz6o"
+    },
+    {
+      "id": "logic",
+      "title": "Temporal Logic & Resilience",
+      "kicker": "Tasks you can state precisely",
+      "viz": "logic",
+      "text": "Complex missions such as “visit A within 4 s, then B, and never enter C” are written in signal or linear temporal logic. We synthesise controllers that satisfy these specifications by construction, and measure how much disturbance or energy loss a system can absorb before a task fails.",
+      "points": [
+        "Controller synthesis for the full class of signal temporal logic (STL) tasks",
+        "Resilience metrics and maximally resilient controllers",
+        "Assume–guarantee contracts for interconnected systems",
+        "Reinforcement learning made tractable with tube-shaped STL rewards"
+      ],
+      "tags": [
+        "STL / LTL",
+        "Resilience",
+        "Contracts",
+        "Reinforcement learning"
+      ],
+      "match": "temporal logic|resilien|assume-guarantee|\\bSTL\\b",
+      "repos": [
+        [
+          "RL for STL via funnels",
+          "https://github.com/FocasLab/Reinforcement-Learning-for-Signal-Temporal-Logic-using-Funnel-Based-Approach"
+        ]
+      ]
     },
     {
       "id": "learning",
-      "title": "Learning-based Control",
-      "kicker": "Data with guarantees",
-      "text": "Many cyber-physical systems lack precise models. We use data-driven and machine-learning methods, such as neural certificates, Gaussian processes and conformal prediction, to give probabilistic and formal guarantees for unknown dynamical systems.",
-      "more": "https://www.focaslab.com/research/learning_control"
+      "title": "Learning with Guarantees",
+      "kicker": "Data-driven, still certified",
+      "viz": "learning",
+      "text": "Many systems have no reliable model. We learn controllers and safety certificates from data, then verify them, so a learned policy comes with a proof (or a probability bound) rather than only good test results.",
+      "points": [
+        "Neural control barrier functions and neural stabilising controllers",
+        "Physics-informed networks that learn spatiotemporal tubes",
+        "Fast, sample-efficient verification with extreme learning machines and graph neural networks",
+        "Certified sim-to-real transfer via simulation-gap functions; Gaussian-process funnel control"
+      ],
+      "tags": [
+        "Neural certificates",
+        "Verification",
+        "Gaussian processes",
+        "Sim-to-real"
+      ],
+      "match": "neural|learning machine|physics-informed|gaussian|sim-to-real|data-driven|conformal",
+      "repos": [
+        [
+          "Gaussian-process funnel controller",
+          "https://github.com/FocasLab/Gaussian-Process-Funnel-Controller-Simulation"
+        ]
+      ]
     },
     {
       "id": "multi-robot",
       "title": "Multi-Robot Systems",
-      "kicker": "Distributed coordination",
-      "text": "Teams of robots must reach consensus, hold formations, stay connected and avoid collisions using distributed resources. We develop scalable, provably safe controllers for multi-agent systems under sensing and communication constraints.",
-      "image": "assets/img/38f0fb204613.jpg"
+      "kicker": "Coordination under sensing limits",
+      "viz": "swarm",
+      "text": "Robot teams must hold formations, stay connected and avoid each other using only what each robot can sense. We build distributed controllers with safety guarantees that scale with team size.",
+      "points": [
+        "Formation tracking with a single control-barrier-function constraint",
+        "Safely acquiring a rigid communication graph under limited sensing range",
+        "Socially aware navigation for unknown multi-agent systems",
+        "Prescribed-performance multi-cluster consensus"
+      ],
+      "tags": [
+        "Formations",
+        "Rigidity",
+        "Distributed control",
+        "Consensus"
+      ],
+      "match": "multi-agent|formation|consensus|rigid|multi-robot|social",
+      "repos": [
+        [
+          "STT for socially aware multi-agent systems",
+          "https://github.com/FocasLab/STT-for-SA-MAS"
+        ]
+      ]
     },
     {
-      "id": "constrained",
-      "title": "Constrained Nonlinear Control",
-      "kicker": "Funnels & tubes",
-      "text": "Performance limits, input saturation, physical stops and safety specifications all constrain real systems. We design approximation-free, real-time controllers, including funnel and spatiotemporal-tube methods, that respect these constraints by construction.",
-      "more": "https://www.focaslab.com/research/constrained_control"
+      "id": "stability",
+      "title": "Stability & Symbolic Control",
+      "kicker": "Incremental stability, switched & hybrid systems",
+      "viz": "contraction",
+      "text": "Cyber-physical systems mix discrete switching with continuous dynamics. We study incremental stability (all trajectories converging towards each other), which makes symbolic abstractions and compositional controller design possible for large systems.",
+      "points": [
+        "Incremental stability of switched and interconnected systems",
+        "Neural and learned controllers with incremental-stability guarantees",
+        "Symbolic abstractions and compositional synthesis",
+        "Scalable verification for large-scale networks"
+      ],
+      "tags": [
+        "Incremental stability",
+        "Switched systems",
+        "Symbolic models",
+        "Compositional"
+      ],
+      "match": "stabil|switched|symbolic|abstraction",
+      "repos": [
+        [
+          "SCOTS (symbolic controller synthesis)",
+          "https://github.com/FocasLab/SCOTS"
+        ]
+      ]
     },
     {
-      "id": "cps",
-      "title": "Cyber-Physical Systems",
-      "kicker": "Hybrid & symbolic",
-      "text": "CPS couple computation with physical processes, giving hybrid models with discrete transitions and continuous dynamics. We build symbolic abstractions and compositional synthesis methods that keep controller design tractable at scale.",
-      "image": "assets/img/a5630b89be65.png",
-      "more": "https://www.focaslab.com/research/control_cps"
-    }
-  ],
-  "courses": [
-    {
-      "code": "CP 241",
-      "title": "Applied Linear and Nonlinear Control",
-      "note": "MathWorks–IISc collaboration",
-      "text": "A postgraduate course linking advanced control theory to robots, with MATLAB, Simulink, ROS 2 and motion-capture experiments. It covers linear and nonlinear dynamics, stability theory, optimal control and safety-critical control, and ends with controllers running on mobile robots and manipulators.",
-      "link": "https://github.com/FocasLab/CP-241-Applied-linear-and-non-linear-control"
+      "id": "robots",
+      "title": "From Demonstrations to Robots",
+      "kicker": "Hardware, imitation & experiments",
+      "viz": "arm",
+      "text": "Every method is tested on real hardware: mobile robots, manipulators, drones and an F1TENTH car in a motion-capture arena. We also teach robots from human demonstrations, including imperfect ones, while keeping the safety guarantees.",
+      "points": [
+        "Robust imitation learning from mixed-skill demonstrations",
+        "Learning from demonstration inside spatiotemporal tubes",
+        "Safe trajectory tracking with moving obstacles, validated on planar robots",
+        "Open-source ROS / ROS 2 stacks for the lab's robots"
+      ],
+      "tags": [
+        "Imitation learning",
+        "Manipulators",
+        "ROS 2",
+        "Experiments"
+      ],
+      "match": "imitation|demonstration|experimental|articulated|manipulat|robot",
+      "repos": [
+        [
+          "Beyond the teacher (ICRA 2026)",
+          "https://github.com/FocasLab/ICRA-IL-2026"
+        ],
+        [
+          "F1TENTH stack",
+          "https://github.com/FocasLab/focaslab_f1tenth"
+        ],
+        [
+          "PhaseSpace mocap for ROS",
+          "https://github.com/FocasLab/phasespace-mocap-ros"
+        ]
+      ]
     }
   ],
   "openings": [

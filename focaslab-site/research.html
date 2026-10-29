@@ -9,15 +9,22 @@
 <meta property="og:description" content="Formal Control and Autonomous Systems Lab, Department of Cyber-Physical Systems, IISc Bengaluru.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body data-page="research">
 <main>
 <div class="wrap page-head"><span class="mono">Research</span><h1>Guarantees, <em>not hopes.</em></h1>
-<p>Robotics draws on mechanical, electrical and computer engineering. We focus on interdisciplinary research: designing controllers with formal guarantees for complex tasks, closing the Sim2Real gap, making data-driven control safe, and building efficient robotic platforms.</p></div>
-<div class="wrap" id="rlist" style="margin-top:40px"></div>
+<p>We build controllers for robots and cyber-physical systems that provably do what they are asked to do: complex tasks, hard deadlines, unknown dynamics, real hardware.</p></div>
+<div class="wrap"><ol class="flow rv" aria-label="How our work fits together">
+  <li><span class="mono">01 · Specify</span><b>What must happen</b><p>Temporal-logic tasks, safety sets, deadlines.</p></li>
+  <li><span class="mono">02 · Synthesise</span><b>A provable controller</b><p>Spatiotemporal tubes, barrier functions, symbolic models.</p></li>
+  <li><span class="mono">03 · Learn</span><b>When models are missing</b><p>Neural certificates and data, with verification.</p></li>
+  <li><span class="mono">04 · Deploy</span><b>On real robots</b><p>Ground, aerial, manipulators and teams.</p></li>
+</ol></div>
+<div class="wrap" id="rlist" style="margin-top:24px"></div>
 </main>
 <script src="assets/site.js"></script>
+<script src="assets/research-viz.js"></script>
 </body>
 </html>
