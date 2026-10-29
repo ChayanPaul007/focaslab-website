@@ -102,7 +102,7 @@
       "title": "Multi-Robot Systems",
       "kicker": "Distributed coordination",
       "text": "Teams of robots must reach consensus, hold formations, stay connected and avoid collisions using distributed resources. We develop scalable, provably safe controllers for multi-agent systems under sensing and communication constraints.",
-      "image": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72s-fuIwdoxtw-dvBEVBZjgiMdzXaJ_ErlPYb4Waoia7g0CMOple40SPCAPeSxbUBL0qpWxdM-DEK4UdwYqnkFgCfOpa7htJ5MQ28KwY0TgUk57p4Km9wGmEMb5Pij6osSJCPgdaIiYFXKAy4KSc4C8yQWYtWmY57sQ8B8tWZLULZtpWuQ5TZcjLB6eiKXWt3enQPfYmHqeKP8WiPrhxR81LJ48E7_XkG93gV_YJcvk=w1280"
+      "image": "assets/img/38f0fb204613.jpg"
     },
     {
       "id": "constrained",
@@ -116,7 +116,7 @@
       "title": "Cyber-Physical Systems",
       "kicker": "Hybrid & symbolic",
       "text": "CPS couple computation with physical processes, giving hybrid models with discrete transitions and continuous dynamics. We build symbolic abstractions and compositional synthesis methods that keep controller design tractable at scale.",
-      "image": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72uZFQ9rM2uXVtf7rm6ClNX36fsFJ9_H07TIbYcsJwvqJYcjwdcsnH9yCS8Q2Em2Ig08G3y5hGksKmPxuqYUuNAj8mqmWGEJyZ-1WSwhNaf4EDrcfYdF-OBYGae3cdhZ0b4k5WpX7YC8wrje45VL7dQ8oWEnw3P1C2MxuwWQJAFo2phfebsGiw6-R85GSpJiiZUpnPg-ELlLXDwOq8aWS2mPq1_m91MKfYkS92wleEA=w1280",
+      "image": "assets/img/a5630b89be65.png",
       "more": "https://www.focaslab.com/research/control_cps"
     }
   ],
