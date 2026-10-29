@@ -4,93 +4,468 @@
     "role": "Assistant Professor, Dept. of Cyber-Physical Systems, IISc",
     "bio": "Control systems, robotics, formal methods, learning-based control, multi-agent systems, nonlinear, robust and adaptive control, stochastic systems, reinforcement learning, CPS and spatio-temporal logic specifications.",
     "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72uIz3PhmeygoK42NnIdieH75vx6LrYngCK4YHY6In_tSmFzhGjpkHdr5kjpY-70TPP8T0deyH1DRJLnPLrACOQyw4E8PbH3cVnzKoqHgXB3FvavOKqQ4VouB8qCt-y526KqGjQINPTOssrlS1rPaHXKTKG1vI7kF0BHglGdUzz0Si7dgeI6TIBM0gKBfHuKDMQclVJbs4SQEx8JdUM7hxJyARKl26D0PjIi7wjcc5w=w1280",
-    "links": {"email": "pushpak@iisc.ac.in", "web": "http://www.pushpakjagtap.com", "scholar": "https://scholar.google.com/citations?user=Szd98jUAAAAJ&hl=en", "linkedin": "https://www.linkedin.com/in/pushpak-jagtap", "researchgate": "https://www.researchgate.net/profile/Pushpak-Jagtap", "x": "https://twitter.com/pushpak_jagtap"}
+    "links": {
+      "email": "pushpak@iisc.ac.in",
+      "web": "http://www.pushpakjagtap.com",
+      "scholar": "https://scholar.google.com/citations?user=Szd98jUAAAAJ&hl=en",
+      "linkedin": "https://www.linkedin.com/in/pushpak-jagtap",
+      "researchgate": "https://www.researchgate.net/profile/Pushpak-Jagtap",
+      "x": "https://twitter.com/pushpak_jagtap"
+    }
   },
   "groups": [
-    {"title": "Postdoctoral Researchers", "members": [
-      {"name": "Dr. Chayan Kumar Paul", "since": "2026", "topics": "Adaptive & constrained control, robotics, impedance control, contraction theory", "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72va_SDONSjeY7ekZFGE51QNrMYtvIRSN67IobfMIzEIj45dxTTKw-LMbPAFoSUV2_TxAO-jY6TMUGSIstmQeucVb87NnxtuN7OM_vH4URdYhJ4Bxy3AyJ_BM4Z5NnBseuPgwz58OG6hpPzShBwS1exxcoWiCppOiPL8vYT8z6k0r-FYzvWpy-QpG5dVWODej7EOLttzMnMmSPBzacxYGWY-NxtIIu72DE3t5rk01iw=w1280", "links": {"web": "https://www.ckpaul.in/", "scholar": "https://scholar.google.com/citations?user=svjX4-MAAAAJ&hl=en", "linkedin": "http://www.linkedin.com/in/chayan-kumar-paul-806953122"}},
-      {"name": "Dr. Poulomee Ghosh", "since": "2026", "topics": "Constrained & adaptive control, safety, uncertain systems", "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72vQ82d3XFCYawzzCQ39hEHLEAS3O_vRmoBM-UPwDqAkvDLwHB2vd66dJUPfCiJJZ6qLEdNdMmV-JULpSx_BBNqfCfavRnh1pOc5WYEF5Tsslz47gUOGwodeQukKfbNNsMI1AbcHq8lw_mKtdBen7-g6B9U2rBPQbzR-8AgCJi_D2RlM8QTgLyQWBzvKys7fRrcOuFxVZjPFD1jvhAkwC-UI8iF-D5S18S_VTUWX93k=w1280", "links": {"web": "https://www.poulomeeghosh.in", "scholar": "https://scholar.google.com/citations?user=lMPHw_MAAAAJ&hl=en", "linkedin": "https://www.linkedin.com/in/poulomee-ghosh-4a4037182/"}}
-    ]},
-    {"title": "PhD Scholars", "members": [
-      {"name": "Manan Tayal", "since": "2021", "note": "PMRF · co-advised with Dr. Shishir Kolathaya", "topics": "Safety-critical systems, robotics, control", "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72th01SQrfxJJ1Tdh2JIC3nvROJP59Nd8ebI9_UgZidonmWuPcpBCYiFMYsCdjPQK3_bLFZ8pGTKoNieSXt3ooEOK7PjULJs3FvbWEpYylFSSoN5IzSb90OR0Aqqx2zBJZ6qj3ExZkbT6ELqaDidtM9IhpE2Ovzw1PZZTSfgNbEOwlhfjwU1ibzOxn48vXEAjpdSyMHh_ARo4ulx-vue4NH0A5bmylVCKOA8w5Qt5xc=w1280", "links": {"web": "https://tayalmanan28.github.io/", "scholar": "https://scholar.google.com/citations?user=jWWQhY8AAAAJ&hl=en", "linkedin": "https://www.linkedin.com/in/manan-tayal/"}},
-      {"name": "Sangeerth P", "since": "2022", "note": "Siemens PhD Fellow", "topics": "Control systems, embedded systems, optimization", "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72tAD7pLmvDnvwzJkqAmcaMMwEuCDalF-i70dpqhXymcQBlw0pI2l2HXQrk4482fIUEnEQ7alLCO1gEBQMrUt85PikrrJv7qDV1Q-y94fyyhABgGApf-fM_TfVZOcCsp8vPIfex5Zt-H0ZSmBk_DuB3gj4g1PST3GFJ_XMiskpkz7VPzSCL4zxgCWByUUzTOTLE40FvN9E3vFoW2NZ8fS22cHNDPGxQKm2Tjihku=w1280", "links": {"scholar": "https://scholar.google.com/citations?hl=en&user=UNJKZ3QAAAAJ", "linkedin": "https://www.linkedin.com/in/sangeerth-p-9a283a222", "researchgate": "https://www.researchgate.net/profile/Sangeerth-Prabakar"}},
-      {"name": "Vaishnavi J", "since": "2022", "note": "Siemens PhD Fellow", "topics": "Robotics, machine learning, control", "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72tNwuFPgC8rW9bojkuKqqx3R0wl2bZ9IjyDAE4MACaz58PSTb94oMh1U2eIRZie0k4hBBn_ucLKvKNWu0hBZfKozGHM8jvmxHQqnZWCm4fTSJPEavF_32ylZ87qFebCg6YGlJZ2fiacchLpI3UgpiFc-xhsrYBoJKeQVisuPljuvWtk7YcDMVIvmuyS531Jez9u-G6Y1Zj_VuuZmCitJuUpDNGKippMn4_N35urAfI=w1280", "links": {"linkedin": "https://www.linkedin.com/in/vaishnavi-j4"}},
-      {"name": "Ratnangshu Das", "since": "2023", "note": "PMRF", "topics": "Robotics, dynamics, control", "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72vSi8nlWi4UULJbGLsKBDHi26--3stJeRvVqv9h72VO6wkRn8ZphwbfE9pXJCvBpJ-KQEyAxDXsqGIPfxF6R45-4kzioj2y06mg3dXslDG-jrUzgHF4m0OMv7u8c_cGsk-OLA2yb2-gttcw9PeX_DI5KwphNtreJVvqsx11ToACMmMAL6lcw2sZrzR4IZA=w1280", "links": {"scholar": "https://scholar.google.com/citations?user=miRvKrsAAAAJ&hl=en", "linkedin": "https://www.linkedin.com/in/ratnangshu-d-11955a107/"}},
-      {"name": "Shravista Kashyap Chirdre", "since": "2023", "note": "co-advised with Dr. Jishnu Keshavan", "topics": "Robotics, dynamics, control", "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72uCVxcIEBO6v30g3cChFLItXmDTOz1_-d59Eq_nhJEJ26wJv5JJ0csdxtvZrQLJT_oCbmWbcDoA1riqEiLPc_7lXzOdxYduIB9BPQhSyj5EZZVcr2qyx0qo53mKb_w0OAneZkkWl-h2mGt5Wet7cQMnyHtn7cDa0ntJdNlc_HZZyXfzo0d_XNt9AjeMXvPEclflrHT-fdwqcAq6xtf5-JsRD-w1BceI8Tc87sfD3Vk=w1280", "links": {"web": "https://shravista.github.io/", "scholar": "https://scholar.google.com/citations?hl=en&user=zCfwK60AAAAJ", "linkedin": "https://www.linkedin.com/in/shravista/"}},
-      {"name": "Faizuddin Faruqui", "since": "2023", "note": "Sponsored PhD, URSC, ISRO", "topics": "Autonomous systems, formal methods, multi-agent systems", "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72sr_U-pMCtUljC04OVJvO9T1k4sf1izfHyK68i0tGq_YmdYZ2IoYfbRUXiBcAjA4XclNLwm-HAVflDseknITI9lJG9pc3E4bXj1oZ1m4RR4Zl20CNNxPF22n9JRI3Z0cwdVIb4g1Ye9vhg7JgKy4b0EU9w-7-eEJSGOhQFXwv8FAft6ULX6AxkHhvIDKPC8DV59zgPktcV9N1P0cDeBqMcC6sIRaMr8aPWtbMqeXPk=w1280", "links": {"scholar": "https://scholar.google.com/citations?hl=en&user=8BYpRXoAAAAJ", "linkedin": "https://www.linkedin.com/in/faizuddin-faruqui/"}},
-      {"name": "Shubham Ganesh Sawarkar", "since": "2023", "topics": "Robotics, dynamics, control", "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72th9FIkigCRdcbpwNF7t4uh2JV2IgIaCAewKrGX_sbC534NCJfXYt71-MbNI4E7EtjU5BAKblBs26ZQDWdGUhJFlr3lywGg171pHxaAq-ZIdPoQzRIkgos6X8tcXuScrzk9aWgfIH9Q5k0lrNOP9G7OVlj01ozoqpFpUR8xc1ISfpzs5RJOrAe5Vtk45CY=w1280", "links": {"scholar": "https://scholar.google.com/citations?user=FkNk0SkAAAAJ&hl=en", "linkedin": "https://www.linkedin.com/in/shubham2233198/"}},
-      {"name": "Ahan Basu", "since": "2023", "topics": "Data-driven control", "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72ugTN3BzWJLCjzdJcgh2ET2txAWEd51qCsb1yKrEAnaqCD3pECNGdvahZfAVrL-wH0cgI0YBpOAhe5BSOh6IojDwif0oA5dUbBMjryOGoyz2c5FpFc8_V94QoLObK37ZGl9w19Ijfb_w2EdVZIjsPqAkcT6XGusFx4Hc25HSZJVxa5isJAsxiIKBcEdFUU=w1280", "links": {"scholar": "https://scholar.google.com/citations?user=kyvZI2cAAAAJ&hl=en", "linkedin": "https://www.linkedin.com/in/ahan-basu-b983431a8/"}},
-      {"name": "Siddhartha Upadhyay", "since": "2024", "topics": "Control systems", "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72uU16wCRiOmCHJUdhqIgEVPnoP6MiUkt5WLN3YZal_bk6WCVJk0v_eIMTKPEdIEr7WHy2--uG0lfYHsSp8E3iEYHIruJ-EU_8yOCQQxzKDReWEJlZ0bp5RNHuMEJOKRDr7XMHRkbKlHlp3R9FKyLwh0Nnqd3zxT3vLYcUJJuXWt8l2OyPk8cNnY3mCIfxDiSmk-0OAUThWLp21NaAuvRvZCdy3LaAHTmc9PlqyotVU=w1280", "links": {"scholar": "https://scholar.google.com/citations?hl=en&user=ioHRc4kAAAAJ", "linkedin": "https://in.linkedin.com/in/siddhartha-upadhyay-47b736216"}},
-      {"name": "Saharsh", "since": "2025", "topics": "Control barrier functions, imitation learning, sliding-mode control", "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72t2-nHV3ujMqpPPTt5QRKDVQ5mQL-CpMEWt2SZvggsyzMaesD9_C6nFMUbNm1OI0UthXf6GTsw7TXFGgk4JLTnubsliAR5seLV_xVwQXoqP9GMGRpESx5iHVjtoq_VTWRPP94Bfmzrx2hZh9j6nXrepSZjpxqjqG-_Gk8YLtIc1KoRKditv9R3tykLREhX-vza1czRSB0tv1_GupavehOZwdGodF1z2trFCQmGD1aM=w1280", "links": {"scholar": "https://scholar.google.com/citations?hl=en&user=lkb7bRMAAAAJ", "linkedin": "https://www.linkedin.com/in/saharsh-98a34515a"}},
-      {"name": "Varuni Buereddy", "since": "2025", "note": "India AI Fellow · co-advised with Dr. Ravi Prakash", "topics": "Safe CPS, robotics, imitation learning", "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72tYxupSnxO4tIqRT9I177TNQ6p2aTO8XLhUeW_g_RauhD3fcNPj9RivDCaY6_BRzaW9lkEoBgyLmIY_m3_3oo5pPUbqb_7_Ua2VFbVI_ibpzlZrZfFW6w0Y4_Ltc03W8ipvCgllWjFZ2KSqM7xx5HzNwgTJKdWPhoVj5juedpWHe2h6YVG7IKVOEZ55-QaHbnsVbQvCnXc5Xm_iGDAJ-M960QK3-iHorhh5ReXp=w1280", "links": {"scholar": "https://scholar.google.com/citations?hl=en&user=nTCygfMAAAAJ", "linkedin": "https://www.linkedin.com/in/varunibuereddy"}},
-      {"name": "Archana Kulkarni", "since": "2026", "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72swbxDoMxz2p3A6h9yWGatrC-9Qjeufv0EgefowvKw6lNPHDEoZHl3YqgvFqpsaQk5a_nzefqPpKwIEsABfO5gn07qfZefD0caABWJ-lA2FjYLKr2EK4-dXdEvpzmOy498UTpciMQihkNeybUuw2NxpBCaGQ51Fe2kA5nY_E-37J46dj2eYkxdeTAcCPDNDh-smm4oZ6xunDjAM5wPr8ADG-CcyXjIvIdfI4PFb=w1280", "links": {"linkedin": "https://www.linkedin.com/in/archana-kulkarni-493903247"}},
-      {"name": "Rushikesh Shinde", "since": "2026", "note": "Sponsored PhD, John Deere", "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72tUOEMsVBuCVuPfnhfo3Hb93iHwcZnCL3a63k7-ztrp9Atd_7NgN3qQymgN-w6_yyKoU2RfDdHb53MmDH50DoBcOUT0pxvruyrHEg6iEhdaN69gwmsvlp3twevZo3ILOZuxM18y2ivY4xrGsc9ngClc4Omj1Ru08wH_YeNFnFCJAlVdY9gIz-wGr8rk2iw=w1280", "links": {"linkedin": "https://www.linkedin.com/in/rushi-p-shinde/"}}
-    ]},
-    {"title": "Pre-Doctoral Researchers", "members": [
-      {"name": "Vedant Kakde", "since": "2026", "note": "NPTEL fellowship", "topics": "Embedded systems, electronics, robotics", "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72t2jYniLQ860Ac9mr0KzsDVia1aAECSb9Q67YIhQ9AUtf_0LMWaYB5YMfYUncJfIQx8MT5J18sqdM1vQ8PiiRL6ifSargh6uBFXUtxllLkGimGUxVi73U5eod6Tb9fvDbz7UMWV0A0_5FhNrec9D7wA97cscxzy6Ko3s_U69X_WEKXhMHMSrddIwGeT8tcr9TTtsVMlZx-Q1h6ffxucEQpNyLsp9ugzCzl-S1-xr-Y=w1280", "links": {"linkedin": "https://www.linkedin.com/in/vedant-kakde-641802256"}}
-    ]}
+    {
+      "title": "Postdoctoral Researchers",
+      "members": [
+        {
+          "name": "Dr. Chayan Kumar Paul",
+          "since": "2026",
+          "topics": "Adaptive & constrained control, robotics, impedance control, contraction theory",
+          "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72va_SDONSjeY7ekZFGE51QNrMYtvIRSN67IobfMIzEIj45dxTTKw-LMbPAFoSUV2_TxAO-jY6TMUGSIstmQeucVb87NnxtuN7OM_vH4URdYhJ4Bxy3AyJ_BM4Z5NnBseuPgwz58OG6hpPzShBwS1exxcoWiCppOiPL8vYT8z6k0r-FYzvWpy-QpG5dVWODej7EOLttzMnMmSPBzacxYGWY-NxtIIu72DE3t5rk01iw=w1280",
+          "links": {
+            "web": "https://www.ckpaul.in/",
+            "scholar": "https://scholar.google.com/citations?user=svjX4-MAAAAJ&hl=en",
+            "linkedin": "http://www.linkedin.com/in/chayan-kumar-paul-806953122"
+          }
+        },
+        {
+          "name": "Dr. Poulomee Ghosh",
+          "since": "2026",
+          "topics": "Constrained & adaptive control, safety, uncertain systems",
+          "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72vQ82d3XFCYawzzCQ39hEHLEAS3O_vRmoBM-UPwDqAkvDLwHB2vd66dJUPfCiJJZ6qLEdNdMmV-JULpSx_BBNqfCfavRnh1pOc5WYEF5Tsslz47gUOGwodeQukKfbNNsMI1AbcHq8lw_mKtdBen7-g6B9U2rBPQbzR-8AgCJi_D2RlM8QTgLyQWBzvKys7fRrcOuFxVZjPFD1jvhAkwC-UI8iF-D5S18S_VTUWX93k=w1280",
+          "links": {
+            "web": "https://www.poulomeeghosh.in",
+            "scholar": "https://scholar.google.com/citations?user=lMPHw_MAAAAJ&hl=en",
+            "linkedin": "https://www.linkedin.com/in/poulomee-ghosh-4a4037182/"
+          }
+        }
+      ]
+    },
+    {
+      "title": "PhD Scholars",
+      "members": [
+        {
+          "name": "Manan Tayal",
+          "since": "2021",
+          "note": "PMRF · co-advised with Dr. Shishir Kolathaya",
+          "topics": "Safety-critical systems, robotics, control",
+          "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72th01SQrfxJJ1Tdh2JIC3nvROJP59Nd8ebI9_UgZidonmWuPcpBCYiFMYsCdjPQK3_bLFZ8pGTKoNieSXt3ooEOK7PjULJs3FvbWEpYylFSSoN5IzSb90OR0Aqqx2zBJZ6qj3ExZkbT6ELqaDidtM9IhpE2Ovzw1PZZTSfgNbEOwlhfjwU1ibzOxn48vXEAjpdSyMHh_ARo4ulx-vue4NH0A5bmylVCKOA8w5Qt5xc=w1280",
+          "links": {
+            "web": "https://tayalmanan28.github.io/",
+            "scholar": "https://scholar.google.com/citations?user=jWWQhY8AAAAJ&hl=en",
+            "linkedin": "https://www.linkedin.com/in/manan-tayal/"
+          }
+        },
+        {
+          "name": "Sangeerth P",
+          "since": "2022",
+          "note": "Siemens PhD Fellow",
+          "topics": "Control systems, embedded systems, optimization",
+          "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72tAD7pLmvDnvwzJkqAmcaMMwEuCDalF-i70dpqhXymcQBlw0pI2l2HXQrk4482fIUEnEQ7alLCO1gEBQMrUt85PikrrJv7qDV1Q-y94fyyhABgGApf-fM_TfVZOcCsp8vPIfex5Zt-H0ZSmBk_DuB3gj4g1PST3GFJ_XMiskpkz7VPzSCL4zxgCWByUUzTOTLE40FvN9E3vFoW2NZ8fS22cHNDPGxQKm2Tjihku=w1280",
+          "links": {
+            "scholar": "https://scholar.google.com/citations?hl=en&user=UNJKZ3QAAAAJ",
+            "linkedin": "https://www.linkedin.com/in/sangeerth-p-9a283a222",
+            "researchgate": "https://www.researchgate.net/profile/Sangeerth-Prabakar"
+          }
+        },
+        {
+          "name": "Vaishnavi J",
+          "since": "2022",
+          "note": "Siemens PhD Fellow",
+          "topics": "Robotics, machine learning, control",
+          "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72tNwuFPgC8rW9bojkuKqqx3R0wl2bZ9IjyDAE4MACaz58PSTb94oMh1U2eIRZie0k4hBBn_ucLKvKNWu0hBZfKozGHM8jvmxHQqnZWCm4fTSJPEavF_32ylZ87qFebCg6YGlJZ2fiacchLpI3UgpiFc-xhsrYBoJKeQVisuPljuvWtk7YcDMVIvmuyS531Jez9u-G6Y1Zj_VuuZmCitJuUpDNGKippMn4_N35urAfI=w1280",
+          "links": {
+            "linkedin": "https://www.linkedin.com/in/vaishnavi-j4"
+          }
+        },
+        {
+          "name": "Ratnangshu Das",
+          "since": "2023",
+          "note": "PMRF",
+          "topics": "Robotics, dynamics, control",
+          "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72vSi8nlWi4UULJbGLsKBDHi26--3stJeRvVqv9h72VO6wkRn8ZphwbfE9pXJCvBpJ-KQEyAxDXsqGIPfxF6R45-4kzioj2y06mg3dXslDG-jrUzgHF4m0OMv7u8c_cGsk-OLA2yb2-gttcw9PeX_DI5KwphNtreJVvqsx11ToACMmMAL6lcw2sZrzR4IZA=w1280",
+          "links": {
+            "scholar": "https://scholar.google.com/citations?user=miRvKrsAAAAJ&hl=en",
+            "linkedin": "https://www.linkedin.com/in/ratnangshu-d-11955a107/"
+          }
+        },
+        {
+          "name": "Shravista Kashyap Chirdre",
+          "since": "2023",
+          "note": "co-advised with Dr. Jishnu Keshavan",
+          "topics": "Robotics, dynamics, control",
+          "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72uCVxcIEBO6v30g3cChFLItXmDTOz1_-d59Eq_nhJEJ26wJv5JJ0csdxtvZrQLJT_oCbmWbcDoA1riqEiLPc_7lXzOdxYduIB9BPQhSyj5EZZVcr2qyx0qo53mKb_w0OAneZkkWl-h2mGt5Wet7cQMnyHtn7cDa0ntJdNlc_HZZyXfzo0d_XNt9AjeMXvPEclflrHT-fdwqcAq6xtf5-JsRD-w1BceI8Tc87sfD3Vk=w1280",
+          "links": {
+            "web": "https://shravista.github.io/",
+            "scholar": "https://scholar.google.com/citations?hl=en&user=zCfwK60AAAAJ",
+            "linkedin": "https://www.linkedin.com/in/shravista/"
+          }
+        },
+        {
+          "name": "Faizuddin Faruqui",
+          "since": "2023",
+          "note": "Sponsored PhD, URSC, ISRO",
+          "topics": "Autonomous systems, formal methods, multi-agent systems",
+          "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72sr_U-pMCtUljC04OVJvO9T1k4sf1izfHyK68i0tGq_YmdYZ2IoYfbRUXiBcAjA4XclNLwm-HAVflDseknITI9lJG9pc3E4bXj1oZ1m4RR4Zl20CNNxPF22n9JRI3Z0cwdVIb4g1Ye9vhg7JgKy4b0EU9w-7-eEJSGOhQFXwv8FAft6ULX6AxkHhvIDKPC8DV59zgPktcV9N1P0cDeBqMcC6sIRaMr8aPWtbMqeXPk=w1280",
+          "links": {
+            "scholar": "https://scholar.google.com/citations?hl=en&user=8BYpRXoAAAAJ",
+            "linkedin": "https://www.linkedin.com/in/faizuddin-faruqui/"
+          }
+        },
+        {
+          "name": "Shubham Ganesh Sawarkar",
+          "since": "2023",
+          "topics": "Robotics, dynamics, control",
+          "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72th9FIkigCRdcbpwNF7t4uh2JV2IgIaCAewKrGX_sbC534NCJfXYt71-MbNI4E7EtjU5BAKblBs26ZQDWdGUhJFlr3lywGg171pHxaAq-ZIdPoQzRIkgos6X8tcXuScrzk9aWgfIH9Q5k0lrNOP9G7OVlj01ozoqpFpUR8xc1ISfpzs5RJOrAe5Vtk45CY=w1280",
+          "links": {
+            "scholar": "https://scholar.google.com/citations?user=FkNk0SkAAAAJ&hl=en",
+            "linkedin": "https://www.linkedin.com/in/shubham2233198/"
+          }
+        },
+        {
+          "name": "Ahan Basu",
+          "since": "2023",
+          "topics": "Data-driven control",
+          "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72ugTN3BzWJLCjzdJcgh2ET2txAWEd51qCsb1yKrEAnaqCD3pECNGdvahZfAVrL-wH0cgI0YBpOAhe5BSOh6IojDwif0oA5dUbBMjryOGoyz2c5FpFc8_V94QoLObK37ZGl9w19Ijfb_w2EdVZIjsPqAkcT6XGusFx4Hc25HSZJVxa5isJAsxiIKBcEdFUU=w1280",
+          "links": {
+            "scholar": "https://scholar.google.com/citations?user=kyvZI2cAAAAJ&hl=en",
+            "linkedin": "https://www.linkedin.com/in/ahan-basu-b983431a8/"
+          }
+        },
+        {
+          "name": "Siddhartha Upadhyay",
+          "since": "2024",
+          "topics": "Control systems",
+          "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72uU16wCRiOmCHJUdhqIgEVPnoP6MiUkt5WLN3YZal_bk6WCVJk0v_eIMTKPEdIEr7WHy2--uG0lfYHsSp8E3iEYHIruJ-EU_8yOCQQxzKDReWEJlZ0bp5RNHuMEJOKRDr7XMHRkbKlHlp3R9FKyLwh0Nnqd3zxT3vLYcUJJuXWt8l2OyPk8cNnY3mCIfxDiSmk-0OAUThWLp21NaAuvRvZCdy3LaAHTmc9PlqyotVU=w1280",
+          "links": {
+            "scholar": "https://scholar.google.com/citations?hl=en&user=ioHRc4kAAAAJ",
+            "linkedin": "https://in.linkedin.com/in/siddhartha-upadhyay-47b736216"
+          }
+        },
+        {
+          "name": "Saharsh",
+          "since": "2025",
+          "topics": "Control barrier functions, imitation learning, sliding-mode control",
+          "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72t2-nHV3ujMqpPPTt5QRKDVQ5mQL-CpMEWt2SZvggsyzMaesD9_C6nFMUbNm1OI0UthXf6GTsw7TXFGgk4JLTnubsliAR5seLV_xVwQXoqP9GMGRpESx5iHVjtoq_VTWRPP94Bfmzrx2hZh9j6nXrepSZjpxqjqG-_Gk8YLtIc1KoRKditv9R3tykLREhX-vza1czRSB0tv1_GupavehOZwdGodF1z2trFCQmGD1aM=w1280",
+          "links": {
+            "scholar": "https://scholar.google.com/citations?hl=en&user=lkb7bRMAAAAJ",
+            "linkedin": "https://www.linkedin.com/in/saharsh-98a34515a"
+          }
+        },
+        {
+          "name": "Varuni Buereddy",
+          "since": "2025",
+          "note": "India AI Fellow · co-advised with Dr. Ravi Prakash",
+          "topics": "Safe CPS, robotics, imitation learning",
+          "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72tYxupSnxO4tIqRT9I177TNQ6p2aTO8XLhUeW_g_RauhD3fcNPj9RivDCaY6_BRzaW9lkEoBgyLmIY_m3_3oo5pPUbqb_7_Ua2VFbVI_ibpzlZrZfFW6w0Y4_Ltc03W8ipvCgllWjFZ2KSqM7xx5HzNwgTJKdWPhoVj5juedpWHe2h6YVG7IKVOEZ55-QaHbnsVbQvCnXc5Xm_iGDAJ-M960QK3-iHorhh5ReXp=w1280",
+          "links": {
+            "scholar": "https://scholar.google.com/citations?hl=en&user=nTCygfMAAAAJ",
+            "linkedin": "https://www.linkedin.com/in/varunibuereddy"
+          }
+        },
+        {
+          "name": "Archana Kulkarni",
+          "since": "2026",
+          "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72swbxDoMxz2p3A6h9yWGatrC-9Qjeufv0EgefowvKw6lNPHDEoZHl3YqgvFqpsaQk5a_nzefqPpKwIEsABfO5gn07qfZefD0caABWJ-lA2FjYLKr2EK4-dXdEvpzmOy498UTpciMQihkNeybUuw2NxpBCaGQ51Fe2kA5nY_E-37J46dj2eYkxdeTAcCPDNDh-smm4oZ6xunDjAM5wPr8ADG-CcyXjIvIdfI4PFb=w1280",
+          "links": {
+            "linkedin": "https://www.linkedin.com/in/archana-kulkarni-493903247"
+          }
+        },
+        {
+          "name": "Rushikesh Shinde",
+          "since": "2026",
+          "note": "Sponsored PhD, John Deere",
+          "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72tUOEMsVBuCVuPfnhfo3Hb93iHwcZnCL3a63k7-ztrp9Atd_7NgN3qQymgN-w6_yyKoU2RfDdHb53MmDH50DoBcOUT0pxvruyrHEg6iEhdaN69gwmsvlp3twevZo3ILOZuxM18y2ivY4xrGsc9ngClc4Omj1Ru08wH_YeNFnFCJAlVdY9gIz-wGr8rk2iw=w1280",
+          "links": {
+            "linkedin": "https://www.linkedin.com/in/rushi-p-shinde/"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Pre-Doctoral Researchers",
+      "members": [
+        {
+          "name": "Vedant Kakde",
+          "since": "2026",
+          "note": "NPTEL fellowship",
+          "topics": "Embedded systems, electronics, robotics",
+          "photo": "https://lh7-us.googleusercontent.com/sitesv-images-rt/AMxu72t2jYniLQ860Ac9mr0KzsDVia1aAECSb9Q67YIhQ9AUtf_0LMWaYB5YMfYUncJfIQx8MT5J18sqdM1vQ8PiiRL6ifSargh6uBFXUtxllLkGimGUxVi73U5eod6Tb9fvDbz7UMWV0A0_5FhNrec9D7wA97cscxzy6Ko3s_U69X_WEKXhMHMSrddIwGeT8tcr9TTtsVMlZx-Q1h6ffxucEQpNyLsp9ugzCzl-S1-xr-Y=w1280",
+          "links": {
+            "linkedin": "https://www.linkedin.com/in/vedant-kakde-641802256"
+          }
+        }
+      ]
+    }
   ],
   "lists": [
-    {"title": "Master’s Students", "members": [
-      {"name": "Debayan Ghosh", "note": "M.Tech RAS ’27", "link": "https://www.linkedin.com/in/ghoshdebayan72/"},
-      {"name": "Manas Patel", "note": "M.Tech RAS ’27", "link": "https://www.linkedin.com/in/manas-patel-408b751a9/"},
-      {"name": "Ayush Sagar", "note": "M.Tech RAS ’27", "link": "https://www.linkedin.com/in/ayush-sagar-014893219/"},
-      {"name": "Adarsh Bharadwaj", "note": "M.Tech Aero ’27", "link": "https://www.linkedin.com/in/adarsh-bharadwaj-7a9398185/"},
-      {"name": "Shubham Kumar", "note": "M.Tech Aero ’27", "link": "https://www.linkedin.com/in/shubham-kumar-436312354"},
-      {"name": "Gollapalli Praveen Kumar", "note": "M.Tech Mech ’27", "link": "https://www.linkedin.com/in/pkgollapalli"}
-    ]},
-    {"title": "Interns", "members": [
-      {"name": "Nitya Ahuja", "link": "http://www.linkedin.com/in/nitya-ahuja-516240237"},
-      {"name": "Vedhas Talnikar", "link": "https://www.linkedin.com/in/vedhas-talnikar-13429a229/"},
-      {"name": "Yusuf Khambaty", "link": "https://www.linkedin.com/in/yusuf-khambaty-a3219a281"}
-    ]}
+    {
+      "title": "Master’s Students",
+      "members": [
+        {
+          "name": "Debayan Ghosh",
+          "note": "M.Tech RAS ’27",
+          "link": "https://www.linkedin.com/in/ghoshdebayan72/"
+        },
+        {
+          "name": "Manas Patel",
+          "note": "M.Tech RAS ’27",
+          "link": "https://www.linkedin.com/in/manas-patel-408b751a9/"
+        },
+        {
+          "name": "Ayush Sagar",
+          "note": "M.Tech RAS ’27",
+          "link": "https://www.linkedin.com/in/ayush-sagar-014893219/"
+        },
+        {
+          "name": "Adarsh Bharadwaj",
+          "note": "M.Tech Aero ’27",
+          "link": "https://www.linkedin.com/in/adarsh-bharadwaj-7a9398185/"
+        },
+        {
+          "name": "Shubham Kumar",
+          "note": "M.Tech Aero ’27",
+          "link": "https://www.linkedin.com/in/shubham-kumar-436312354"
+        },
+        {
+          "name": "Gollapalli Praveen Kumar",
+          "note": "M.Tech Mech ’27",
+          "link": "https://www.linkedin.com/in/pkgollapalli"
+        }
+      ]
+    },
+    {
+      "title": "Interns",
+      "members": [
+        {
+          "name": "Nitya Ahuja",
+          "link": "http://www.linkedin.com/in/nitya-ahuja-516240237"
+        },
+        {
+          "name": "Vedhas Talnikar",
+          "link": "https://www.linkedin.com/in/vedhas-talnikar-13429a229/"
+        },
+        {
+          "name": "Yusuf Khambaty",
+          "link": "https://www.linkedin.com/in/yusuf-khambaty-a3219a281"
+        }
+      ]
+    }
   ],
   "alumni": [
-    {"group": "Postdocs", "members": [
-      ["Dr. Bhabani Shankar Dey", "2024–2026", "Research Asst. Professor, VIT"],
-      ["Dr. Anusree Rajan", "2024–2025", "Asst. Professor, Christ University"],
-      ["Dr. Shilalipi Sahoo", "2024–2025", "Asst. Professor, NIT Warangal"],
-      ["Dr. Jerome Moses", "2024–2025", ""],
-      ["Dr. Pushkar P. Arya", "2022–2024", "Asst. Professor, NIT Patna"],
-      ["Dr. Pankaj K. Mishra", "2022–2023", "Asst. Professor, NIT Hamirpur"],
-      ["Mahendra Singh Tomar", "2023", "Asst. Professor, BITS Pilani Goa"]
-    ]},
-    {"group": "Research Staff", "members": [
-      ["Aiman Bayezeed", "2024–2025", "M.Sc., University of Stuttgart"],
-      ["Puneeth S", "2024–2025", "M.S. Robotics, WPI"],
-      ["Chiluveru Akhil", "2024", "Data Scientist, Citi"],
-      ["David Smith Sundarsingh", "2022–2024", "PhD, Washington University"],
-      ["Manas Sashank Juvvi", "2023–2024", "M.S., TU Delft"],
-      ["Jay Bhagiya", "2022–2023", "Research Assistant, ZeMA, Germany"],
-      ["Jeel Chatrola", "2022–2023", "Software Engineer, Torc Robotics"]
-    ]},
-    {"group": "Master’s", "members": [
-      ["Archana Kulkarni", "RAS 2026", "PhD, CPS IISc"],
-      ["Soumyodipta Nath", "RAS 2026", ""],
-      ["Pukhrambam Akash Singh", "AI 2026", "Applied Scientist, InMobi"],
-      ["Mohammad Ansar A", "RAS 2025", "ML Engineer, Glance"],
-      ["Anand Neelappa Sortur", "RAS 2025", "Engineer, ISRO"],
-      ["Rushikesh Rakesh Jadhav", "RAS 2025", "Research Associate, IISc"],
-      ["Shreeraj Pandey", "AI 2025", ""],
-      ["Anupam Porwal", "RAS 2024", "Lt. Colonel, Indian Army"],
-      ["Pawan Gulia", "RAS 2024", "Indian Army"],
-      ["Abhijeet Antony Tomy", "RAS 2024", "Siemens"],
-      ["Tushar Dilip Kurne", "RAS 2024", "Senior Data Scientist, Netradyne"],
-      ["Tarun Singhal", "AI 2024", "AI Engineer, Mercedes-Benz R&D"],
-      ["Geerath Bhat", "AI 2024", "AI Researcher, Ascendion"],
-      ["Vinay Kumar Sonkar", "AI 2024", "ML Engineer, Ceremorphic"],
-      ["Suraj Kumar", "RAS 2024", "Research Scientist, ISRO"],
-      ["Gajera Vishvasumar", "RAS 2024", "AOCS Engineer, NewOrbit Space"],
-      ["Saharsh", "RAS 2023", "PhD, CPS IISc"],
-      ["Sandeep Gorantla", "RAS 2023", "Software Engineer, Celona"],
-      ["Dibya Dilip", "AI 2023", "Indian Air Force"],
-      ["Lokesh Bansal", "RAS 2023", "Data Scientist, Netradyne"],
-      ["Nilay Srivastav", "RAS 2023", "Researcher, Addverb"],
-      ["Mohit Kumar Gupta", "RAS 2023", "Technical Lead, HCLTech"],
-      ["Tejas Jain", "AI 2023", "Software Engineer, SomyaLabs"],
-      ["Vijay Chaurasia", "AI 2023", "Data Scientist, RagaAI"],
-      ["Jakka Pavan Santosh", "AI 2023", ""]
-    ]},
-    {"group": "Interns", "names": "Rajasi Deshmukh, Kumar Satyanarayan Bhat, Puja Ghosh, Ved Santosh Narsekar, Sreesaketh, Prathamesh Duvvuri, Mohan Aneesh Sai Pusarla, Ritesh Suresh Ashtkar, Ishan Goyal, Akshay Arjun, Tamizhanban A G, Shreya Shah, Geethik Mylapur, Subhodeep Choudhury, Malhar Kamalapur, Rohit Jorige, Rohan Singh, Tripan Dham, Ananya Paresh Goraksha, Nalin Angrish, Akshit Goyal, Surendar Malai, Manan Gupta, Barbie Sharma, Mahima Varkey, Thomas J Chackenkulam, Ninaad Desai, Shriram Damodaran, Allen Emmanuel Binny, Krunal Bhatt, Ansh Ruparel, Devansh Savani, Ameya Vaidya, Prapti Bordoloi, Naveen Sani, Marck Koothoor, Kuldeep Gurjar, Tanishq Chaudhary, Pratham Vishwakarma, Yatharth Ahuja, R K Raj Surya, Anupama Kolsur, Poorvi S H M, Gunjan Haldar, P Govind Rao, Aman Mittal, Anshuman Tejaswi, Anuj Agarwal, Somik Dhar, Deepesh Padala, Lakshmi Prasad, Sahishnu Raju Kakarlapudi, Saksham Gautam, Shashank M, Shashank M A, Shashwat M A"}
+    {
+      "group": "Postdocs",
+      "members": [
+        [
+          "Dr. Bhabani Shankar Dey",
+          "2024–2026",
+          "Research Asst. Professor, VIT"
+        ],
+        [
+          "Dr. Anusree Rajan",
+          "2024–2025",
+          "Asst. Professor, Christ University"
+        ],
+        [
+          "Dr. Shilalipi Sahoo",
+          "2024–2025",
+          "Asst. Professor, NIT Warangal"
+        ],
+        [
+          "Dr. Jerome Moses",
+          "2024–2025",
+          ""
+        ],
+        [
+          "Dr. Pushkar P. Arya",
+          "2022–2024",
+          "Asst. Professor, NIT Patna"
+        ],
+        [
+          "Dr. Pankaj K. Mishra",
+          "2022–2023",
+          "Asst. Professor, NIT Hamirpur"
+        ],
+        [
+          "Mahendra Singh Tomar",
+          "2023",
+          "Asst. Professor, BITS Pilani Goa"
+        ]
+      ]
+    },
+    {
+      "group": "Research Staff",
+      "members": [
+        [
+          "Aiman Bayezeed",
+          "2024–2025",
+          "M.Sc., University of Stuttgart"
+        ],
+        [
+          "Puneeth S",
+          "2024–2025",
+          "M.S. Robotics, WPI"
+        ],
+        [
+          "Chiluveru Akhil",
+          "2024",
+          "Data Scientist, Citi"
+        ],
+        [
+          "David Smith Sundarsingh",
+          "2022–2024",
+          "PhD, Washington University"
+        ],
+        [
+          "Manas Sashank Juvvi",
+          "2023–2024",
+          "M.S., TU Delft"
+        ],
+        [
+          "Jay Bhagiya",
+          "2022–2023",
+          "Research Assistant, ZeMA, Germany"
+        ],
+        [
+          "Jeel Chatrola",
+          "2022–2023",
+          "Software Engineer, Torc Robotics"
+        ]
+      ]
+    },
+    {
+      "group": "Master’s",
+      "members": [
+        [
+          "Archana Kulkarni",
+          "RAS 2026",
+          "PhD, CPS IISc"
+        ],
+        [
+          "Soumyodipta Nath",
+          "RAS 2026",
+          ""
+        ],
+        [
+          "Pukhrambam Akash Singh",
+          "AI 2026",
+          "Applied Scientist, InMobi"
+        ],
+        [
+          "Mohammad Ansar A",
+          "RAS 2025",
+          "ML Engineer, Glance"
+        ],
+        [
+          "Anand Neelappa Sortur",
+          "RAS 2025",
+          "Engineer, ISRO"
+        ],
+        [
+          "Rushikesh Rakesh Jadhav",
+          "RAS 2025",
+          "Research Associate, IISc"
+        ],
+        [
+          "Shreeraj Pandey",
+          "AI 2025",
+          ""
+        ],
+        [
+          "Anupam Porwal",
+          "RAS 2024",
+          "Lt. Colonel, Indian Army"
+        ],
+        [
+          "Pawan Gulia",
+          "RAS 2024",
+          "Indian Army"
+        ],
+        [
+          "Abhijeet Antony Tomy",
+          "RAS 2024",
+          "Siemens"
+        ],
+        [
+          "Tushar Dilip Kurne",
+          "RAS 2024",
+          "Senior Data Scientist, Netradyne"
+        ],
+        [
+          "Tarun Singhal",
+          "AI 2024",
+          "AI Engineer, Mercedes-Benz R&D"
+        ],
+        [
+          "Geerath Bhat",
+          "AI 2024",
+          "AI Researcher, Ascendion"
+        ],
+        [
+          "Vinay Kumar Sonkar",
+          "AI 2024",
+          "ML Engineer, Ceremorphic"
+        ],
+        [
+          "Suraj Kumar",
+          "RAS 2024",
+          "Research Scientist, ISRO"
+        ],
+        [
+          "Gajera Vishvasumar",
+          "RAS 2024",
+          "AOCS Engineer, NewOrbit Space"
+        ],
+        [
+          "Saharsh",
+          "RAS 2023",
+          "PhD, CPS IISc"
+        ],
+        [
+          "Sandeep Gorantla",
+          "RAS 2023",
+          "Software Engineer, Celona"
+        ],
+        [
+          "Dibya Dilip",
+          "AI 2023",
+          "Indian Air Force"
+        ],
+        [
+          "Lokesh Bansal",
+          "RAS 2023",
+          "Data Scientist, Netradyne"
+        ],
+        [
+          "Nilay Srivastav",
+          "RAS 2023",
+          "Researcher, Addverb"
+        ],
+        [
+          "Mohit Kumar Gupta",
+          "RAS 2023",
+          "Technical Lead, HCLTech"
+        ],
+        [
+          "Tejas Jain",
+          "AI 2023",
+          "Software Engineer, SomyaLabs"
+        ],
+        [
+          "Vijay Chaurasia",
+          "AI 2023",
+          "Data Scientist, RagaAI"
+        ],
+        [
+          "Jakka Pavan Santosh",
+          "AI 2023",
+          ""
+        ]
+      ]
+    },
+    {
+      "group": "Interns",
+      "names": "Rajasi Deshmukh, Kumar Satyanarayan Bhat, Puja Ghosh, Ved Santosh Narsekar, Sreesaketh, Prathamesh Duvvuri, Mohan Aneesh Sai Pusarla, Ritesh Suresh Ashtkar, Ishan Goyal, Akshay Arjun, Tamizhanban A G, Shreya Shah, Geethik Mylapur, Subhodeep Choudhury, Malhar Kamalapur, Rohit Jorige, Rohan Singh, Tripan Dham, Ananya Paresh Goraksha, Nalin Angrish, Akshit Goyal, Surendar Malai, Manan Gupta, Barbie Sharma, Mahima Varkey, Thomas J Chackenkulam, Ninaad Desai, Shriram Damodaran, Allen Emmanuel Binny, Krunal Bhatt, Ansh Ruparel, Devansh Savani, Ameya Vaidya, Prapti Bordoloi, Naveen Sani, Marck Koothoor, Kuldeep Gurjar, Tanishq Chaudhary, Pratham Vishwakarma, Yatharth Ahuja, R K Raj Surya, Anupama Kolsur, Poorvi S H M, Gunjan Haldar, P Govind Rao, Aman Mittal, Anshuman Tejaswi, Anuj Agarwal, Somik Dhar, Deepesh Padala, Lakshmi Prasad, Sahishnu Raju Kakarlapudi, Saksham Gautam, Shashank M, Shashank M A, Shashwat M A"
+    }
   ]
 }
