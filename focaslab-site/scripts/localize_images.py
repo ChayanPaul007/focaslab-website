@@ -22,7 +22,7 @@ ALIAS = {"TurtleBot 3": "Turtlebot-3", "TurtleBot 4": "Turtlebot4", "AgileX LIMO
          "Hello Robot Stretch 3": "Hello Robot's Stretch 3", "AgileX Cobot S": "Agile Cobot S",
          "Crazyflie swarm": "Crazyflie", "PhaseSpace motion capture": "Phasespace Motion Capture",
          "3D printing": "3D Printer", "Multi-Robot Systems": "Multi-Robot Systems (MRS)",
-         "Cyber-Physical Systems": "Modern physical processes"}
+         "Cyber-Physical Systems": "Modern physical processes", "Shubham Ganesh Sawarkar": "Shubham Ganesh"}
 # (old page, image is before/after the name)
 PAGE = {"people": ("people", "before"), "facilities": ("facilities", "before"), "site": ("research", "after")}
 norm = lambda s: re.sub(r"[^a-z0-9]", "", (s or "").lower().replace("dr.", "").replace("dr ", ""))
