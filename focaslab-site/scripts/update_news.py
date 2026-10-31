@@ -22,10 +22,10 @@ STATE = ROOT / "data" / "news_state.json"
 KEY = os.environ.get("GEMINI_API_KEY", "")
 # tried in order; quotas and load differ per model, so a 404, 429 or 5xx moves on to the next one
 MODELS = [m for m in [os.environ.get("GEMINI_MODEL")] if m] + ["gemini-2.5-flash", "gemini-flash-latest", "gemini-2.5-flash-lite"]
-LINKEDIN = os.environ.get("LINKEDIN_URL", "https://www.linkedin.com/in/focas-lab-644911386/")
+LINKEDIN = os.environ.get("LINKEDIN_URL") or "https://www.linkedin.com/in/focas-lab-644911386/"  # unset repo variables arrive as ""
 RSS = os.environ.get("LINKEDIN_RSS_URL", "")
 APIFY = os.environ.get("APIFY_TOKEN", "")
-APIFY_ACTOR = os.environ.get("APIFY_ACTOR", "harvestapi~linkedin-profile-posts")
+APIFY_ACTOR = os.environ.get("APIFY_ACTOR") or "harvestapi~linkedin-profile-posts"
 MAX_NEW = 4
 
 
