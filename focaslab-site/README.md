@@ -52,9 +52,10 @@ Journal / conference / preprint tags and the merging of arXiv and published vers
 
 - **New papers:** when a journal or conference paper shows up on Scholar, Gemini writes a one-line item
   ("Two papers accepted at CDC 2026."). Preprints are skipped.
-- **LinkedIn:** Gemini searches the web for recent FOCAS Lab LinkedIn posts and turns real news (awards, defences,
-  talks, new members) into one-liners with a "Post →" link. If `LINKEDIN_RSS_URL` is set, it reads that feed instead,
-  which is more reliable.
+- **LinkedIn:** the lab profile's latest posts are read through [Apify](https://apify.com/harvestapi/linkedin-profile-posts)
+  (about $0.002 per post, well inside Apify's free monthly credit), and Gemini turns real news (awards, defences, talks,
+  new members) into one-liners with a "Post →" link. Without `APIFY_TOKEN` it falls back to `LINKEDIN_RSS_URL`, then to
+  a Gemini web search, which rarely finds posts from this profile.
 
 Setup (GitHub → **Settings → Secrets and variables → Actions**):
 
@@ -62,6 +63,7 @@ Setup (GitHub → **Settings → Secrets and variables → Actions**):
 |---|---|---|
 | `GEMINI_API_KEY` | Secret | key from [aistudio.google.com/apikey](https://aistudio.google.com/apikey) |
 | `LINKEDIN_URL` | Variable (optional) | defaults to the lab page, `linkedin.com/in/focas-lab-644911386` |
+| `APIFY_TOKEN` | Secret | Apify → Settings → API & Integrations → Personal API token |
 | `LINKEDIN_RSS_URL` | Variable (optional) | an RSS feed of that page, e.g. from rss.app |
 | `GEMINI_MODEL` | Variable (optional) | tried first; then gemini-2.5-flash, gemini-flash-latest, gemini-2.5-flash-lite |
 

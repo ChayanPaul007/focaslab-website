@@ -2,14 +2,14 @@
 
 Two sources:
   1. New journal / conference papers in data/publications.json (always works).
-  2. FOCAS Lab's LinkedIn posts, found with Gemini's Google Search tool, or read from
-     an RSS feed of the page if LINKEDIN_RSS_URL is set (more reliable).
+  2. FOCAS Lab's LinkedIn posts, read through Apify if APIFY_TOKEN is set, else from an RSS feed
+     if LINKEDIN_RSS_URL is set, else looked up with Gemini's Google Search tool (least reliable).
 
 Never destroys data: without GEMINI_API_KEY, or on any API error, site.json is left as is.
 At most MAX_NEW items are added per run; data/news_state.json remembers what was already seen.
 """
 import json, os, re, sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from xml.etree import ElementTree
 
@@ -24,6 +24,8 @@ KEY = os.environ.get("GEMINI_API_KEY", "")
 MODELS = [m for m in [os.environ.get("GEMINI_MODEL")] if m] + ["gemini-2.5-flash", "gemini-flash-latest", "gemini-2.5-flash-lite"]
 LINKEDIN = os.environ.get("LINKEDIN_URL", "https://www.linkedin.com/in/focas-lab-644911386/")
 RSS = os.environ.get("LINKEDIN_RSS_URL", "")
+APIFY = os.environ.get("APIFY_TOKEN", "")
+APIFY_ACTOR = os.environ.get("APIFY_ACTOR", "harvestapi~linkedin-profile-posts")
 MAX_NEW = 4
 
 
@@ -76,6 +78,16 @@ def rss_posts():
     return out[:15]
 
 
+def apify_posts():
+    since = (datetime.now(timezone.utc) - timedelta(days=183)).strftime("%Y-%m-%d")
+    r = requests.post(f"https://api.apify.com/v2/acts/{APIFY_ACTOR}/run-sync-get-dataset-items",
+                      headers={"Authorization": f"Bearer {APIFY}"}, timeout=300,
+                      json={"targetUrls": [LINKEDIN], "maxPosts": 10, "postedLimitDate": since, "includeReposts": False})
+    r.raise_for_status()
+    return [{"url": p.get("linkedinUrl", ""), "date": (p.get("postedAt") or {}).get("date", ""),
+             "text": (p.get("content") or "")[:1500]} for p in r.json() if p.get("type", "post") == "post" and p.get("content")]
+
+
 def linkedin_news(existing, seen_urls):
     rules = """Keep only real lab news: awards, thesis defences, paper acceptances, talks, new members,
 grants, visits, events, demos. Skip reposts of other people's content, job ads and generic posts.
@@ -85,8 +97,9 @@ Skip anything already covered by this existing news list:
 Return a JSON array of objects: {"date": "<Mon YYYY>", "text": "<sentence>", "url": "<post url>"}.
 Return [] if there is nothing new. Never invent posts."""
     ok = lambda i: re.match(r"https://([a-z]+\.)?linkedin\.com/", i.get("url", "")) and i["url"] not in seen_urls
-    if RSS:
-        posts = [p for p in rss_posts() if p["url"] not in seen_urls]
+    if APIFY or RSS:
+        posts = [p for p in (apify_posts() if APIFY else rss_posts()) if p["url"] not in seen_urls]
+        print(f"[linkedin] {len(posts)} unseen posts")
         if not posts:
             return []
         items = gemini("These are recent LinkedIn posts by FOCAS Lab, IISc:\n"

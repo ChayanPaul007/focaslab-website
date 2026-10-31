@@ -46,6 +46,7 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           LINKEDIN_URL: ${{ vars.LINKEDIN_URL }}
           LINKEDIN_RSS_URL: ${{ vars.LINKEDIN_RSS_URL }}
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
         run: python scripts/update_news.py
 
       - name: Store images locally
