@@ -1,0 +1,18 @@
+/* Backup palette: the original navy / gold look.
+   To use it again, add this line right after style.css in each page's <head>:
+   <link rel="stylesheet" href="assets/palette-classic.css">  */
+:root{
+  --paper:#fafaf7; --paper-2:#f1f0ea; --ink:#0f1b33; --ink-2:#33405a; --muted:#6b7280; --line:#dedcd3;
+  --accent:#b8892b; --accent-ink:#8a6416; --accent-soft:rgba(184,137,43,.12); --navy:#1e3a8a; --safe:#1f7a5c;
+  --deep:#0f1b33; --on-deep:#f1f0ea;
+  --serif:"IBM Plex Serif",Georgia,serif; --sans:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --max:1180px; --r:14px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --paper:#0a0f1c; --paper-2:#141b2d; --ink:#e8e6df; --ink-2:#c3c7d1; --muted:#9ca3af; --line:#253049;
+  --accent:#e0b455; --accent-ink:#e0b455; --accent-soft:rgba(224,180,85,.14); --navy:#8fb0ff; --safe:#4fc3a1;
+  --deep:#141b2d; --on-deep:#e8e6df; color-scheme:dark;}}
+:root[data-theme="dark"]{--paper:#0a0f1c; --paper-2:#141b2d; --ink:#e8e6df; --ink-2:#c3c7d1; --muted:#9ca3af; --line:#253049;
+  --accent:#e0b455; --accent-ink:#e0b455; --accent-soft:rgba(224,180,85,.14); --navy:#8fb0ff; --safe:#4fc3a1;
+  --deep:#141b2d; --on-deep:#e8e6df; color-scheme:dark;}

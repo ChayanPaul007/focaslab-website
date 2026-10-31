@@ -31,7 +31,7 @@ function shell(site) {
   <footer><div class="wrap">
     <div><div class="big">${logo('focas-logo', 'FOCAS: Formal Control &amp; Autonomous Systems Lab')}</div><p>${esc(site.full_name)}<br>${esc(site.department)}<br>${esc(site.institute)}</p></div>
     <div><h5>Visit</h5><p>${site.address.map(esc).join('<br>')}</p><a href="${site.map}" target="_blank" rel="noopener">Open in Maps ↗</a></div>
-    <div><h5>Elsewhere</h5><a href="mailto:${site.email}">${site.email}</a><a href="${site.links.scholar}" target="_blank" rel="noopener">Google Scholar ↗</a><a href="${site.links.github}" target="_blank" rel="noopener">GitHub ↗</a><a href="${site.links.youtube}" target="_blank" rel="noopener">YouTube ↗</a></div>
+    <div><h5>Elsewhere</h5><a href="mailto:${site.email}">${site.email}</a><a href="${site.links.scholar}" target="_blank" rel="noopener">Google Scholar ↗</a><a href="${site.links.github}" target="_blank" rel="noopener">GitHub ↗</a><a href="${site.links.youtube}" target="_blank" rel="noopener">YouTube ↗</a>${site.links.linkedin ? `<a href="${site.links.linkedin}" target="_blank" rel="noopener">LinkedIn ↗</a>` : ''}</div>
     <div class="base mono"><span>© ${new Date().getFullYear()} FOCAS Lab, IISc Bengaluru</span><span>${esc(site.department)} · IISc</span></div>
   </div></footer>`);
   $('#theme').onclick = toggleTheme;
@@ -110,7 +110,7 @@ const pages = {
         <div><h3>${esc(r.title)}</h3><span class="k mono">${esc(r.kicker)}</span></div>
         <p>${esc(r.text)}</p><span class="arrow">→</span>
       </a>`).join('');
-    $('#news').innerHTML = site.news.slice(0, 7).map(n => `<li><span class="d">${esc(n.date)}</span><span>${esc(n.text)}</span></li>`).join('');
+    $('#news').innerHTML = site.news.slice(0, 7).map(n => `<li><span class="d">${esc(n.date)}</span><span>${esc(n.text)}${n.url ? ` <a class="more" href="${esc(n.url)}" target="_blank" rel="noopener">Post →</a>` : ''}</span></li>`).join('');
     const recent = items.filter(p => p.kind === 'journal' || p.kind === 'conference').sort((a, b) => (b.year || 0) - (a.year || 0)).slice(0, 5);
     $('#recent').innerHTML = recent.map(p => pubHTML(p, true)).join('');
     const figs = fac.flatMap(g => g.items).map(f => `<figure><img loading="lazy" src="${f.image}" alt="${esc(f.name)}"><figcaption>${esc(f.name)}</figcaption></figure>`).join('');
