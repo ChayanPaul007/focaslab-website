@@ -110,7 +110,11 @@ const pages = {
         <div><h3>${esc(r.title)}</h3><span class="k mono">${esc(r.kicker)}</span></div>
         <p>${esc(r.text)}</p><span class="arrow">→</span>
       </a>`).join('');
-    $('#news').innerHTML = site.news.slice(0, 7).map(n => `<li><span class="d">${esc(n.date)}</span><span>${esc(n.text)}${n.url ? ` <a class="more" href="${esc(n.url)}" target="_blank" rel="noopener">Post →</a>` : ''}</span></li>`).join('');
+    // only news from the last 6 months; a bare year counts as December of that year
+    const cutoff = new Date(); cutoff.setMonth(cutoff.getMonth() - 6);
+    const when = d => { const m = String(d).match(/^(?:([A-Za-z]{3})\w*\s+)?(\d{4})$/); return m ? new Date(`${m[1] || 'Dec'} 1, ${m[2]}`) : new Date(0); };
+    const recentNews = site.news.filter(n => when(n.date) >= cutoff);
+    $('#news').innerHTML = (recentNews.length ? recentNews : site.news.slice(0, 3)).map(n => `<li><span class="d">${esc(n.date)}</span><span>${esc(n.text)}${n.url ? ` <a class="more" href="${esc(n.url)}" target="_blank" rel="noopener">Post →</a>` : ''}</span></li>`).join('');
     const recent = items.filter(p => p.kind === 'journal' || p.kind === 'conference').sort((a, b) => (b.year || 0) - (a.year || 0)).slice(0, 5);
     $('#recent').innerHTML = recent.map(p => pubHTML(p, true)).join('');
     const figs = fac.flatMap(g => g.items).map(f => `<figure><img loading="lazy" src="${f.image}" alt="${esc(f.name)}"><figcaption>${esc(f.name)}</figcaption></figure>`).join('');

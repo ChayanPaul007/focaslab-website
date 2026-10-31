@@ -20,7 +20,7 @@ SITE = ROOT / "data" / "site.json"
 PUBS = ROOT / "data" / "publications.json"
 STATE = ROOT / "data" / "news_state.json"
 KEY = os.environ.get("GEMINI_API_KEY", "")
-# tried in order; free-tier quotas differ per model, so a 429 or 404 moves on to the next one
+# tried in order; quotas and load differ per model, so a 404, 429 or 5xx moves on to the next one
 MODELS = [m for m in [os.environ.get("GEMINI_MODEL")] if m] + ["gemini-2.5-flash", "gemini-flash-latest", "gemini-2.5-flash-lite"]
 LINKEDIN = os.environ.get("LINKEDIN_URL", "https://www.linkedin.com/in/focas-lab-644911386/")
 RSS = os.environ.get("LINKEDIN_RSS_URL", "")
@@ -39,7 +39,7 @@ def gemini(prompt, search=False):
         if r.ok:
             break
         print(f"[gemini] {model}: HTTP {r.status_code} {r.text[:300]}")
-        if r.status_code not in (404, 429):
+        if r.status_code not in (404, 429, 500, 503):
             break
     r.raise_for_status()
     text = "".join(p.get("text", "") for p in r.json()["candidates"][0]["content"]["parts"])
