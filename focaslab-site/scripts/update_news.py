@@ -20,7 +20,8 @@ SITE = ROOT / "data" / "site.json"
 PUBS = ROOT / "data" / "publications.json"
 STATE = ROOT / "data" / "news_state.json"
 KEY = os.environ.get("GEMINI_API_KEY", "")
-MODEL = os.environ.get("GEMINI_MODEL", "gemini-flash-latest")
+# tried in order; free-tier quotas differ per model, so a 429 or 404 moves on to the next one
+MODELS = [m for m in [os.environ.get("GEMINI_MODEL")] if m] + ["gemini-2.5-flash", "gemini-flash-latest", "gemini-2.5-flash-lite"]
 LINKEDIN = os.environ.get("LINKEDIN_URL", "https://www.linkedin.com/in/focas-lab-644911386/")
 RSS = os.environ.get("LINKEDIN_RSS_URL", "")
 MAX_NEW = 4
@@ -32,8 +33,14 @@ def gemini(prompt, search=False):
         body["tools"] = [{"google_search": {}}]  # search grounding cannot be combined with JSON mode
     else:
         body["generationConfig"] = {"responseMimeType": "application/json"}
-    r = requests.post(f"https://generativelanguage.googleapis.com/v1beta/models/{MODEL}:generateContent",
-                      headers={"x-goog-api-key": KEY}, json=body, timeout=120)
+    for model in MODELS:
+        r = requests.post(f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent",
+                          headers={"x-goog-api-key": KEY}, json=body, timeout=120)
+        if r.ok:
+            break
+        print(f"[gemini] {model}: HTTP {r.status_code} {r.text[:300]}")
+        if r.status_code not in (404, 429):
+            break
     r.raise_for_status()
     text = "".join(p.get("text", "") for p in r.json()["candidates"][0]["content"]["parts"])
     m = re.search(r"\[.*\]", text, re.S)

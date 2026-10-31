@@ -63,7 +63,7 @@ Setup (GitHub → **Settings → Secrets and variables → Actions**):
 | `GEMINI_API_KEY` | Secret | key from [aistudio.google.com/apikey](https://aistudio.google.com/apikey) |
 | `LINKEDIN_URL` | Variable (optional) | defaults to the lab page, `linkedin.com/in/focas-lab-644911386` |
 | `LINKEDIN_RSS_URL` | Variable (optional) | an RSS feed of that page, e.g. from rss.app |
-| `GEMINI_MODEL` | Variable (optional) | defaults to `gemini-flash-latest` |
+| `GEMINI_MODEL` | Variable (optional) | tried first; then gemini-2.5-flash, gemini-flash-latest, gemini-2.5-flash-lite |
 
 At most 4 items are added per run; `data/news_state.json` remembers what was already used. Any item can be
 edited or deleted by hand in `site.json`. Without a key the step is skipped and nothing changes.
