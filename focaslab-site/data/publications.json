@@ -1,7 +1,7 @@
 {
- "source": "Google Scholar (via SerpAPI)",
+ "source": "Google Scholar",
  "scholar_id": "Szd98jUAAAAJ",
- "updated": "2026-10-31T10:33:33Z",
+ "updated": "2026-10-31T10:37:05Z",
  "profile": {
   "name": "Pushpak Jagtap",
   "citations": 1656,
@@ -124,7 +124,7 @@
   {
    "title": "Beyond the Teacher: Leveraging Mixed-Skill Demonstrations for Robust Imitation Learning",
    "authors": "S Saharsh, S Sonkar, P Jagtap, R Prakash",
-   "venue": "2026 IEEE International Conference on Robotics and Automation (ICRA), 14393 …, 2026",
+   "venue": "2026 IEEE International Conference on Robotics and Automation (ICRA), 14393 …, 2026",
    "year": 2026,
    "citations": 0,
    "id": "pyW8ca7W8N0C"
@@ -380,7 +380,7 @@
   {
    "title": "Signal Temporal Logic Compliant Co-design of Planning and Control",
    "authors": "MS Juvvi, TD Kurne, S Kolathaya, P Jagtap",
-   "venue": "2025 IEEE/RSJ International Conference on Intelligent Robots and Systems …, 2025",
+   "venue": "2025 IEEE/RSJ International Conference on Intelligent Robots and Systems …, 2025",
    "year": 2025,
    "citations": 2,
    "id": "fPk4N6BV_jEC"
@@ -388,7 +388,7 @@
   {
    "title": "Scalable learning of high-dimensional demonstrations with composition of linear parameter varying dynamical systems",
    "authors": "S Agrawal, HTM Kussaba, L Chen, AE Binny, P Jagtap, S Haddadin, ...",
-   "venue": "2025 IEEE/RSJ International Conference on Intelligent Robots and Systems …, 2025",
+   "venue": "2025 IEEE/RSJ International Conference on Intelligent Robots and Systems …, 2025",
    "year": 2025,
    "citations": 2,
    "id": "u_35RYKgDlwC"
@@ -620,7 +620,7 @@
   {
    "title": "Spatiotemporal Tubes for Reach-Avoid-Stay Specifications✱",
    "authors": "R Das, P Jagtap",
-   "venue": "Proceedings of the 27th ACM International Conference on Hybrid Systems …, 2024",
+   "venue": "Proceedings of the 27th ACM International Conference on Hybrid Systems …, 2024",
    "year": 2024,
    "citations": 0,
    "id": "M3NEmzRMIkIC"
@@ -628,7 +628,7 @@
   {
    "title": "Safe Multi-Robot Exploration using Symbolic Control",
    "authors": "MS Juvvi, DS Sundarsingh, R Das, P Jagtap",
-   "venue": "2024 IEEE International Conference on Robotics and Automation (ICRA), 11619 …, 2024",
+   "venue": "2024 IEEE International Conference on Robotics and Automation (ICRA), 11619 …, 2024",
    "year": 2024,
    "citations": 3,
    "id": "BqipwSGYUEgC"
@@ -636,7 +636,7 @@
   {
    "title": "Barrier functions inspired reward shaping for reinforcement learning",
    "authors": "A Ranjan, S Agrawal, A Jain, P Jagtap, S Kolathaya",
-   "venue": "2024 IEEE international conference on robotics and automation (ICRA), 10807 …, 2024",
+   "venue": "2024 IEEE international conference on robotics and automation (ICRA), 10807 …, 2024",
    "year": 2024,
    "citations": 27,
    "id": "TFP_iSt0sucC"
@@ -644,7 +644,7 @@
   {
    "title": "Signal temporal logic compliant motion planning using reinforcement learning",
    "authors": "TD Kurne, MS Juvvi, P Jagtap",
-   "venue": "2024 ACM/IEEE 15th International Conference on Cyber-Physical Systems (ICCPS …, 2024",
+   "venue": "2024 ACM/IEEE 15th International Conference on Cyber-Physical Systems (ICCPS …, 2024",
    "year": 2024,
    "citations": 2,
    "id": "NMxIlDl6LWMC"
@@ -716,7 +716,7 @@
   {
    "title": "Autonomous exploration using ground robots with safety guarantees",
    "authors": "DS Sundarsingh, J Bhagiya, J Chatrola, P Jagtap",
-   "venue": "2023 IEEE/RSJ International Conference on Intelligent Robots and Systems …, 2023",
+   "venue": "2023 IEEE/RSJ International Conference on Intelligent Robots and Systems …, 2023",
    "year": 2023,
    "citations": 6,
    "id": "_Qo2XoVZTnwC"
@@ -804,7 +804,7 @@
   {
    "title": "Formal safety verification of unknown continuous-time systems: a data-driven approach",
    "authors": "A Lavaei, A Nejati, P Jagtap, M Zamani",
-   "venue": "Proceedings of the 24th International Conference on Hybrid Systems …, 2021",
+   "venue": "Proceedings of the 24th International Conference on Hybrid Systems …, 2021",
    "year": 2021,
    "citations": 14,
    "id": "qxL8FJ1GzNcC"
@@ -852,7 +852,7 @@
   {
    "title": "dtControl: decision tree learning algorithms for controller representation",
    "authors": "P Ashok, M Jackermeier, P Jagtap, J Křetínský, M Weininger, M Zamani",
-   "venue": "Proceedings of the 23rd international conference on hybrid systems …, 2020",
+   "venue": "Proceedings of the 23rd international conference on hybrid systems …, 2020",
    "year": 2020,
    "citations": 51,
    "id": "3fE2CSJIrl8C"
@@ -860,7 +860,7 @@
   {
    "title": "Compositional construction of control barrier functions for interconnected control systems",
    "authors": "P Jagtap, A Swikir, M Zamani",
-   "venue": "Proceedings of the 23rd International Conference on Hybrid Systems …, 2020",
+   "venue": "Proceedings of the 23rd International Conference on Hybrid Systems …, 2020",
    "year": 2020,
    "citations": 48,
    "id": "8k81kl-MbHgC"
@@ -908,7 +908,7 @@
   {
    "title": "Temporal logic verification of stochastic systems using barrier certificates",
    "authors": "P Jagtap, S Soudjani, M Zamani",
-   "venue": "International Symposium on Automated Technology for Verification and …, 2018",
+   "venue": "International Symposium on Automated Technology for Verification and …, 2018",
    "year": 2018,
    "citations": 68,
    "id": "Se3iqnhoufwC"
@@ -956,7 +956,7 @@
   {
    "title": "On incremental stability of time-delayed stochastic control systems",
    "authors": "P Jagtap, M Zamani",
-   "venue": "2016 54th Annual Allerton Conference on Communication, Control, and …, 2016",
+   "venue": "2016 54th Annual Allerton Conference on Communication, Control, and …, 2016",
    "year": 2016,
    "citations": 2,
    "id": "YsMSGLbcyi4C"
@@ -996,7 +996,7 @@
   {
    "title": "Extreme-ANFIS: A novel learning approach for inverse model control of Nonlinear Dynamical Systems",
    "authors": "P Jagtap, P Raut, GN Pillai, F Kazi, NM Singh",
-   "venue": "2015 International Conference on Industrial Instrumentation and Control …, 2015",
+   "venue": "2015 International Conference on Industrial Instrumentation and Control …, 2015",
    "year": 2015,
    "citations": 14,
    "id": "9yKSN-GCB0IC"
@@ -1004,7 +1004,7 @@
   {
    "title": "Extreme learning ANFIS for control applications",
    "authors": "GN Pillai, J Pushpak, MG Nisha",
-   "venue": "2014 IEEE Symposium on Computational Intelligence in Control and Automation …, 2014",
+   "venue": "2014 IEEE Symposium on Computational Intelligence in Control and Automation …, 2014",
    "year": 2014,
    "citations": 31,
    "id": "d1gkVwhDpl0C"
@@ -1028,7 +1028,7 @@
   {
    "title": "Robust Control of Robotic Manipulator with Prescribed Spatio-temporal and Input constraints",
    "authors": "CS Kashyap, P Jagtap, J Keshavan",
-   "venue": "The Workshop on Manipulation Robustness: Towards Human-Level Robustness …, 0",
+   "venue": "The Workshop on Manipulation Robustness: Towards Human-Level Robustness …, 0",
    "year": null,
    "citations": 0,
    "id": "4fKUyHm3Qg0C"
