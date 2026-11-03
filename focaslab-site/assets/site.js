@@ -20,7 +20,7 @@ const NAV = [['index.html', 'Home', 'home'], ['research.html', 'Research', 'rese
 function shell(site) {
   document.body.insertAdjacentHTML('afterbegin', `
   <header class="nav"><div class="wrap">
-    <a class="brand" href="index.html" aria-label="FOCAS Lab home">${logo('focas-mark', 'FOCAS')}<small>IISc<br>CPS</small></a>
+    <a class="brand" href="index.html" aria-label="FOCAS Lab home">${logo('focas-mark', 'FOCAS')}<span class="iisc">${logo('iisc-logo', 'IISc')}</span></a>
     <nav class="links" id="links">${NAV.map(([h, l, k]) => `<a href="${h}" class="${k === PAGE ? 'active' : ''}">${l}</a>`).join('')}</nav>
     <div style="display:flex;gap:8px">
       <button class="icon-btn" id="theme" aria-label="Toggle theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
@@ -29,7 +29,7 @@ function shell(site) {
   </div></header>`);
   document.body.insertAdjacentHTML('beforeend', `
   <footer><div class="wrap">
-    <div><div class="big">${logo('focas-logo', 'FOCAS: Formal Control &amp; Autonomous Systems Lab')}</div><p>${esc(site.full_name)}<br>${esc(site.department)}<br>${esc(site.institute)}</p></div>
+    <div><div class="big">${logo('focas-logo', 'FOCAS: Formal Control &amp; Autonomous Systems Lab')}<a class="iisc" href="https://iisc.ac.in" target="_blank" rel="noopener">${logo('iisc-logo', 'Indian Institute of Science')}</a></div><p>${esc(site.full_name)}<br>${esc(site.department)}<br>${esc(site.institute)}</p></div>
     <div><h5>Visit</h5><p>${site.address.map(esc).join('<br>')}</p><a href="${site.map}" target="_blank" rel="noopener">Open in Maps ↗</a></div>
     <div><h5>Elsewhere</h5><a href="mailto:${site.email}">${site.email}</a><a href="${site.links.scholar}" target="_blank" rel="noopener">Google Scholar ↗</a><a href="${site.links.github}" target="_blank" rel="noopener">GitHub ↗</a><a href="${site.links.youtube}" target="_blank" rel="noopener">YouTube ↗</a>${site.links.linkedin ? `<a href="${site.links.linkedin}" target="_blank" rel="noopener">LinkedIn ↗</a>` : ''}</div>
     <div class="base mono"><span>© ${new Date().getFullYear()} FOCAS Lab, IISc Bengaluru</span><span>${esc(site.department)} · IISc</span></div>
