@@ -99,7 +99,7 @@ const pubHTML = (p, short) => `
 /* ---------- pages ---------- */
 const pages = {
   async home(site) {
-    const [pub, ppl, fac] = await Promise.all([get('publications'), get('people'), get('facilities')]);
+    const [pub, ppl, fac, photos, vids] = await Promise.all([get('publications'), get('people'), get('facilities'), get('photos'), get('videos')]);
     const items = prepPubs(pub).filter(p => !p.dup);
     const members = 1 + ppl.groups.reduce((n, g) => n + g.members.length, 0) + ppl.lists.reduce((n, g) => n + g.members.length, 0);
     const robots = fac.filter(g => g.group !== 'Infrastructure').reduce((n, g) => n + g.items.length, 0);
@@ -119,6 +119,14 @@ const pages = {
     $('#recent').innerHTML = recent.map(p => pubHTML(p, true)).join('');
     const figs = fac.flatMap(g => g.items).map(f => `<figure><img loading="lazy" src="${f.image}" alt="${esc(f.name)}"><figcaption>${esc(f.name)}</figcaption></figure>`).join('');
     $('#strip').innerHTML = `<div class="track">${figs}${figs}</div>`;
+    const g = photos.group;
+    $('#group').innerHTML = `<img loading="lazy" src="${g.image}" alt="${esc(g.alt)}"><figcaption><span>${esc(g.caption)}</span><a href="people.html">Meet the team →</a></figcaption>`;
+    $('#videos').innerHTML = vids.items.slice(0, 4).map(v => `
+      <a class="video rv" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener">
+        <span class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt=""><span class="play" aria-hidden="true">▶</span></span>
+        <b>${esc(v.title)}</b><span class="mono">${new Date(v.date).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' })}</span>
+      </a>`).join('');
+    $('#yt-all').href = site.links.youtube;
   },
 
   async research(site) {
@@ -143,7 +151,9 @@ const pages = {
   },
 
   async people() {
-    const d = await get('people');
+    const [d, photos] = await Promise.all([get('people'), get('photos')]);
+    const shots = photos.strip.map(p => `<figure><img loading="lazy" src="${p.image}" alt="${esc(p.alt)}"></figure>`).join('');
+    $('#photos').innerHTML = `<div class="track">${shots}${shots.replace(/alt="[^"]*"/g, 'alt="" aria-hidden="true"')}</div>`;
     const links = l => Object.entries(l || {}).map(([k, v]) => `<a href="${k === 'email' ? 'mailto:' + v : v}" target="_blank" rel="noopener">${{ web: 'Web', scholar: 'Scholar', linkedin: 'LinkedIn', researchgate: 'RG', x: 'X', email: 'Email' }[k] || k}</a>`).join('');
     const ph = (src, name) => `<div class="ph">${src ? `<img loading="lazy" src="${src}" alt="${esc(name)}" onerror="this.remove()">` : ''}<span class="init" style="z-index:-1">${esc(name.replace(/^Dr\.\s*/, '')[0])}</span></div>`;
     const pi = d.pi;

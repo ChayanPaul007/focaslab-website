@@ -11,6 +11,8 @@ No build step: plain HTML/CSS/JS rendering JSON from `data/`, served by GitHub P
 | Courses, open-source repos, lab highlights (Teaching page) | `data/teaching.json` |
 | People, alumni | `data/people.json` |
 | Robots and equipment | `data/facilities.json` |
+| Group photo (Home) and photo strip (People) | `data/photos.json` |
+| Latest videos (Home) | `data/videos.json` (**auto-generated** from the YouTube channel) |
 | Publications | `data/publications.json` (**auto-generated, do not edit**) |
 | News | `data/site.json` (Gemini adds items automatically, see below) |
 
@@ -69,6 +71,14 @@ Setup (GitHub → **Settings → Secrets and variables → Actions**):
 
 At most 4 items are added per run; `data/news_state.json` remembers what was already used. Any item can be
 edited or deleted by hand in `site.json`. Without a key the step is skipped and nothing changes.
+
+## Photos and videos
+
+- **Photos:** add a picture to `assets/img/` and list it in `data/photos.json` with a short `alt` text describing it
+  (screen readers read this out). `group` is the large photo on the home page; `strip` is the scrolling row on People.
+  Remove location data first: phone photos often carry GPS coordinates.
+- **Videos:** `scripts/update_videos.py` reads the channel's public feed (no key needed) on every scheduled run;
+  the home page shows the newest four.
 
 ## Colours
 

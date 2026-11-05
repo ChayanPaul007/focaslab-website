@@ -1,0 +1,17 @@
+{
+  "group": {
+    "image": "assets/img/lab-group.jpg",
+    "alt": "Group photo of FOCAS Lab members standing together outdoors",
+    "caption": "The FOCAS team"
+  },
+  "strip": [
+    { "image": "assets/img/lab-dinner-1.jpg", "alt": "Lab members at a group dinner" },
+    { "image": "assets/img/lab-jerseys.jpg", "alt": "Lab members in matching jerseys" },
+    { "image": "assets/img/lab-demo-stall.jpg", "alt": "Visitors at a FOCAS Lab demo stall" },
+    { "image": "assets/img/lab-group-indoor.jpg", "alt": "Lab group photo indoors" },
+    { "image": "assets/img/lab-visit.jpg", "alt": "Lab members on a visit to the IITM Incubation Cell" },
+    { "image": "assets/img/lab-workshop.jpg", "alt": "Lab members working with a machine in the workshop" },
+    { "image": "assets/img/lab-dinner-2.jpg", "alt": "Lab members at a group dinner" },
+    { "image": "assets/img/lab-lunch.jpg", "alt": "Lab members at a group lunch" }
+  ]
+}

@@ -40,6 +40,10 @@ jobs:
           SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
         run: python scripts/update_publications.py
 
+      - name: Sync latest YouTube videos
+        if: github.event_name != 'push'
+        run: python scripts/update_videos.py
+
       - name: Write news with Gemini (new papers + LinkedIn)
         if: github.event_name != 'push'
         env:
@@ -57,7 +61,7 @@ jobs:
           git config user.name "focas-bot"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add -A .
-          git diff --cached --quiet || (git commit -m "chore: sync publications, news & images [skip ci]" && git push)
+          git diff --cached --quiet || (git commit -m "chore: sync publications, news, videos & images [skip ci]" && git push)
 
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

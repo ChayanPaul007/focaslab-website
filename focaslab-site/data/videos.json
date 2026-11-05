@@ -1,0 +1,80 @@
+{
+ "channel": "UC-M-WAAge3C6cv_aCga9N2Q",
+ "items": [
+  {
+   "id": "NvjkIZxtnPM",
+   "title": "Transferring Controllers from Math to Real-World Systems : A Formal Control-Theoretic Approach",
+   "date": "2026-11-04"
+  },
+  {
+   "id": "9Pz3MOQ3zxk",
+   "title": "Prescribed Performance Control of Unknown Euler–Lagrange Systems Under Input Constraints",
+   "date": "2026-10-17"
+  },
+  {
+   "id": "jZ2CU0UY35M",
+   "title": "STT for Probabilistic Temporal Reach-Avoid-Stay Task in Uncertain Dynamic Environment",
+   "date": "2026-08-16"
+  },
+  {
+   "id": "PyHoO0E9oLg",
+   "title": "From Non-Rigid to Rigid: Safe Acquisition of Rigid Communication Graphs under Limited Sensing",
+   "date": "2026-07-07"
+  },
+  {
+   "id": "Mhj0o8EdV68",
+   "title": "Rigid and Dynamic Formation Tracking under Sensing Constraints",
+   "date": "2026-07-06"
+  },
+  {
+   "id": "53XQ6FO0yOU",
+   "title": "Constrained Adaptive Control of Uncertain Systems by Poulomee Ghosh",
+   "date": "2026-04-14"
+  },
+  {
+   "id": "UnNlvu0TdtI",
+   "title": "Multi-Robot Navigation: Without vs With Social Awareness",
+   "date": "2026-04-02"
+  },
+  {
+   "id": "sEGpXu0vF7Q",
+   "title": "Beyond the Teacher : Leveraging Mixed-Skill Demonstration for Robust Imitation Learning.",
+   "date": "2026-02-24"
+  },
+  {
+   "id": "dWcxwum96vk",
+   "title": "Sliding Mode Control for Mobile Robots with Moving Obstacle (Ackermann/Unicycle/Drone)",
+   "date": "2026-02-09"
+  },
+  {
+   "id": "xbOD40endR8",
+   "title": "Multi-Cluster Consensus Using Prescribed Performance Control for Five differential-drive Robots",
+   "date": "2026-01-21"
+  },
+  {
+   "id": "-SaFbrn9BJM",
+   "title": "STT for Probabilistic Temporal Reach-Avoid-Stay Task in Uncertain Dynamic Environment",
+   "date": "2025-12-13"
+  },
+  {
+   "id": "BjgmxghPdWk",
+   "title": "Real-Time Spatiotemporal Tubes for Dynamic Unsafe Sets",
+   "date": "2025-12-05"
+  },
+  {
+   "id": "xf0fIWWP2CE",
+   "title": "Symbolic Control for 7-DOF Manipulators with Unknown Dynamics",
+   "date": "2025-12-05"
+  },
+  {
+   "id": "hGDgXXnWLG4",
+   "title": "Reachability based Control Barrier Function only Formation Tracking with Safety Guarantees",
+   "date": "2025-10-24"
+  },
+  {
+   "id": "oDo6Qs9vw7s",
+   "title": "Incorporating Social Awareness into Control of Unknown Multi-Agent Systems: A Real-Time STT Approach",
+   "date": "2025-10-20"
+  }
+ ]
+}
