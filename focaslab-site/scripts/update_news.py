@@ -22,7 +22,11 @@ STATE = ROOT / "data" / "news_state.json"
 KEY = os.environ.get("GEMINI_API_KEY", "")
 # tried in order; quotas and load differ per model, so a 404, 429 or 5xx moves on to the next one
 MODELS = [m for m in [os.environ.get("GEMINI_MODEL")] if m] + ["gemini-2.5-flash", "gemini-flash-latest", "gemini-2.5-flash-lite"]
-LINKEDIN = os.environ.get("LINKEDIN_URL") or "https://www.linkedin.com/in/focas-lab-644911386/"  # unset repo variables arrive as ""
+# the lab posts on its company page; the personal "FOCAS Lab" profile is followed too.
+# LINKEDIN_URL may list several, comma-separated; unset repo variables arrive as ""
+LINKEDIN = [u.strip() for u in (os.environ.get("LINKEDIN_URL") or
+            "https://www.linkedin.com/company/formal-control-and-autonomous-systems-lab/,"
+            "https://www.linkedin.com/in/focas-lab-644911386/").split(",") if u.strip()]
 RSS = os.environ.get("LINKEDIN_RSS_URL", "")
 APIFY = os.environ.get("APIFY_TOKEN", "")
 APIFY_ACTOR = os.environ.get("APIFY_ACTOR") or "harvestapi~linkedin-profile-posts"
@@ -82,7 +86,7 @@ def apify_posts():
     since = (datetime.now(timezone.utc) - timedelta(days=183)).strftime("%Y-%m-%d")
     r = requests.post(f"https://api.apify.com/v2/acts/{APIFY_ACTOR}/run-sync-get-dataset-items",
                       headers={"Authorization": f"Bearer {APIFY}"}, timeout=300,
-                      json={"targetUrls": [LINKEDIN], "maxPosts": 10, "postedLimitDate": since, "includeReposts": False})
+                      json={"targetUrls": LINKEDIN, "maxPosts": 10, "postedLimitDate": since, "includeReposts": False})
     r.raise_for_status()
     return [{"url": p.get("linkedinUrl", ""), "date": (p.get("postedAt") or {}).get("date", ""),
              "text": (p.get("content") or "")[:1500]} for p in r.json() if p.get("type", "post") == "post" and p.get("content")]
@@ -106,7 +110,7 @@ Return [] if there is nothing new. Never invent posts."""
                       + json.dumps(posts, ensure_ascii=False) + "\n\n" + rules)
         return [i for i in items if ok(i)]
     items = gemini(f"""Search the web for the most recent public LinkedIn posts by the FOCAS Lab
-(Formal Control and Autonomous Systems Lab, IISc Bengaluru, PI Pushpak Jagtap), profile {LINKEDIN},
+(Formal Control and Autonomous Systems Lab, IISc Bengaluru, PI Pushpak Jagtap), pages {", ".join(LINKEDIN)},
 from the last 3 months. Only use posts you actually find in search results, with their linkedin.com URLs.
 {rules}""", search=True)
     # grounding can still drift: keep only items that point at a LinkedIn post we have not used before

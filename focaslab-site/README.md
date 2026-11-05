@@ -62,7 +62,7 @@ Setup (GitHub → **Settings → Secrets and variables → Actions**):
 | Name | Kind | Value |
 |---|---|---|
 | `GEMINI_API_KEY` | Secret | key from [aistudio.google.com/apikey](https://aistudio.google.com/apikey) |
-| `LINKEDIN_URL` | Variable (optional) | defaults to the lab page, `linkedin.com/in/focas-lab-644911386` |
+| `LINKEDIN_URL` | Variable (optional) | comma-separated pages to follow; defaults to the company page `linkedin.com/company/formal-control-and-autonomous-systems-lab` and the profile `linkedin.com/in/focas-lab-644911386` |
 | `APIFY_TOKEN` | Secret | Apify → Settings → API & Integrations → Personal API token |
 | `LINKEDIN_RSS_URL` | Variable (optional) | an RSS feed of that page, e.g. from rss.app |
 | `GEMINI_MODEL` | Variable (optional) | tried first; then gemini-2.5-flash, gemini-flash-latest, gemini-2.5-flash-lite |
