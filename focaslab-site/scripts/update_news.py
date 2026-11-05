@@ -117,6 +117,18 @@ from the last 3 months. Only use posts you actually find in search results, with
     return [i for i in items if ok(i)]
 
 
+MONTHS = "jan feb mar apr may jun jul aug sep oct nov dec".split()
+
+
+def news_key(n):
+    # "Aug 2026" -> (2026, 8); a bare "2026" sorts below that year's dated items
+    m = re.match(r"(?:([A-Za-z]{3})\w*\s+)?(\d{4})$", str(n.get("date", "")).strip())
+    if not m:
+        return (0, 0)
+    mon = m.group(1).lower() if m.group(1) else ""
+    return (int(m.group(2)), MONTHS.index(mon) + 1 if mon in MONTHS else 0)
+
+
 def main():
     if not KEY:
         print("GEMINI_API_KEY not set; skipping news update")
@@ -146,6 +158,7 @@ def main():
             item["url"] = n["url"]
         site["news"].insert(0, item)
         print("+", item["date"], item["text"])
+    site["news"].sort(key=news_key, reverse=True)  # stable: same-month items keep their order
     SITE.write_text(json.dumps(site, ensure_ascii=False, indent=2) + "\n")
     STATE.write_text(json.dumps(state, indent=1) + "\n")
     print(f"Added {len(added)} news items")
