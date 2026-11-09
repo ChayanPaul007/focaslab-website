@@ -1,10 +1,10 @@
 {
  "source": "Google Scholar (via SerpAPI)",
  "scholar_id": "Szd98jUAAAAJ",
- "updated": "2026-11-05T13:41:41Z",
+ "updated": "2026-11-09T09:55:02Z",
  "profile": {
   "name": "Pushpak Jagtap",
-  "citations": 1659,
+  "citations": 1688,
   "h_index": 22,
   "i10_index": 41
  },
@@ -18,12 +18,28 @@
    "id": "V3AGJWp-ZtQC"
   },
   {
+   "title": "Transferring Controller from Math to Real World Systems: A Formal Control Theoretic Approach",
+   "authors": "P Sangeerth, BS Dey, P Jagtap",
+   "venue": "arXiv preprint arXiv:2611.04163, 2026",
+   "year": 2026,
+   "citations": 0,
+   "id": "XiVPGOgt02cC"
+  },
+  {
    "title": "Spatiotemporal Tubes for Probabilistic Temporal Reach–Avoid–Stay task in uncertain dynamic environment",
    "authors": "S Upadhyay, R Das, P Jagtap",
    "venue": "Nonlinear Analysis: Hybrid Systems 62, 101800, 2026",
    "year": 2026,
    "citations": 0,
    "id": "UxriW0iASnsC"
+  },
+  {
+   "title": "Co-design of Output-Feedback Neural Network Control Barrier Functions and Observers for Stochastic Jump-Diffusion Systems",
+   "authors": "V Jagabathula, A Basu, P Jagtap",
+   "venue": "arXiv preprint arXiv:2611.01100, 2026",
+   "year": 2026,
+   "citations": 0,
+   "id": "bnK-pcrLprsC"
   },
   {
    "title": "Stochastic neural control barrier functions",
@@ -38,7 +54,7 @@
    "authors": "S Saharsh, BA Sadek, A Swikir, P Jagtap, A Saoud",
    "venue": "arXiv preprint arXiv:2610.34895, 2026",
    "year": 2026,
-   "citations": 0,
+   "citations": 1,
    "id": "5ugPr518TE4C"
   },
   {
@@ -118,7 +134,7 @@
    "authors": "R Das, P Shankar, V Buereddy, R Prakash, P Jagtap",
    "venue": "arXiv preprint arXiv:2607.00534, 2026",
    "year": 2026,
-   "citations": 0,
+   "citations": 1,
    "id": "geHnlv5EZngC"
   },
   {
@@ -190,7 +206,7 @@
    "authors": "M Tayal, BG Goswami, K Rajgopal, R Singh, MT Rao, J Keshavan, ...",
    "venue": "IEEE Transactions on Control Systems Technology, 2026",
    "year": 2026,
-   "citations": 36,
+   "citations": 37,
    "id": "isC4tDSrTZIC"
   },
   {
@@ -198,7 +214,7 @@
    "authors": "P Sangeerth, DS Sundarsingh, BS Dey, P Jagtap",
    "venue": "2025 Eleventh Indian Control Conference (ICC), 283-288, 2026",
    "year": 2026,
-   "citations": 2,
+   "citations": 3,
    "id": "WbkHhVStYXYC"
   },
   {
@@ -206,7 +222,7 @@
    "authors": "A Basu, BS Dey, P Jagtap",
    "venue": "International Journal of Systems Science, 1-16, 2026",
    "year": 2026,
-   "citations": 2,
+   "citations": 4,
    "id": "u9iWguZQMMsC"
   },
   {
@@ -310,7 +326,7 @@
    "authors": "M Tayal, A Singh, P Jagtap, S Kolathaya",
    "venue": "2025 IEEE 64th Conference on Decision and Control (CDC), 4831-4837, 2025",
    "year": 2025,
-   "citations": 17,
+   "citations": 18,
    "id": "GnPB-g6toBAC"
   },
   {
@@ -374,7 +390,7 @@
    "authors": "A Saoud, P Jagtap, S Soudjani",
    "venue": "IEEE Transactions on Automatic Control, 2025",
    "year": 2025,
-   "citations": 12,
+   "citations": 13,
    "id": "maZDTaKrznsC"
   },
   {
@@ -390,7 +406,7 @@
    "authors": "MS Juvvi, TD Kurne, S Kolathaya, P Jagtap",
    "venue": "2025 IEEE/RSJ International Conference on Intelligent Robots and Systems …, 2025",
    "year": 2025,
-   "citations": 2,
+   "citations": 3,
    "id": "fPk4N6BV_jEC"
   },
   {
@@ -406,7 +422,7 @@
    "authors": "CS Kashyap, P Jagtap, J Keshavan",
    "venue": "arXiv preprint arXiv:2510.02769, 2025",
    "year": 2025,
-   "citations": 0,
+   "citations": 1,
    "id": "bFI3QPDXJZMC"
   },
   {
@@ -446,7 +462,7 @@
    "authors": "P Sangeerth, A Lavaei, P Jagtap",
    "venue": "2025 American Control Conference (ACC), 4788-4793, 2025",
    "year": 2025,
-   "citations": 3,
+   "citations": 4,
    "id": "NaGl4SEjCO4C"
   },
   {
@@ -470,7 +486,7 @@
    "authors": "P Sangeerth, P Jagtap",
    "venue": "2025 European Control Conference (ECC), 929-934, 2025",
    "year": 2025,
-   "citations": 1,
+   "citations": 2,
    "id": "3s1wT3WcHBgC"
   },
   {
@@ -486,7 +502,7 @@
    "authors": "R Das, P Bakshi, P Jagtap",
    "venue": "2025 European Control Conference (ECC), 398-403, 2025",
    "year": 2025,
-   "citations": 5,
+   "citations": 6,
    "id": "M05iB0D1s5AC"
   },
   {
@@ -494,7 +510,7 @@
    "authors": "A Basu, BS Dey, P Jagtap",
    "venue": "2025 European Control Conference (ECC), 446-451, 2025",
    "year": 2025,
-   "citations": 2,
+   "citations": 3,
    "id": "lSLTfruPkqcC"
   },
   {
@@ -518,7 +534,7 @@
    "authors": "M Tayal, A Singh, P Jagtap, S Kolathaya",
    "venue": "arXiv preprint arXiv:2503.17395, 2025",
    "year": 2025,
-   "citations": 20,
+   "citations": 21,
    "id": "HoB7MX3m0LUC"
   },
   {
@@ -614,7 +630,7 @@
    "authors": "R Das, P Jagtap",
    "venue": "IEEE Control Systems Letters 8, 946-951, 2024",
    "year": 2024,
-   "citations": 28,
+   "citations": 29,
    "id": "JV2RwH3_ST0C"
   },
   {
@@ -758,7 +774,7 @@
    "authors": "PK Mishra, P Jagtap",
    "venue": "IEEE Control Systems Letters 7, 1261-1266, 2023",
    "year": 2023,
-   "citations": 40,
+   "citations": 41,
    "id": "9ZlFYXVOiuMC"
   },
   {
@@ -766,7 +782,7 @@
    "authors": "BA Sadek, P Jagtap, A Saoud",
    "venue": "IFAC-PapersOnLine 56 (2), 10210-10215, 2023",
    "year": 2023,
-   "citations": 2,
+   "citations": 3,
    "id": "QIV2ME_5wuYC"
   },
   {
@@ -806,7 +822,7 @@
    "authors": "A Lavaei, A Nejati, P Jagtap, M Zamani",
    "venue": "Proceedings of the 24th International Conference on Hybrid Systems …, 2021",
    "year": 2021,
-   "citations": 14,
+   "citations": 15,
    "id": "qxL8FJ1GzNcC"
   },
   {
@@ -814,7 +830,7 @@
    "authors": "A Saoud, P Jagtap, M Zamani, A Girard",
    "venue": "IEEE Transactions on Control of Network Systems 8 (2), 702-712, 2021",
    "year": 2021,
-   "citations": 23,
+   "citations": 24,
    "id": "MXK_kJrjxJIC"
   },
   {
@@ -822,7 +838,7 @@
    "authors": "P Jagtap, GJ Pappas, M Zamani",
    "venue": "2020 59th IEEE Conference on Decision and Control (CDC), 3699-3704, 2020",
    "year": 2020,
-   "citations": 176,
+   "citations": 178,
    "id": "YOwf2qJgpHMC"
   },
   {
@@ -830,7 +846,7 @@
    "authors": "P Jagtap, S Soudjani, M Zamani",
    "venue": "IEEE Transactions on Automatic Control 66 (7), 3097-3110, 2020",
    "year": 2020,
-   "citations": 222,
+   "citations": 225,
    "id": "5nxA0vEk-isC"
   },
   {
@@ -854,7 +870,7 @@
    "authors": "P Ashok, M Jackermeier, P Jagtap, J Křetínský, M Weininger, M Zamani",
    "venue": "Proceedings of the 23rd international conference on hybrid systems …, 2020",
    "year": 2020,
-   "citations": 51,
+   "citations": 52,
    "id": "3fE2CSJIrl8C"
   },
   {
@@ -910,7 +926,7 @@
    "authors": "P Jagtap, S Soudjani, M Zamani",
    "venue": "International Symposium on Automated Technology for Verification and …, 2018",
    "year": 2018,
-   "citations": 68,
+   "citations": 70,
    "id": "Se3iqnhoufwC"
   },
   {
@@ -942,7 +958,7 @@
    "authors": "P Jagtap, M Zamani",
    "venue": "IEEE Transactions on Automatic Control 63 (1), 255-261, 2017",
    "year": 2017,
-   "citations": 35,
+   "citations": 36,
    "id": "zYLM7Y9cAGgC"
   },
   {
