@@ -7,7 +7,8 @@ No build step: plain HTML/CSS/JS rendering JSON from `data/`, served by GitHub P
 
 | What | File |
 |---|---|
-| News, research themes, openings, contact | `data/site.json` |
+| News, research themes, openings, open topics (`projects`), contact | `data/site.json` |
+| Featured video on Home | `featured_video` in `data/site.json` (a YouTube id); without it, the newest upload |
 | Courses, open-source repos, lab highlights (Teaching page) | `data/teaching.json` |
 | People, alumni | `data/people.json` |
 | Robots and equipment | `data/facilities.json` |
@@ -72,6 +73,11 @@ Setup (GitHub → **Settings → Secrets and variables → Actions**):
 At most 4 items are added per run; `data/news_state.json` remembers what was already used. Any item can be
 edited or deleted by hand in `site.json`. Without a key the step is skipped and nothing changes.
 
+## Join page topics
+
+`projects` in `data/site.json` lists open topics: `title`, `text`, `background`, optional `funding`, `for`, a `theme`
+(research id it links to) and `status` (`open`, `upcoming` or `closed`). Keep it current: an outdated list is worse than none.
+
 ## Photos and videos
 
 - **Photos:** add a picture to `assets/img/` and list it in `data/photos.json` with a short `alt` text describing it
@@ -82,9 +88,9 @@ edited or deleted by hand in `site.json`. Without a key the step is skipped and 
 
 ## Colours
 
-The palette follows the FOCAS logo (charcoal `#3a3a3c`, blue `#006fb8`) and lives at the top of `assets/style.css`.
-The previous navy / gold look is kept in `assets/palette-classic.css` (and `assets/favicon-classic.svg`): link that
-stylesheet after `style.css` to switch back.
+Deep navy (`#0b1f3a`, `#0e1c2f` text) with the logo's blue (`#0a6cbd`) as the accent, on cool blue-grey neutrals;
+all tokens are at the top of `assets/style.css` (light and dark). The original navy / gold look is kept in
+`assets/palette-classic.css`: link that stylesheet after `style.css` to switch back.
 
 ## Local preview
 

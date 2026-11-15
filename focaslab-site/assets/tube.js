@@ -125,12 +125,18 @@
       ctx.fillStyle = ink; ctx.fillText(txt, bx + 6, P.t + 10);
     }
     ctx.globalAlpha = 1;
-    if (!reduce || mouse) requestAnimationFrame(draw);
+    if (!reduce || mouse) schedule();
   }
 
-  new ResizeObserver(() => { size(); if (reduce) requestAnimationFrame(draw); }).observe(cv);
-  cv.addEventListener('pointermove', e => { const r = cv.getBoundingClientRect(); mouse = { x: e.clientX - r.left, y: e.clientY - r.top }; if (reduce) requestAnimationFrame(draw); });
+  // run only while the canvas is on screen and the tab is visible
+  let onScreen = true, queued = false;
+  function schedule() { if (!queued && onScreen && !document.hidden) { queued = true; requestAnimationFrame(t => { queued = false; draw(t); }); } }
+  new IntersectionObserver(es => { onScreen = es[0].isIntersecting; schedule(); }).observe(cv);
+  document.addEventListener('visibilitychange', schedule);
+
+  new ResizeObserver(() => { size(); if (reduce) schedule(); }).observe(cv);
+  cv.addEventListener('pointermove', e => { const r = cv.getBoundingClientRect(); mouse = { x: e.clientX - r.left, y: e.clientY - r.top }; if (reduce) schedule(); });
   cv.addEventListener('pointerleave', () => { mouse = null; });
   cv.addEventListener('click', () => { scene = make(); t0 = performance.now(); });
-  size(); requestAnimationFrame(draw);
+  size(); schedule();
 })();

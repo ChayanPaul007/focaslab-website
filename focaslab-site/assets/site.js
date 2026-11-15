@@ -1,6 +1,8 @@
 const $ = (s, el = document) => el.querySelector(s);
 const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
-const get = f => fetch(`data/${f}.json`, { cache: 'no-cache' }).then(r => r.json());
+const get = f => fetch(`data/${f}.json`).then(r => { if (!r.ok) throw new Error(f); return r.json(); });
+document.documentElement.classList.add('js');
+const asOf = iso => iso ? new Date(iso).toLocaleDateString('en-GB', { month: 'long', year: 'numeric' }) : '';
 const PAGE = document.body.dataset.page;
 
 /* ---------- theme ---------- */
@@ -19,12 +21,13 @@ const NAV = [['index.html', 'Home', 'home'], ['research.html', 'Research', 'rese
 
 function shell(site) {
   document.body.insertAdjacentHTML('afterbegin', `
+  <a class="skip" href="#main">Skip to content</a>
   <header class="nav"><div class="wrap">
     <a class="brand" href="index.html" aria-label="FOCAS Lab home">${logo('focas-mark', 'FOCAS')}<span class="iisc">${logo('iisc-logo', 'IISc')}</span></a>
-    <nav class="links" id="links">${NAV.map(([h, l, k]) => `<a href="${h}" class="${k === PAGE ? 'active' : ''}">${l}</a>`).join('')}</nav>
+    <nav class="links" id="links">${NAV.map(([h, l, k]) => `<a href="${h}" class="${k === PAGE ? 'active' : ''}"${k === PAGE ? ' aria-current="page"' : ''}>${l}</a>`).join('')}</nav>
     <div style="display:flex;gap:8px">
       <button class="icon-btn" id="theme" aria-label="Toggle theme"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button>
-      <button class="icon-btn burger" id="burger" aria-label="Menu"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h16M4 16h16"/></svg></button>
+      <button class="icon-btn burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="links"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h16M4 16h16"/></svg></button>
     </div>
   </div></header>`);
   document.body.insertAdjacentHTML('beforeend', `
@@ -35,26 +38,26 @@ function shell(site) {
     <div class="base mono"><span>© ${new Date().getFullYear()} FOCAS Lab, IISc Bengaluru</span><span>${esc(site.department)} · IISc</span></div>
   </div></footer>`);
   $('#theme').onclick = toggleTheme;
-  $('#burger').onclick = () => $('#links').classList.toggle('open');
+  $('#burger').onclick = e => e.currentTarget.setAttribute('aria-expanded', $('#links').classList.toggle('open'));
   const nav = $('.nav'); addEventListener('scroll', () => nav.classList.toggle('scrolled', scrollY > 8), { passive: true });
 }
 
-/* stat tiles: [value, label, suffix?]; numbers count up when they scroll into view */
-const statsHTML = list => list.map(([v, l, suf]) => `<div class="stat rv"><b data-n="${v}">${Number(v).toLocaleString()}${suf ? `<sup>${suf}</sup>` : ''}</b><span class="mono">${l}</span></div>`).join('');
-function countUp() {
-  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const io = new IntersectionObserver(es => es.forEach(e => {
-    if (!e.isIntersecting) return; io.unobserve(e.target);
-    const b = e.target, n = +b.dataset.n, sup = b.querySelector('sup')?.outerHTML || '', t0 = performance.now();
-    const step = t => { const k = Math.min(1, (t - t0) / 1400), v = Math.round(n * (1 - Math.pow(1 - k, 3))); b.innerHTML = v.toLocaleString() + sup; if (k < 1) requestAnimationFrame(step); };
-    requestAnimationFrame(step);
-  }), { threshold: .4 });
-  document.querySelectorAll('[data-n]').forEach(b => io.observe(b));
+/* stat tiles: [value, label, suffix?] */
+const statsHTML = list => list.map(([v, l, suf]) => `<div class="stat"><b>${Number(v).toLocaleString('en-IN')}${suf ? `<sup>${suf}</sup>` : ''}</b><span class="mono">${l}</span></div>`).join('');
+
+/* second copy of a marquee: hidden from screen readers, and from touch screens (they swipe instead) */
+const dupOf = html => html.replace(/<figure>/g, '<figure class="dup" aria-hidden="true">').replace(/alt="[^"]*"/g, 'alt=""');
+
+/* pause looping CSS animations (strips, flow bar) while they are off-screen */
+function pauseOffscreen() {
+  const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('is-off', !e.isIntersecting)));
+  document.querySelectorAll('.strip, .flow').forEach(el => io.observe(el));
 }
 
 function reveal() {
   const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { rootMargin: '0px 0px -8% 0px' });
-  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+  document.querySelectorAll('.rv').forEach(el => el.getBoundingClientRect().top < innerHeight ? el.classList.add('in') : io.observe(el));
+  addEventListener('beforeprint', () => document.querySelectorAll('.rv').forEach(el => el.classList.add('in')));
 }
 
 /* ---------- publications helpers ---------- */
@@ -74,8 +77,13 @@ function prepPubs(data) {
     const id = (p.id || '').includes(':') ? p.id : `${sid}:${p.id}`;
     return { ...p, kind: kind(p.venue), arxiv: ax ? ax[1] : null, key: norm(p.title), url: `https://scholar.google.com/citations?view_op=view_citation&hl=en&user=${sid}&citation_for_view=${id}` };
   });
+  // versions of one paper share a title or an arXiv id (preprints are often renamed between versions)
+  const root = {}, find = k => root[k] && root[k] !== k ? (root[k] = find(root[k])) : k;
+  const join = (a, b) => { root[a] ??= a; root[b] ??= b; root[find(a)] = find(b); };
+  items.forEach(p => { root[p.key] ??= p.key; if (p.arxiv) join(p.key, 'ax' + p.arxiv); });
+  items.forEach(p => { p.key = find(p.key); });
   const best = {};
-  const rank = p => (p.kind === 'preprint' ? 0 : 10) + (p.citations || 0) / 1e4;
+  const rank = p => (p.kind === 'preprint' ? 0 : 10) + (p.citations || 0) / 1e4 + (p.year || 0) / 1e7;
   items.forEach(p => { if (!best[p.key] || rank(p) > rank(best[p.key])) best[p.key] = p; });
   items.forEach(p => { p.dup = best[p.key] !== p; const alt = items.find(q => q.key === p.key && q !== p && q.arxiv); if (!p.arxiv && alt) p.arxiv = alt.arxiv; });
   return items;
@@ -92,9 +100,11 @@ const pubHTML = (p, short) => `
       <span class="tag ${p.kind}">${LABEL[p.kind]}</span>
       ${short ? `<span class="cites">${p.year || ''}</span>` : `
       ${p.citations ? `<span class="cites">${p.citations} cit.</span>` : ''}
-      <span class="lk">${p.arxiv ? `<a href="https://arxiv.org/abs/${p.arxiv}" target="_blank" rel="noopener">arXiv</a>` : ''}<a href="${p.url}" target="_blank" rel="noopener">Scholar</a></span>`}
+      <span class="lk">${p.arxiv ? `<a href="https://arxiv.org/abs/${p.arxiv}" target="_blank" rel="noopener">arXiv</a><a href="https://arxiv.org/pdf/${p.arxiv}" target="_blank" rel="noopener">PDF</a>` : ''}<a href="${p.url}" target="_blank" rel="noopener">Scholar</a></span>`}
     </div>
   </article>`;
+
+const newsItem = n => `<li><span class="d">${esc(n.date)}</span><span>${esc(n.text)}${n.url ? ` <a class="more" href="${esc(n.url)}" target="_blank" rel="noopener">Post →</a>` : ''}</span></li>`;
 
 /* ---------- pages ---------- */
 const pages = {
@@ -104,29 +114,46 @@ const pages = {
     const members = 1 + ppl.groups.reduce((n, g) => n + g.members.length, 0) + ppl.lists.reduce((n, g) => n + g.members.length, 0);
     const robots = fac.filter(g => g.group !== 'Infrastructure').reduce((n, g) => n + g.items.length, 0);
     $('#stats').innerHTML = statsHTML([[items.length, 'Publications'], [pub.profile.citations, 'Citations', '+'], [pub.profile.h_index, 'h-index'], [members, 'Members'], [robots, 'Robots']]);
+    $('#asof').textContent = `Publication figures: Google Scholar, ${asOf(pub.updated)}`;
+
+    // featured experiment: site.featured_video if set, else the newest upload; plays only when clicked
+    const fv = vids.items.find(v => v.id === site.featured_video) || vids.items[0];
+    if (fv) {
+      $('#featured').innerHTML = `<button class="poster" aria-label="Play video: ${esc(fv.title)}">
+          <img src="https://i.ytimg.com/vi/${fv.id}/maxresdefault.jpg" onerror="this.onerror=null;this.src='https://i.ytimg.com/vi/${fv.id}/hqdefault.jpg'" alt="">
+          <span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></button>
+        <figcaption><span class="mono">Featured experiment · ${new Date(fv.date).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' })}</span><b>${esc(fv.title)}</b></figcaption>`;
+      $('#featured .poster').onclick = e => {
+        e.currentTarget.outerHTML = `<div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/${fv.id}?autoplay=1&rel=0" title="${esc(fv.title)}" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe></div>`;
+      };
+    }
+
     $('#themes').innerHTML = site.research.map((r, i) => `
       <a class="theme rv" href="research.html#${r.id}">
         <span class="num">0${i + 1}</span>
         <div><h3>${esc(r.title)}</h3><span class="k mono">${esc(r.kicker)}</span></div>
-        <p>${esc(r.text)}</p><span class="arrow">→</span>
+        <p>${esc(r.text)}</p><span class="arrow" aria-hidden="true">→</span>
       </a>`).join('');
-    // only news from the last 6 months; a bare year counts as December of that year
-    const cutoff = new Date(); cutoff.setMonth(cutoff.getMonth() - 6);
-    const when = d => { const m = String(d).match(/^(?:([A-Za-z]{3})\w*\s+)?(\d{4})$/); return m ? new Date(`${m[1] || 'Dec'} 1, ${m[2]}`) : new Date(0); };
-    const recentNews = site.news.filter(n => when(n.date) >= cutoff);
-    $('#news').innerHTML = (recentNews.length ? recentNews : site.news.slice(0, 3)).map(n => `<li><span class="d">${esc(n.date)}</span><span>${esc(n.text)}${n.url ? ` <a class="more" href="${esc(n.url)}" target="_blank" rel="noopener">Post →</a>` : ''}</span></li>`).join('');
-    const recent = items.filter(p => p.kind === 'journal' || p.kind === 'conference').sort((a, b) => (b.year || 0) - (a.year || 0)).slice(0, 5);
+    $('#news').innerHTML = site.news.slice(0, 3).map(newsItem).join('');
+    const recent = items.filter(p => p.kind === 'journal' || p.kind === 'conference').sort((a, b) => (b.year || 0) - (a.year || 0)).slice(0, 4);
     $('#recent').innerHTML = recent.map(p => pubHTML(p, true)).join('');
     const figs = fac.flatMap(g => g.items).map(f => `<figure><img loading="lazy" src="${f.image}" alt="${esc(f.name)}"><figcaption>${esc(f.name)}</figcaption></figure>`).join('');
-    $('#strip').innerHTML = `<div class="track">${figs}${figs}</div>`;
+    $('#strip').innerHTML = `<div class="track">${figs}${dupOf(figs)}</div>`;
     const g = photos.group;
     $('#group').innerHTML = `<img loading="lazy" src="${g.image}" alt="${esc(g.alt)}"><figcaption><span>${esc(g.caption)}</span><a href="people.html">Meet the team →</a></figcaption>`;
-    $('#videos').innerHTML = vids.items.slice(0, 4).map(v => `
-      <a class="video rv" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener">
-        <span class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt=""><span class="play" aria-hidden="true">▶</span></span>
+    $('#videos').innerHTML = vids.items.filter(v => v !== fv).slice(0, 4).map(v => `
+      <a class="video" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener">
+        <span class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt=""><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></span>
         <b>${esc(v.title)}</b><span class="mono">${new Date(v.date).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' })}</span>
       </a>`).join('');
     $('#yt-all').href = site.links.youtube;
+  },
+
+  async news(site) {
+    const by = {};
+    site.news.forEach(n => (by[String(n.date).match(/\d{4}/)?.[0] || 'Earlier'] ??= []).push(n));
+    $('#allnews').innerHTML = Object.keys(by).sort((a, b) => b.localeCompare(a)).map(y =>
+      `<div class="year-block"><h3>${y}<small>${by[y].length} item${by[y].length > 1 ? 's' : ''}</small></h3><ul class="news">${by[y].map(newsItem).join('')}</ul></div>`).join('');
   },
 
   async research(site) {
@@ -153,7 +180,7 @@ const pages = {
   async people() {
     const [d, photos] = await Promise.all([get('people'), get('photos')]);
     const shots = photos.strip.map(p => `<figure><img loading="lazy" src="${p.image}" alt="${esc(p.alt)}"></figure>`).join('');
-    $('#photos').innerHTML = `<div class="track">${shots}${shots.replace(/alt="[^"]*"/g, 'alt="" aria-hidden="true"')}</div>`;
+    $('#photos').innerHTML = `<div class="track">${shots}${dupOf(shots)}</div>`;
     const links = l => Object.entries(l || {}).map(([k, v]) => `<a href="${k === 'email' ? 'mailto:' + v : v}" target="_blank" rel="noopener">${{ web: 'Web', scholar: 'Scholar', linkedin: 'LinkedIn', researchgate: 'RG', x: 'X', email: 'Email' }[k] || k}</a>`).join('');
     const ph = (src, name) => `<div class="ph">${src ? `<img loading="lazy" src="${src}" alt="${esc(name)}" onerror="this.remove()">` : ''}<span class="init" style="z-index:-1">${esc(name.replace(/^Dr\.\s*/, '')[0])}</span></div>`;
     const pi = d.pi;
@@ -167,6 +194,13 @@ const pages = {
       </div></div>`).join('') +
       d.lists.map(g => `<div class="group"><h3>${esc(g.title)} <span class="mono">${g.members.length}</span></h3><div class="plain">
         ${g.members.map(m => `<a href="${m.link}" target="_blank" rel="noopener"><span>${esc(m.name)}</span><span class="mono">${esc(m.note || '↗')}</span></a>`).join('')}</div></div>`).join('');
+    // "Role, Organisation[, Country]": one chip per organisation, roles and names on hover
+    const orgs = new Map();
+    d.alumni.filter(g => g.members && g.group !== 'PhD').flatMap(g => g.members).filter(m => /,/.test(m[2] || '')).forEach(m => {
+      const i = m[2].indexOf(','), org = m[2].slice(i + 1).trim();
+      orgs.set(org, [...(orgs.get(org) || []), `${m[0]}: ${m[2].slice(0, i).trim()}`]);
+    });
+    $('#went').innerHTML = [...orgs].map(([org, who]) => `<li title="${esc(who.join('\n'))}">${esc(org)}${who.length > 1 ? ` <small>×${who.length}</small>` : ''}</li>`).join('');
     $('#alumni').innerHTML = d.alumni.map((g, i) => `<details class="al" ${i < 2 ? 'open' : ''}><summary>${esc(g.group)} <span class="mono">${g.members ? g.members.length : g.names.split(',').length}</span></summary>
       ${g.members ? `<table class="alumni">${g.members.map(m => `<tr><td>${esc(m[0])}</td><td>${esc(m[1])}</td><td>${esc(m[2])}</td></tr>`).join('')}</table>`
         : `<p style="color:var(--ink-2);font-size:14.5px;line-height:1.9">${esc(g.names)}</p>`}</details>`).join('');
@@ -179,6 +213,7 @@ const pages = {
     const years = [...new Set(all.map(p => p.year).filter(Boolean))].sort((a, b) => b - a);
     $('#metrics').innerHTML = statsHTML([[all.filter(p => !p.dup).length, 'Papers'], [data.profile.citations, 'Citations', '+'], [data.profile.h_index, 'h-index'], [data.profile.i10_index, 'i10-index']]) +
       `<a class="stat link" href="https://scholar.google.com/citations?user=${data.scholar_id}&hl=en" target="_blank" rel="noopener"><b>→</b><span class="mono">Google Scholar profile</span></a>`;
+    $('#pasof').textContent = `Google Scholar data as of ${asOf(data.updated)}.`;
     const kinds = ['all', 'journal', 'conference', 'preprint'];
     $('#tools').innerHTML = `<input type="search" id="q" placeholder="Search titles, authors, venues…" aria-label="Search publications">
       ${kinds.map(k => `<button class="chip" data-k="${k}">${k === 'all' ? 'All' : LABEL[k]}<small></small></button>`).join('')}
@@ -201,20 +236,31 @@ const pages = {
     render();
   },
 
-  async facilities() {
-    const fac = await get('facilities');
+  async facilities(site) {
+    const [fac, vids] = await Promise.all([get('facilities'), get('videos')]);
+    $('#inaction').innerHTML = vids.items.slice(0, 3).map(v => `
+      <a class="video" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener">
+        <span class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt=""><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></span>
+        <b>${esc(v.title)}</b></a>`).join('');
+    $('#yt-all').href = site.links.youtube;
     $('#fac').innerHTML = fac.map(g => `<div class="group"><h3>${esc(g.group)} <span class="mono">${g.items.length}</span></h3><div class="fac">
       ${g.items.map(f => `<figure class="rv"><div class="im"><img loading="lazy" src="${f.image}" alt="${esc(f.name)}"></div><figcaption>${esc(f.name)}</figcaption></figure>`).join('')}</div></div>`).join('');
   },
 
   async join(site) {
+    const ST = { open: 'Open', upcoming: 'Opening soon', closed: 'Not recruiting' };
+    $('#projects').innerHTML = (site.projects || []).map(t => `<article class="project rv">
+        <div class="ph-head"><span class="status ${t.status}">${ST[t.status] || t.status}</span><span class="mono">${esc(t.for)}</span></div>
+        <h3>${esc(t.title)}</h3><p>${esc(t.text)}</p>
+        <dl><dt>Good background</dt><dd>${esc(t.background)}</dd>${t.funding ? `<dt>Funding</dt><dd>${esc(t.funding)}</dd>` : ''}</dl>
+        ${t.theme ? `<a href="research.html#${t.theme}">Related research →</a>` : ''}</article>`).join('');
     $('#open').innerHTML = site.openings.map(o => `<div class="rv"><h3>${esc(o.title)}</h3><p>${esc(o.text)}</p><a href="${o.href}" target="_blank" rel="noopener">${esc(o.action)} →</a></div>`).join('');
   },
 
   async teaching() {
     const [t, fac] = await Promise.all([get('teaching'), get('facilities')]);
     const robots = fac.filter(g => g.group !== 'Infrastructure').reduce((n, g) => n + g.items.length, 0);
-    $('#tstats').innerHTML = statsHTML([[t.courses.length, 'Graduate courses'], [t.code.reduce((n, g) => n + g.items.length, 0), 'Open-source repositories'], [robots, 'Robot platforms']]);
+    $('#tstats').innerHTML = statsHTML([[t.courses.length, t.courses.length === 1 ? 'Graduate course' : 'Graduate courses'], [t.code.reduce((n, g) => n + g.items.length, 0), 'Open-source repositories'], [robots, 'Robot platforms']]);
     $('#courses').innerHTML = t.courses.map(c => `<div class="course rv"><div><div class="ccode">${esc(c.code)}</div><span class="mono">${esc(c.note)}</span></div>
       <div><h3>${esc(c.title)}</h3><p>${esc(c.text)}</p>
       ${c.topics ? `<ul class="points">${c.topics.map(x => `<li>${esc(x)}</li>`).join('')}</ul>` : ''}
@@ -229,7 +275,10 @@ const pages = {
 (async () => {
   const site = await get('site');
   shell(site);
-  try { await pages[PAGE]?.(site); } catch (e) { console.error(e); }
+  try { await pages[PAGE]?.(site); } catch (e) {
+    console.error(e);
+    $('main')?.insertAdjacentHTML('beforeend', `<div class="wrap"><p class="load-error">Some content could not be loaded. Please refresh the page.</p></div>`);
+  }
   reveal();
-  countUp();
+  pauseOffscreen();
 })();

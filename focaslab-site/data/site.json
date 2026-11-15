@@ -335,5 +335,48 @@
       "action": "hr.focas@iisc.ac.in",
       "href": "mailto:hr.focas@iisc.ac.in"
     }
+  ],
+  "projects": [
+    {
+      "title": "Real-time spatiotemporal tubes for moving and uncertain obstacles",
+      "theme": "tubes",
+      "status": "open",
+      "for": "PhD · M.Tech (Research)",
+      "text": "Extend tube-based controllers to unknown dynamics, input limits and obstacles that move unpredictably, and demonstrate them on ground robots and manipulators.",
+      "background": "Nonlinear control, ODEs, Python or C++; ROS is a plus."
+    },
+    {
+      "title": "Learning controllers that come with a proof",
+      "theme": "learning",
+      "status": "open",
+      "for": "PhD · M.Tech (Research) · Postdoc",
+      "text": "Train neural controllers and safety certificates (barrier functions, stability certificates) from data, then verify them formally or with probability bounds.",
+      "background": "Control theory, machine learning (PyTorch), optimisation."
+    },
+    {
+      "title": "Temporal-logic missions and reinforcement learning",
+      "theme": "logic",
+      "status": "open",
+      "for": "PhD · M.Tech (Research) · Intern",
+      "text": "Synthesise controllers for signal temporal logic tasks, and use tube-shaped rewards to make reinforcement learning for such tasks tractable.",
+      "background": "Formal methods or RL, linear algebra, programming."
+    },
+    {
+      "title": "Safe coordination for robot teams",
+      "theme": "multi-robot",
+      "status": "open",
+      "for": "PhD · M.Tech (Research) · Intern",
+      "text": "Distributed controllers for formations, connectivity and socially aware navigation using only local sensing, tested on the lab's multi-robot platforms.",
+      "background": "Multi-agent systems or graph theory, robotics, ROS 2."
+    },
+    {
+      "title": "Hardware experiments and the lab's ROS 2 stack",
+      "theme": "robots",
+      "status": "open",
+      "for": "Intern · IISc UG / M.Tech project",
+      "text": "Bring the lab's controllers to real robots in the motion-capture arena: manipulators, mobile robots, drones and the F1TENTH car.",
+      "background": "ROS / ROS 2, Linux, C++ or Python; hands-on hardware experience.",
+      "funding": "Internships: through fellowship schemes such as INSA SRF or FAST-SF; IISc projects: as per the programme."
+    }
   ]
 }

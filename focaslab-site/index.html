@@ -7,26 +7,37 @@
 <meta name="description" content="Formal Control and Autonomous Systems Lab, Department of Cyber-Physical Systems, IISc Bengaluru.">
 <meta property="og:title" content="FOCAS Lab — IISc">
 <meta property="og:description" content="Formal Control and Autonomous Systems Lab, Department of Cyber-Physical Systems, IISc Bengaluru.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="FOCAS Lab, IISc">
+<meta property="og:image" content="https://chayanpaul007.github.io/focaslab-website/assets/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#0b1f3a">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/style.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body data-page="home">
-<main>
-<section class="hero" style="padding-bottom:0"><div class="wrap">
-  <span class="mono"><b class="accent">FOCAS Lab</b> · Formal Control &amp; Autonomous Systems Lab · Dept. of Cyber-Physical Systems · IISc Bengaluru</span>
-  <h1 style="margin-top:18px">Safe autonomy,<br><em>with proofs.</em></h1>
-  <div class="sub">
-    <p>We design controllers for robots and cyber-physical systems that come with formal guarantees: robust, reliable and safe by construction, from theory to hardware.</p>
-    <div class="cta"><a class="btn solid" href="research.html">Our research →</a><a class="btn ghost" href="publications.html">Publications</a></div>
+<main id="main">
+<section class="hero"><div class="wrap">
+  <div class="hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow mono"><b>FOCAS Lab</b><span class="wide">· Dept. of Cyber-Physical Systems</span><span>· IISc Bengaluru</span></span>
+      <h1>Safe autonomy,<br><em>with proofs.</em></h1>
+      <p class="lede">We design controllers for robots and cyber-physical systems that come with formal guarantees: robust, reliable and safe by construction, from theory to hardware.</p>
+      <div class="cta"><a class="btn solid" href="research.html">Our research →</a><a class="btn ghost" href="join.html">Join the lab</a></div>
+    </div>
+    <figure class="featured" id="featured"></figure>
   </div>
   <div class="tube-stage">
     <canvas id="tube" aria-label="Animated spatiotemporal tube: a trajectory stays inside a shrinking funnel, avoids unsafe sets and reaches a target in time" role="img"></canvas>
     <div class="tube-legend mono"><span><i style="background:var(--accent);opacity:.5"></i>Tube Γ(t)</span><span><i style="background:repeating-linear-gradient(45deg,var(--ink) 0 1px,transparent 1px 4px)"></i>Unsafe U</span><span><i style="background:var(--safe);opacity:.5"></i>Target T</span></div>
     <div class="tube-hint mono">hover to read ρ(t) · click to replan</div>
   </div>
-  <div class="stats" id="stats"></div>
+  <div class="stats home-stats" id="stats"></div>
+  <p class="asof" id="asof"></p>
 </div></section>
 
 <section><div class="wrap">
@@ -35,8 +46,8 @@
 </div></section>
 
 <section style="padding-top:0"><div class="wrap two">
-  <div><div class="col-title"><h3>News</h3><span class="mono">Latest</span></div><ul class="news" id="news"></ul></div>
-  <div><div class="col-title"><h3>Recent papers</h3><a href="publications.html">All publications →</a></div><div id="recent" style="border-top:1px solid var(--ink)"></div></div>
+  <div><div class="col-title"><h3>News</h3><a href="news.html">All news →</a></div><ul class="news" id="news"></ul></div>
+  <div><div class="col-title"><h3>Recent papers</h3><a href="publications.html">All publications →</a></div><div id="recent" class="recent"></div></div>
 </div></section>
 
 <section style="padding-top:0"><div class="wrap">
@@ -50,15 +61,15 @@
 <div class="wrap" style="margin-top:24px"><a class="btn ghost" href="facilities.html">All facilities →</a></div>
 </section>
 
-<section style="padding-top:0"><div class="wrap">
-  <div class="sec-head"><span class="mono">§ 03 — Videos</span><h2>See it on <em>real robots.</em></h2><p>The latest experiments from our YouTube channel.</p></div>
+<section class="band"><div class="wrap">
+  <div class="sec-head"><span class="mono">§ 03 — Videos</span><h2>See it on <em>real robots.</em></h2><p>Recent experiments from our YouTube channel.</p></div>
   <div class="videos" id="videos"></div>
-  <div style="margin-top:24px"><a class="btn ghost" id="yt-all" href="#" target="_blank" rel="noopener">All videos on YouTube →</a></div>
+  <div style="margin-top:28px"><a class="btn ghost" id="yt-all" href="#" target="_blank" rel="noopener">All videos on YouTube →</a></div>
 </div></section>
 
-<section style="padding-top:0"><div class="wrap">
+<section><div class="wrap">
   <div class="callout rv"><div><h2>Build robots you can <em>trust.</em></h2><p>We are looking for PhD, M.Tech (Research) and postdoctoral researchers, and interns, who enjoy both proofs and hardware.</p></div>
-  <div class="cta" style="justify-content:flex-end"><a class="btn solid" href="join.html">Join the lab →</a><a class="btn" href="people.html">Meet the team</a></div></div>
+  <div class="cta" style="justify-content:flex-end"><a class="btn solid" href="join.html">See open topics →</a><a class="btn" href="people.html">Meet the team</a></div></div>
 </div></section>
 <script src="assets/tube.js"></script>
 </main>
