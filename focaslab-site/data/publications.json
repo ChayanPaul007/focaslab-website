@@ -1,10 +1,10 @@
 {
  "source": "Google Scholar (via SerpAPI)",
  "scholar_id": "Szd98jUAAAAJ",
- "updated": "2026-11-12T09:56:09Z",
+ "updated": "2026-11-16T09:52:44Z",
  "profile": {
   "name": "Pushpak Jagtap",
-  "citations": 1688,
+  "citations": 1698,
   "h_index": 22,
   "i10_index": 41
  },
@@ -18,11 +18,19 @@
    "id": "V3AGJWp-ZtQC"
   },
   {
+   "title": "Incremental Input-to-State Stabilization of Partially Unknown Control-Affine Systems within Prescribed Safe Sets",
+   "authors": "P Sangeerth, P Ghosh, P Jagtap",
+   "venue": "arXiv preprint arXiv:2611.13556, 2026",
+   "year": 2026,
+   "citations": 0,
+   "id": "olpn-zPbct0C"
+  },
+  {
    "title": "Transferring Controller from Math to Real World Systems: A Formal Control Theoretic Approach",
    "authors": "P Sangeerth, BS Dey, P Jagtap",
    "venue": "arXiv preprint arXiv:2611.04163, 2026",
    "year": 2026,
-   "citations": 0,
+   "citations": 1,
    "id": "XiVPGOgt02cC"
   },
   {
@@ -198,7 +206,7 @@
    "authors": "BS Dey, IN Kar, P Jagtap",
    "venue": "International Journal of Systems Science 57 (4), 895-910, 2026",
    "year": 2026,
-   "citations": 7,
+   "citations": 8,
    "id": "HDshCWvjkbEC"
   },
   {
@@ -214,7 +222,7 @@
    "authors": "P Sangeerth, DS Sundarsingh, BS Dey, P Jagtap",
    "venue": "2025 Eleventh Indian Control Conference (ICC), 283-288, 2026",
    "year": 2026,
-   "citations": 3,
+   "citations": 4,
    "id": "WbkHhVStYXYC"
   },
   {
@@ -222,7 +230,7 @@
    "authors": "A Basu, BS Dey, P Jagtap",
    "venue": "International Journal of Systems Science, 1-16, 2026",
    "year": 2026,
-   "citations": 4,
+   "citations": 5,
    "id": "u9iWguZQMMsC"
   },
   {
@@ -310,7 +318,7 @@
    "authors": "Y Ait Si, R Das, N Monir, S Soudjani, P Jagtap, A Saoud",
    "venue": "2025 IEEE 64th Conference on Decision and Control (CDC), 5034-5040, 2025",
    "year": 2025,
-   "citations": 3,
+   "citations": 4,
    "id": "a0OBvERweLwC"
   },
   {
@@ -318,7 +326,7 @@
    "authors": "N Monir, YAIT Si, R Das, P Jagtap, A Saoud, S Soudjani",
    "venue": "2025 IEEE 64th Conference on Decision and Control (CDC), 8122-8129, 2025",
    "year": 2025,
-   "citations": 3,
+   "citations": 4,
    "id": "cFHS6HbyZ2cC"
   },
   {
@@ -390,7 +398,7 @@
    "authors": "A Saoud, P Jagtap, S Soudjani",
    "venue": "IEEE Transactions on Automatic Control, 2025",
    "year": 2025,
-   "citations": 13,
+   "citations": 14,
    "id": "maZDTaKrznsC"
   },
   {
@@ -454,7 +462,7 @@
    "authors": "R Das, A Basu, P Jagtap",
    "venue": "IEEE Transactions on Automatic Control, 2025",
    "year": 2025,
-   "citations": 24,
+   "citations": 23,
    "id": "J_g5lzvAfSwC"
   },
   {
@@ -518,7 +526,7 @@
    "authors": "R Das, S Choudhury, P Jagtap",
    "venue": "IEEE Control Systems Letters 9, 1562-1567, 2025",
    "year": 2025,
-   "citations": 14,
+   "citations": 15,
    "id": "ZHo1McVdvXMC"
   },
   {
@@ -846,7 +854,7 @@
    "authors": "P Jagtap, S Soudjani, M Zamani",
    "venue": "IEEE Transactions on Automatic Control 66 (7), 3097-3110, 2020",
    "year": 2020,
-   "citations": 225,
+   "citations": 227,
    "id": "5nxA0vEk-isC"
   },
   {
@@ -958,7 +966,7 @@
    "authors": "P Jagtap, M Zamani",
    "venue": "IEEE Transactions on Automatic Control 63 (1), 255-261, 2017",
    "year": 2017,
-   "citations": 36,
+   "citations": 37,
    "id": "zYLM7Y9cAGgC"
   },
   {
