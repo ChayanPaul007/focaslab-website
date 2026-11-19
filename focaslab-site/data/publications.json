@@ -1,7 +1,7 @@
 {
  "source": "Google Scholar (via SerpAPI)",
  "scholar_id": "Szd98jUAAAAJ",
- "updated": "2026-11-16T09:52:44Z",
+ "updated": "2026-11-19T10:28:26Z",
  "profile": {
   "name": "Pushpak Jagtap",
   "citations": 1698,
@@ -16,6 +16,14 @@
    "year": 2027,
    "citations": 0,
    "id": "V3AGJWp-ZtQC"
+  },
+  {
+   "title": "Velocity-Free Funnel Control of Euler-Lagrange Systems: An Artificial-Delay Approach",
+   "authors": "CK Paul, P Jagtap",
+   "venue": "arXiv preprint arXiv:2611.16707, 2026",
+   "year": 2026,
+   "citations": 0,
+   "id": "t6usbXjVLHcC"
   },
   {
    "title": "Incremental Input-to-State Stabilization of Partially Unknown Control-Affine Systems within Prescribed Safe Sets",
@@ -662,7 +670,7 @@
    "authors": "A Ranjan, S Agrawal, A Jain, P Jagtap, S Kolathaya",
    "venue": "2024 IEEE international conference on robotics and automation (ICRA), 10807 …, 2024",
    "year": 2024,
-   "citations": 27,
+   "citations": 28,
    "id": "TFP_iSt0sucC"
   },
   {
@@ -878,7 +886,7 @@
    "authors": "P Ashok, M Jackermeier, P Jagtap, J Křetínský, M Weininger, M Zamani",
    "venue": "Proceedings of the 23rd international conference on hybrid systems …, 2020",
    "year": 2020,
-   "citations": 52,
+   "citations": 51,
    "id": "3fE2CSJIrl8C"
   },
   {
