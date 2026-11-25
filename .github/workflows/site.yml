@@ -60,6 +60,17 @@ jobs:
           git add -A .
           git diff --cached --quiet || (git commit -m "chore: sync publications, news, videos & images [skip ci]" && git push)
 
+      # Stamp CSS, JS and data URLs with this run's number, so a browser never
+      # mixes files cached from the previous deploy (Pages lets browsers keep
+      # them for 10 minutes) with new pages. Runs after the commit step: only
+      # the deployed copy changes, the repository keeps plain URLs.
+      - name: Version asset URLs
+        run: |
+          v="$GITHUB_RUN_NUMBER"
+          sed -i -E "s#(assets/[a-z-]+\.(css|js))\"#\1?v=$v\"#g" *.html
+          sed -i "s#data/\${f}\.json#data/\${f}.json?v=$v#" assets/site.js
+          grep -q "style.css?v=$v" index.html && grep -q "json?v=$v" assets/site.js || echo "::warning::asset versioning did not apply"
+
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
