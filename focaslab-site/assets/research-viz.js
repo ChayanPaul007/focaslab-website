@@ -18,7 +18,7 @@
   };
   const circle = (c, x, y, r) => { c.beginPath(); c.arc(x, y, Math.max(0, r), 0, TAU); };
   const obstacle = (c, P, x, y, r) => { circle(c, x, y, r); c.fillStyle = hatch(c, P.ink); c.fill(); c.strokeStyle = P.ink; c.lineWidth = 1.2; c.stroke(); };
-  const label = (c, P, s, x, y, col = P.muted, align = 'left') => { c.font = '600 11px "Source Sans 3", system-ui, sans-serif'; c.fillStyle = col; c.textAlign = align; c.fillText(s, x, y); };
+  const label = (c, P, s, x, y, col = P.muted, align = 'left') => { c.font = '500 11px "Geist", system-ui, sans-serif'; c.fillStyle = col; c.textAlign = align; c.fillText(s, x, y); };
   const bez = (p, s) => { const u = 1 - s; return [0, 1].map(k => u * u * u * p[0][k] + 3 * u * u * s * p[1][k] + 3 * u * s * s * p[2][k] + s * s * s * p[3][k]); };
 
   const scenes = {

@@ -8,7 +8,7 @@
   const rho = t => Rinf + (R0 - Rinf) * Math.exp(-LAM * t);
   let W = 0, H = 0, dpr = 1, scene = null, t0 = performance.now(), mouse = null;
 
-  const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+  const css = n => getComputedStyle(cv).getPropertyValue(n).trim(); // read on the canvas so its panel can restyle the plot
   const rnd = (a, b) => a + Math.random() * (b - a);
 
   function spline(pts, t) { // Catmull-Rom in t on sorted points
@@ -78,7 +78,7 @@
     ctx.strokeStyle = line; ctx.lineWidth = 1;
     for (let k = 0; k <= 10; k++) { const x = X(k); ctx.beginPath(); ctx.moveTo(x, P.b); ctx.lineTo(x, P.b + 5); ctx.stroke(); }
     ctx.beginPath(); ctx.moveTo(P.l, P.b + .5); ctx.lineTo(P.r, P.b + .5); ctx.stroke();
-    ctx.font = '600 11px "Source Sans 3", system-ui, sans-serif'; ctx.fillStyle = muted;
+    ctx.font = 'italic 15px "STIX Two Text", "Cambria Math", serif'; ctx.fillStyle = muted;
     ctx.fillText('t →', P.r - 26, P.b + 20);
     ctx.globalAlpha = fade;
     // obstacles
@@ -119,10 +119,12 @@
       ctx.globalAlpha = 1; ctx.strokeStyle = muted; ctx.setLineDash([3, 3]);
       ctx.beginPath(); ctx.moveTo(mouse.x + .5, P.t); ctx.lineTo(mouse.x + .5, P.b); ctx.stroke(); ctx.setLineDash([]);
       [1, -1].forEach(s => { ctx.fillStyle = acc; ctx.beginPath(); ctx.arc(mouse.x, Y(scene.c[i] + s * rho(t)), 3, 0, 7); ctx.fill(); });
-      const txt = `t=${t.toFixed(2)}  ρ(t)=${rho(t).toFixed(3)}`, tw2 = ctx.measureText(txt).width;
+      ctx.font = '500 11.5px "Geist Mono", ui-monospace, monospace';
+      const txt = `t = ${t.toFixed(2)}   ρ(t) = ${rho(t).toFixed(3)}`, tw2 = ctx.measureText(txt).width;
       const bx = Math.min(mouse.x + 10, P.r - tw2 - 14);
-      ctx.fillStyle = css('--paper'); ctx.fillRect(bx, P.t - 4, tw2 + 12, 20);
-      ctx.fillStyle = ink; ctx.fillText(txt, bx + 6, P.t + 10);
+      ctx.fillStyle = css('--paper'); ctx.beginPath(); ctx.roundRect(bx, P.t - 6, tw2 + 16, 24, 6); ctx.fill();
+      ctx.fillStyle = ink; ctx.fillText(txt, bx + 8, P.t + 10);
+      ctx.font = 'italic 15px "STIX Two Text", "Cambria Math", serif';
     }
     ctx.globalAlpha = 1;
     if (!reduce || mouse) schedule();

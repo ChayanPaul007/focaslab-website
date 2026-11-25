@@ -45,13 +45,10 @@ function shell(site) {
 /* stat tiles: [value, label, suffix?] */
 const statsHTML = list => list.map(([v, l, suf]) => `<div class="stat"><b>${Number(v).toLocaleString('en-IN')}${suf ? `<sup>${suf}</sup>` : ''}</b><span class="mono">${l}</span></div>`).join('');
 
-/* second copy of a marquee: hidden from screen readers, and from touch screens (they swipe instead) */
-const dupOf = html => html.replace(/<figure>/g, '<figure class="dup" aria-hidden="true">').replace(/alt="[^"]*"/g, 'alt=""');
-
-/* pause looping CSS animations (strips, flow bar) while they are off-screen */
+/* pause the looping flow-bar animation while it is off-screen */
 function pauseOffscreen() {
   const io = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('is-off', !e.isIntersecting)));
-  document.querySelectorAll('.strip, .flow').forEach(el => io.observe(el));
+  document.querySelectorAll('.flow').forEach(el => io.observe(el));
 }
 
 function reveal() {
@@ -128,20 +125,24 @@ const pages = {
       };
     }
 
+    // research themes as cards; each card runs its theme's animation from research-viz.js
     $('#themes').innerHTML = site.research.map((r, i) => `
-      <a class="theme rv" href="research.html#${r.id}">
-        <span class="num">0${i + 1}</span>
-        <div><h3>${esc(r.title)}</h3><span class="k mono">${esc(r.kicker)}</span></div>
-        <p>${esc(r.text)}</p><span class="arrow" aria-hidden="true">→</span>
+      <a class="card rv" href="research.html#${r.id}">
+        <div class="card-viz"><canvas data-viz="${r.viz}" role="img" aria-label="${esc(r.title)} animation"></canvas></div>
+        <div class="card-body"><span class="idx">0${i + 1}</span><h3>${esc(r.title)}</h3><span class="go" aria-hidden="true">→</span><p>${esc(r.kicker)}</p></div>
       </a>`).join('');
+    window.FOCAS_VIZ?.();
     $('#news').innerHTML = site.news.slice(0, 3).map(newsItem).join('');
     const recent = items.filter(p => p.kind === 'journal' || p.kind === 'conference').sort((a, b) => (b.year || 0) - (a.year || 0)).slice(0, 4);
     $('#recent').innerHTML = recent.map(p => pubHTML(p, true)).join('');
-    const figs = fac.flatMap(g => g.items).map(f => `<figure><img loading="lazy" src="${f.image}" alt="${esc(f.name)}"><figcaption>${esc(f.name)}</figcaption></figure>`).join('');
-    $('#strip').innerHTML = `<div class="track">${figs}${dupOf(figs)}</div>`;
+    // robot lineup: eight platforms, taken in turn from each group so the mix stays varied
+    const fleet = fac.filter(g => g.group !== 'Infrastructure').map(g => g.items.map(f => ({ ...f, kind: g.group.replace(/s$/, '').replace(/ robot$/, '') })));
+    const pick = [];
+    for (let k = 0; pick.length < 8 && fleet.some(l => l[k]); k++) fleet.forEach(l => l[k] && pick.length < 8 && pick.push(l[k]));
+    $('#strip').innerHTML = pick.map(f => `<figure class="rv"><div class="im"><img loading="lazy" src="${f.image}" alt="${esc(f.name)}"></div><figcaption>${esc(f.name)}<small>${esc(f.kind)}</small></figcaption></figure>`).join('');
     const g = photos.group;
     $('#group').innerHTML = `<img loading="lazy" src="${g.image}" alt="${esc(g.alt)}"><figcaption><span>${esc(g.caption)}</span><a href="people.html">Meet the team →</a></figcaption>`;
-    $('#videos').innerHTML = vids.items.filter(v => v !== fv).slice(0, 4).map(v => `
+    $('#videos').innerHTML = vids.items.filter(v => v !== fv).slice(0, 3).map(v => `
       <a class="video" href="https://www.youtube.com/watch?v=${v.id}" target="_blank" rel="noopener">
         <span class="thumb"><img loading="lazy" src="https://i.ytimg.com/vi/${v.id}/hqdefault.jpg" alt=""><span class="play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></span>
         <b>${esc(v.title)}</b><span class="mono">${new Date(v.date).toLocaleDateString('en-GB', { month: 'short', year: 'numeric' })}</span>
@@ -179,8 +180,8 @@ const pages = {
 
   async people() {
     const [d, photos] = await Promise.all([get('people'), get('photos')]);
-    const shots = photos.strip.map(p => `<figure><img loading="lazy" src="${p.image}" alt="${esc(p.alt)}"></figure>`).join('');
-    $('#photos').innerHTML = `<div class="track">${shots}${dupOf(shots)}</div>`;
+    // photo mosaic: one large picture and four smaller ones, all on the page grid
+    $('#photos').innerHTML = `<div class="bento">${photos.strip.slice(0, 5).map(p => `<figure><img loading="lazy" src="${p.image}" alt="${esc(p.alt)}"></figure>`).join('')}</div>`;
     const links = l => Object.entries(l || {}).map(([k, v]) => `<a href="${k === 'email' ? 'mailto:' + v : v}" target="_blank" rel="noopener">${{ web: 'Web', scholar: 'Scholar', linkedin: 'LinkedIn', researchgate: 'RG', x: 'X', email: 'Email' }[k] || k}</a>`).join('');
     const ph = (src, name) => `<div class="ph">${src ? `<img loading="lazy" src="${src}" alt="${esc(name)}" onerror="this.remove()">` : ''}<span class="init" style="z-index:-1">${esc(name.replace(/^Dr\.\s*/, '')[0])}</span></div>`;
     const pi = d.pi;
