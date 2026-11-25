@@ -17,11 +17,8 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build-deploy:
+  build:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deploy.outputs.page_url }}
     defaults:
       run:
         working-directory: focaslab-site
@@ -67,5 +64,16 @@ jobs:
       - uses: actions/upload-pages-artifact@v3
         with:
           path: focaslab-site
+
+  # Deploy in its own job: by the time it starts, the build job's upload is
+  # finished and registered. Uploading and deploying in one job intermittently
+  # failed with 'No artifacts named "github-pages" were found'.
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+    steps:
       - id: deploy
         uses: actions/deploy-pages@v4
