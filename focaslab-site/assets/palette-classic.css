@@ -5,7 +5,7 @@
   --paper:#fafaf7; --paper-2:#f1f0ea; --ink:#0f1b33; --ink-2:#33405a; --muted:#6b7280; --line:#dedcd3;
   --accent:#b8892b; --accent-ink:#8a6416; --accent-soft:rgba(184,137,43,.12); --navy:#1e3a8a; --safe:#1f7a5c;
   --deep:#0f1b33; --on-deep:#f1f0ea;
-  --serif:"IBM Plex Serif",Georgia,serif; --sans:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+  --serif:"Source Serif 4",Georgia,"Times New Roman",serif; --sans:"Source Sans 3",-apple-system,"Segoe UI",Roboto,system-ui,sans-serif;
   --max:1180px; --r:14px;
   color-scheme:light;
 }

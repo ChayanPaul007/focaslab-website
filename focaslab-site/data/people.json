@@ -2,11 +2,14 @@
   "pi": {
     "name": "Dr. Pushpak Jagtap",
     "role": "Assistant Professor, Dept. of Cyber-Physical Systems, IISc",
-    "bio": "Control systems, robotics, formal methods, learning-based control, multi-agent systems, nonlinear, robust and adaptive control, stochastic systems, reinforcement learning, CPS and spatio-temporal logic specifications.",
+    "bio": [
+      "Pushpak Jagtap is an Assistant Professor in the Department of Cyber-Physical Systems at the Indian Institute of Science (IISc), Bengaluru, where he has led the FOCAS Lab since joining in 2021. Before IISc he was a postdoctoral researcher at KTH Royal Institute of Technology, Stockholm. He received his PhD in Electrical and Computer Engineering from the Technical University of Munich in 2020.",
+      "His group develops control methods with formal guarantees for robots and cyber-physical systems: spatiotemporal tubes for real-time safe control, controller synthesis for temporal-logic tasks, learning-based control with certificates, and coordination of multi-robot teams. He received the Google India Research Award in 2021."
+    ],
+    "interests": "Formal methods and temporal logic · safe and learning-based control · nonlinear, robust and stochastic systems · multi-agent and robotic systems",
     "photo": "assets/img/aab29d58b583.png",
     "links": {
       "email": "pushpak@iisc.ac.in",
-      "web": "http://www.pushpakjagtap.com",
       "scholar": "https://scholar.google.com/citations?user=Szd98jUAAAAJ&hl=en",
       "linkedin": "https://www.linkedin.com/in/pushpak-jagtap",
       "researchgate": "https://www.researchgate.net/profile/Pushpak-Jagtap",
@@ -26,17 +29,6 @@
             "web": "https://www.ckpaul.in/",
             "scholar": "https://scholar.google.com/citations?user=svjX4-MAAAAJ&hl=en",
             "linkedin": "http://www.linkedin.com/in/chayan-kumar-paul-806953122"
-          }
-        },
-        {
-          "name": "Dr. Poulomee Ghosh",
-          "since": "2026",
-          "topics": "Constrained & adaptive control, safety, uncertain systems",
-          "photo": "assets/img/7bf76c1a8baa.jpg",
-          "links": {
-            "web": "https://www.poulomeeghosh.in",
-            "scholar": "https://scholar.google.com/citations?user=lMPHw_MAAAAJ&hl=en",
-            "linkedin": "https://www.linkedin.com/in/poulomee-ghosh-4a4037182/"
           }
         }
       ]
@@ -248,6 +240,11 @@
     {
       "group": "Postdocs",
       "members": [
+        [
+          "Dr. Poulomee Ghosh",
+          "2026",
+          "Postdoc with Prof. Alessandro Astolfi, KAUST"
+        ],
         [
           "Dr. Bhabani Shankar Dey",
           "2024–2026",

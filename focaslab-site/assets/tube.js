@@ -78,7 +78,7 @@
     ctx.strokeStyle = line; ctx.lineWidth = 1;
     for (let k = 0; k <= 10; k++) { const x = X(k); ctx.beginPath(); ctx.moveTo(x, P.b); ctx.lineTo(x, P.b + 5); ctx.stroke(); }
     ctx.beginPath(); ctx.moveTo(P.l, P.b + .5); ctx.lineTo(P.r, P.b + .5); ctx.stroke();
-    ctx.font = '11px "JetBrains Mono", monospace'; ctx.fillStyle = muted;
+    ctx.font = '600 11px "Source Sans 3", system-ui, sans-serif'; ctx.fillStyle = muted;
     ctx.fillText('t →', P.r - 26, P.b + 20);
     ctx.globalAlpha = fade;
     // obstacles

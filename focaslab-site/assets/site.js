@@ -184,8 +184,11 @@ const pages = {
     const links = l => Object.entries(l || {}).map(([k, v]) => `<a href="${k === 'email' ? 'mailto:' + v : v}" target="_blank" rel="noopener">${{ web: 'Web', scholar: 'Scholar', linkedin: 'LinkedIn', researchgate: 'RG', x: 'X', email: 'Email' }[k] || k}</a>`).join('');
     const ph = (src, name) => `<div class="ph">${src ? `<img loading="lazy" src="${src}" alt="${esc(name)}" onerror="this.remove()">` : ''}<span class="init" style="z-index:-1">${esc(name.replace(/^Dr\.\s*/, '')[0])}</span></div>`;
     const pi = d.pi;
+    // bio: one string or a list of paragraphs; interests: optional one-line summary under the bio
+    const bio = [].concat(pi.bio || []).map(t => `<p>${esc(t)}</p>`).join('');
     $('#pi').innerHTML = `<div class="ph"><img src="${pi.photo}" alt="${esc(pi.name)}"></div>
-      <div><span class="mono">Principal Investigator</span><h2>${esc(pi.name)}</h2><p><b>${esc(pi.role)}</b><br>${esc(pi.bio)}</p><div class="socials">${links(pi.links)}</div></div>`;
+      <div><span class="mono">Principal Investigator</span><h2>${esc(pi.name)}</h2><p class="role">${esc(pi.role)}</p>${bio}
+      ${pi.interests ? `<p class="interests"><span class="mono">Research interests</span>${esc(pi.interests)}</p>` : ''}<div class="socials">${links(pi.links)}</div></div>`;
     $('#groups').innerHTML = d.groups.map(g => `
       <div class="group"><h3>${esc(g.title)} <span class="mono">${g.members.length}</span></h3><div class="grid">
       ${g.members.map(m => `<div class="person rv">${ph(m.photo, m.name)}<h4>${esc(m.name)}</h4>
