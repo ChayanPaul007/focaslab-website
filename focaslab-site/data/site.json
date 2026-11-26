@@ -141,7 +141,7 @@
       "title": "Spatiotemporal Tubes",
       "kicker": "Real-time, approximation-free control",
       "viz": "tubes",
-      "text": "Our flagship approach. A spatiotemporal tube is a time-varying region the system must stay inside; we design tubes that avoid obstacles and reach targets on deadline, and a closed-form controller that keeps the system in the tube, with no model approximation and no online optimisation.",
+      "text": "A spatiotemporal tube is a time-varying region the system must stay inside; we design tubes that avoid obstacles and reach targets on deadline, and a closed-form controller that keeps the system in the tube, with no model approximation and no online optimisation.",
       "points": [
         "Prescribed-time reach–avoid–stay tasks with a formal guarantee",
         "Static, moving and uncertain unsafe sets, updated in real time",

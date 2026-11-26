@@ -67,9 +67,11 @@ const kind = v => {
 };
 const LABEL = { journal: 'Journal', conference: 'Conference', preprint: 'Preprint', thesis: 'Thesis', other: 'Other' };
 const norm = s => (s || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+/* FOCAS Lab started in 2021: earlier papers on the PI's Scholar profile are not lab work */
+const LAB_SINCE = 2021;
 function prepPubs(data) {
   const sid = data.scholar_id;
-  const items = data.items.filter(p => p.title).map(p => {
+  const items = data.items.filter(p => p.title && !(p.year && p.year < LAB_SINCE)).map(p => {
     const ax = (p.venue || '').match(/arxiv[:\s]*(?:arxiv:)?\s*([0-9]{4}\.[0-9]{4,5})/i);
     const id = (p.id || '').includes(':') ? p.id : `${sid}:${p.id}`;
     return { ...p, kind: kind(p.venue), arxiv: ax ? ax[1] : null, key: norm(p.title), url: `https://scholar.google.com/citations?view_op=view_citation&hl=en&user=${sid}&citation_for_view=${id}` };
@@ -125,13 +127,9 @@ const pages = {
       };
     }
 
-    // research themes as cards; each card runs its theme's animation from research-viz.js
+    // research topics as coloured links into the Research page (the full themes live there)
     $('#themes').innerHTML = site.research.map((r, i) => `
-      <a class="card rv" href="research.html#${r.id}">
-        <div class="card-viz"><canvas data-viz="${r.viz}" role="img" aria-label="${esc(r.title)} animation"></canvas></div>
-        <div class="card-body"><span class="idx">0${i + 1}</span><h3>${esc(r.title)}</h3><span class="go" aria-hidden="true">→</span><p>${esc(r.kicker)}</p></div>
-      </a>`).join('');
-    window.FOCAS_VIZ?.();
+      <a class="topic rv" href="research.html#${r.id}" style="--tc:var(--c${i % 6 + 1})"><b>${esc(r.title)}</b><span>${esc(r.kicker)}</span><i aria-hidden="true">→</i></a>`).join('');
     $('#news').innerHTML = site.news.slice(0, 3).map(newsItem).join('');
     const recent = items.filter(p => p.kind === 'journal' || p.kind === 'conference').sort((a, b) => (b.year || 0) - (a.year || 0)).slice(0, 4);
     $('#recent').innerHTML = recent.map(p => pubHTML(p, true)).join('');
@@ -165,7 +163,7 @@ const pages = {
       const re = new RegExp(r.match, 'i');
       const sel = pubs.filter(p => !used.has(p.key) && re.test(p.title)).slice(0, 3);
       sel.forEach(p => used.add(p.key));
-      return `<article class="rcard rv" id="${r.id}">
+      return `<article class="rcard rv" id="${r.id}" style="--tc:var(--c${i % 6 + 1})">
         <div>
           <span class="mono">0${i + 1} · ${esc(r.kicker)}</span><h2>${esc(r.title)}</h2><p>${esc(r.text)}</p>
           <ul class="points">${r.points.map(t => `<li>${esc(t)}</li>`).join('')}</ul>
@@ -205,7 +203,7 @@ const pages = {
       orgs.set(org, [...(orgs.get(org) || []), `${m[0]}: ${m[2].slice(0, i).trim()}`]);
     });
     $('#went').innerHTML = [...orgs].map(([org, who]) => `<li title="${esc(who.join('\n'))}">${esc(org)}${who.length > 1 ? ` <small>×${who.length}</small>` : ''}</li>`).join('');
-    $('#alumni').innerHTML = d.alumni.map((g, i) => `<details class="al" ${i < 2 ? 'open' : ''}><summary>${esc(g.group)} <span class="mono">${g.members ? g.members.length : g.names.split(',').length}</span></summary>
+    $('#alumni').innerHTML = d.alumni.map((g, i) => `<details class="al" ${g.members ? 'open' : ''}><summary>${esc(g.group)} <span class="mono">${g.members ? g.members.length : g.names.split(',').length}</span></summary>
       ${g.members ? `<table class="alumni">${g.members.map(m => `<tr><td>${esc(m[0])}</td><td>${esc(m[1])}</td><td>${esc(m[2])}</td></tr>`).join('')}</table>`
         : `<p style="color:var(--ink-2);font-size:14.5px;line-height:1.9">${esc(g.names)}</p>`}</details>`).join('');
   },

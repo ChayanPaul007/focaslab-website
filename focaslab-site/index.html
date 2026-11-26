@@ -22,35 +22,39 @@
 <body data-page="home">
 <main id="main">
 <section class="hero">
-  <div class="wrap">
-    <p class="kicker"><span>FOCAS Lab</span><span class="wide">Dept. of Cyber-Physical Systems</span><span>IISc Bengaluru</span></p>
-    <h1 class="display">Formal Control &amp;<br>Autonomous Systems Lab</h1>
-    <div class="hero-foot">
-      <p class="lede">We design controllers for robots and cyber-physical systems that come with mathematical guarantees of safety and correctness, and we test every one of them on real hardware.</p>
-      <div class="cta"><a class="btn solid" href="research.html">Explore our research <span aria-hidden="true">→</span></a><a class="btn" href="join.html">Join the lab</a></div>
-    </div>
-    <figure class="plot">
-      <div class="plot-head">
-        <span class="label">Fig. 1 · A spatiotemporal tube, live</span>
-        <span class="eq" role="img" aria-label="For all t from 0 to t f, the state x of t stays inside the tube Gamma of t, outside the unsafe set U, and reaches the target T at time t f">∀ t ∈ [0, t<sub>f</sub>] :&ensp;x(t) ∈ Γ(t),&ensp;x(t) ∉ U,&ensp;x(t<sub>f</sub>) ∈ T</span>
-      </div>
-      <canvas id="tube" role="img" aria-label="Animated spatiotemporal tube: a trajectory stays inside a shrinking funnel, avoids unsafe sets and reaches a target in time"></canvas>
-      <figcaption class="plot-foot">
-        <span class="tube-legend"><span><i style="background:var(--accent);opacity:.55"></i>Tube <em>Γ(t)</em></span><span><i style="background:repeating-linear-gradient(45deg,var(--ink) 0 1px,transparent 1px 4px)"></i>Unsafe set <em>U</em></span><span><i style="background:var(--safe);opacity:.55"></i>Target <em>T</em></span></span>
-        <span class="tube-hint">Hover to read ρ(t) · click to replan</span>
-      </figcaption>
-    </figure>
-    <div class="stats home-stats" id="stats"></div>
-    <p class="asof" id="asof"></p>
+  <canvas id="sim" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <svg class="mark" viewBox="0 0 960 270" role="img" aria-labelledby="mark-t">
+      <title id="mark-t">FOCAS</title>
+      <!-- frame: the F's top bar and stem, then the box around the word, ending in the S -->
+      <path id="mark-frame" class="mk-ink mk-draw" pathLength="1" d="M300 42H178Q150 42 150 70V224Q150 252 178 252H904Q932 252 932 224V70Q932 42 904 42H838C800 42 786 66 786 88C786 118 808 128 846 132C884 136 906 150 906 176C906 202 884 214 852 214H784"/>
+      <!-- the F's middle bar is an arrow pointing into the O -->
+      <path class="mk-ink mk-draw mk-arrow" pathLength="1" d="M150 128H258"/>
+      <path class="mk-head" d="M246 108L284 128L246 148Z"/>
+      <circle class="mk-blue mk-draw mk-o" pathLength="1" cx="372" cy="128" r="86"/>
+      <path class="mk-ink mk-draw mk-c" pathLength="1" d="M545 67A86 86 0 1 0 545 189"/>
+      <!-- ∀: an upside-down A -->
+      <path class="mk-blue mk-draw mk-a" pathLength="1" d="M604 42L670 214L736 42M626 98H714"/>
+      <circle class="mk-bot" r="9"><animateMotion dur="9s" begin="2.2s" repeatCount="indefinite" rotate="auto"><mpath href="#mark-frame"/></animateMotion></circle>
+    </svg>
+    <h1 class="hero-name">Formal Control &amp; Autonomous Systems Lab</h1>
+    <p class="kicker"><span>Dept. of Cyber-Physical Systems</span><span>Indian Institute of Science, Bengaluru</span></p>
+    <p class="lede">We design controllers for robots and cyber-physical systems that come with mathematical guarantees of safety and correctness, and we test them on real hardware.</p>
+    <div class="cta"><a class="btn solid" href="research.html">Explore our research <span aria-hidden="true">→</span></a><a class="btn" href="join.html">Join the lab</a></div>
   </div>
 </section>
 
-<section><div class="wrap">
+<section class="stats-sec"><div class="wrap">
+  <div class="stats home-stats" id="stats"></div>
+  <p class="asof" id="asof"></p>
+</div></section>
+
+<section class="research-home"><div class="wrap">
   <header class="sec-head split">
-    <div><span class="label">Research</span><h2>Six research directions, one standard: every claim comes with a proof.</h2></div>
-    <div><p>From control theory to experiments on our own robots. Each theme links to its papers, code and videos.</p><a class="link" href="research.html">All research <span aria-hidden="true">→</span></a></div>
+    <div><span class="label">Research</span><h2>Autonomy you can verify, from theory to real robots.</h2></div>
+    <div><p>We combine formal methods, control theory and learning so that robots meet their specifications with a proof, not only in tests.</p><a class="link" href="research.html">Explore our research <span aria-hidden="true">→</span></a></div>
   </header>
-  <div class="cards" id="themes"></div>
+  <div class="topics" id="themes"></div>
 </div></section>
 
 <section class="band"><div class="wrap">
@@ -85,9 +89,8 @@
   <div class="callout rv"><div><h2>Join the lab</h2><p>We are recruiting PhD and M.Tech (Research) students, postdocs and interns who enjoy both proofs and building things.</p></div>
   <div class="cta"><a class="btn solid" href="join.html">See open topics <span aria-hidden="true">→</span></a><a class="btn" href="people.html">Meet the team</a></div></div>
 </div></section>
-<script src="assets/tube.js"></script>
 </main>
-<script src="assets/research-viz.js"></script>
+<script src="assets/hero-sim.js"></script>
 <script src="assets/site.js"></script>
 </body>
 </html>

@@ -25,10 +25,10 @@
     /* 01: a ball-shaped tube moves through a 2D workspace, dodges moving obstacles and shrinks onto the target by the deadline */
     tubes() {
       const L = 9, TF = 7, path = [[.08, .78], [.35, .05], [.62, 1.0], [.88, .24]];
-      const obs = [.3, .55, .78].map(s => {
-        let lo = 0, hi = 1; for (let k = 0; k < 30; k++) { const m = (lo + hi) / 2; smooth(m) < s ? lo = m : hi = m; }
-        const c0 = bez(path, s); return { x: c0[0], y: c0[1], ti: lo * TF, sg: c0[1] > .5 ? -1 : 1 };
-      });
+      // obstacles beside the path at s = .3, .55, .78; positions are worked out per canvas size
+      // so that every tube ball along the path keeps a visible gap to every obstacle
+      const spots = [[.3, 1], [.55, -1], [.78, 1]];
+      let placed = null, key = '';
       return (c, W, H, t, P, say) => {
         const h = H - CAP, m = Math.min(W, h), pad = 22, X = x => pad + x * (W - 2 * pad), Y = y => pad + y * (h - 2 * pad);
         const tau = t % L, s = smooth(tau / TF), rad = k => m * (.15 * (1 - k) + .045);
@@ -41,7 +41,23 @@
         c.strokeStyle = P.acc;
         for (let k = 0; k <= s; k += .035) { const q = bez(path, k); c.globalAlpha = .22; circle(c, X(q[0]), Y(q[1]), rad(k)); c.stroke(); }
         c.globalAlpha = 1;
-        obs.forEach(o => obstacle(c, P, X(o.x), Y(o.y + o.sg * .3 * Math.cos(1.6 * (tau - o.ti))), m * .065));
+        const R0 = m * .065, gap = 8;
+        if (key !== W + 'x' + H) {
+          key = W + 'x' + H;
+          const P2 = k => { const q = bez(path, k); return [X(q[0]), Y(q[1])]; };
+          placed = spots.map(([s0, side]) => {
+            const [px, py] = P2(s0), [ax, ay] = P2(Math.min(1, s0 + .01)), tl = Math.hypot(ax - px, ay - py) || 1;
+            let nx = -(ay - py) / tl * side, ny = (ax - px) / tl * side, ox = px, oy = py;
+            for (let d = rad(s0) + R0 + gap; d < m; d += 2) {
+              ox = px + nx * d; oy = py + ny * d;
+              let ok = true;
+              for (let k = 0; k <= 1 && ok; k += .005) { const [qx, qy] = P2(k); if (Math.hypot(ox - qx, oy - qy) < rad(k) + R0 + gap) ok = false; }
+              if (ok) break;
+            }
+            return [Math.min(W - R0 - 4, Math.max(R0 + 4, ox)), Math.min(h - R0 - 4, Math.max(R0 + 4, oy))];
+          });
+        }
+        placed.forEach(([ox, oy]) => obstacle(c, P, ox, oy, R0));
         const q = bez(path, s), cx = X(q[0]), cy = Y(q[1]), r = rad(s);
         circle(c, cx, cy, r); c.fillStyle = P.acc; c.globalAlpha = .16; c.fill(); c.globalAlpha = 1; c.lineWidth = 2; c.stroke();
         c.lineWidth = 1.4; c.strokeStyle = P.navy; c.beginPath();
@@ -50,7 +66,7 @@
           c.lineTo(X(qk[0]) + rk * Math.sin(3.1 * k), Y(qk[1]) + rk * Math.cos(4.3 * k));
         } c.stroke();
         const rr = r * .55; circle(c, cx + rr * Math.sin(3.1 * tau), cy + rr * Math.cos(4.3 * tau), 4.5); c.fillStyle = P.navy; c.fill();
-        say(`t = ${tau.toFixed(1)} s of ${TF.toFixed(1)} s · ${tau < TF ? 'inside tube Γ(t), obstacles avoided' : 'target reached on time ✓'}`);
+        say(`t = ${tau.toFixed(1)} s of ${TF.toFixed(1)} s · ${tau < TF ? 'inside tube Γ(t), clear of obstacles' : 'target reached on time ✓'}`);
       };
     },
 
@@ -139,15 +155,15 @@
     swarm() {
       const L = 11, n = 5, off = Array.from({ length: n }, (_, i) => [Math.cos(i / n * TAU - Math.PI / 2), Math.sin(i / n * TAU - Math.PI / 2)]);
       let ag = null, ts = 0;
-      const lead = s => { const u = (s % L) / L; return [-.12 + 1.24 * u, .5 + .05 * Math.sin(u * TAU * 1.5)]; };
-      const scale = x => 1 - .5 * Math.exp(-(((x - .55) / .12) ** 2));
+      const lead = s => { const u = (s % L) / L, x = -.12 + 1.24 * u, calm = 1 - Math.exp(-(((x - .55) / .2) ** 2)); return [x, .5 + .05 * calm * Math.sin(u * TAU * 1.5)]; };
+      const scale = x => 1 - .6 * Math.exp(-(((x - .55) / .16) ** 2));
       return (c, W, H, t, P, say) => {
         const h = H - CAP, X = x => x * W, Y = y => y * h, f = h * .17;
         const goal = s => { const [x, y] = lead(s), k = scale(x); return off.map(([a, b]) => [X(x) + a * f * k, Y(y) + b * f * k]); };
         if (!ag || t < ts || (t % L) < (ts % L)) { ag = goal(t); ts = t; }
         while (ts < t) { ts = Math.min(t, ts + 1 / 120); const g = goal(ts); ag = ag.map((p, i) => [p[0] + (g[i][0] - p[0]) * .06, p[1] + (g[i][1] - p[1]) * .06]); }
         const gapY = .5, gr = h * .11;
-        obstacle(c, P, X(.55), Y(gapY) - f * .78 - gr, gr); obstacle(c, P, X(.55), Y(gapY) + f * .78 + gr, gr);
+        obstacle(c, P, X(.55), Y(gapY) - f * .95 - gr, gr); obstacle(c, P, X(.55), Y(gapY) + f * .95 + gr, gr);
         const sense = f * 2.2; let links = 0;
         c.strokeStyle = P.ink2; c.lineWidth = 1.2;
         for (let i = 0; i < n; i++) for (let j = i + 1; j < n; j++) {
@@ -156,7 +172,6 @@
         }
         c.globalAlpha = 1;
         ag.forEach((p, i) => {
-          c.setLineDash([2, 4]); c.strokeStyle = P.muted; c.globalAlpha = .45; c.lineWidth = 1; circle(c, p[0], p[1], sense / 2); c.stroke(); c.setLineDash([]); c.globalAlpha = 1;
           c.save(); c.translate(p[0], p[1]); c.beginPath(); c.moveTo(8, 0); c.lineTo(-5, 5); c.lineTo(-3, 0); c.lineTo(-5, -5); c.closePath();
           c.fillStyle = i ? P.navy : P.acc; c.fill(); c.restore();
         });
