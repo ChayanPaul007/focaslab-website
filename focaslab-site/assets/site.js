@@ -16,7 +16,9 @@ function toggleTheme() {
 }
 
 /* ---------- shell ---------- */
-const logo = (name, alt) => `<img class="logo-light" src="assets/img/${name}.png" alt="${alt}"><img class="logo-dark" src="assets/img/${name}-dark.png" alt="" aria-hidden="true">`;
+// the deploy stamps this script's URL with ?v=<run>; logos reuse it so a new logo shows up straight after a deploy
+const VER = new URL(document.currentScript?.src || location.href).searchParams.get('v'), vq = VER ? `?v=${VER}` : '';
+const logo = (name, alt) => `<img class="logo-light" src="assets/img/${name}.png${vq}" alt="${alt}"><img class="logo-dark" src="assets/img/${name}-dark.png${vq}" alt="" aria-hidden="true">`;
 const NAV = [['index.html', 'Home', 'home'], ['research.html', 'Research', 'research'], ['people.html', 'People', 'people'], ['publications.html', 'Publications', 'publications'], ['facilities.html', 'Facilities', 'facilities'], ['teaching.html', 'Teaching', 'teaching'], ['join.html', 'Join', 'join']];
 
 function shell(site) {
