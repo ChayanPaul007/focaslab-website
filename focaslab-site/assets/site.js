@@ -129,9 +129,12 @@ const pages = {
       };
     }
 
-    // research topics as coloured links into the Research page (the full themes live there)
+    // research topics: each runs its theme's animation (research-viz.js) straight on the page background
     $('#themes').innerHTML = site.research.map((r, i) => `
-      <a class="topic rv" href="research.html#${r.id}" style="--tc:var(--c${i % 6 + 1})"><b>${esc(r.title)}</b><span>${esc(r.kicker)}</span><i aria-hidden="true">→</i></a>`).join('');
+      <a class="topic rv" href="research.html#${r.id}" style="--tc:var(--c${i % 6 + 1})">
+        <div class="topic-viz"><canvas data-viz="${r.viz}" role="img" aria-label="${esc(r.title)} animation"></canvas></div>
+        <b>${esc(r.title)}</b><span>${esc(r.kicker)}</span><i aria-hidden="true">→</i></a>`).join('');
+    window.FOCAS_VIZ?.();
     $('#news').innerHTML = site.news.slice(0, 3).map(newsItem).join('');
     const recent = items.filter(p => p.kind === 'journal' || p.kind === 'conference').sort((a, b) => (b.year || 0) - (a.year || 0)).slice(0, 4);
     $('#recent').innerHTML = recent.map(p => pubHTML(p, true)).join('');
