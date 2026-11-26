@@ -1,10 +1,10 @@
 {
  "source": "Google Scholar (via SerpAPI)",
  "scholar_id": "Szd98jUAAAAJ",
- "updated": "2026-11-23T10:53:47Z",
+ "updated": "2026-11-26T11:00:56Z",
  "profile": {
   "name": "Pushpak Jagtap",
-  "citations": 1702,
+  "citations": 1704,
   "h_index": 22,
   "i10_index": 41
  },
@@ -446,7 +446,7 @@
    "authors": "V Jagabathula, A Basu, P Jagtap",
    "venue": "arXiv preprint arXiv:2509.26597, 2025",
    "year": 2025,
-   "citations": 0,
+   "citations": 1,
    "id": "eJXPG6dFmWUC"
   },
   {
@@ -886,7 +886,7 @@
    "authors": "P Ashok, M Jackermeier, P Jagtap, J Křetínský, M Weininger, M Zamani",
    "venue": "Proceedings of the 23rd international conference on hybrid systems …, 2020",
    "year": 2020,
-   "citations": 51,
+   "citations": 52,
    "id": "3fE2CSJIrl8C"
   },
   {
