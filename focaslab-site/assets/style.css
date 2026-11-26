@@ -281,7 +281,7 @@ p{text-wrap:pretty}
 .brand{display:flex;align-items:center;gap:14px}
 .brand img{height:30px;width:auto}
 .brand .iisc{border-left:1px solid var(--line);padding-left:14px}
-.brand .iisc img{height:38px}
+.brand .iisc img{height:44px}
 .links{display:flex;gap:2px;align-items:center}
 .links a{position:relative;padding:8px 12px;border-radius:8px;font-size:14.5px;color:var(--ink-2);transition:color .2s,background .2s}
 .links a:hover{color:var(--ink);background:var(--paper-2)}
