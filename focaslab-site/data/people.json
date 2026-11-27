@@ -105,7 +105,7 @@
           "name": "Siddhartha Upadhyay",
           "since": "2024",
           "topics": "Control systems",
-          "photo": "assets/img/4812973336a2.jpg",
+          "photo": "assets/img/siddhartha-upadhyay.jpg",
           "links": {
             "scholar": "https://scholar.google.com/citations?hl=en&user=ioHRc4kAAAAJ",
             "linkedin": "https://in.linkedin.com/in/siddhartha-upadhyay-47b736216"
@@ -144,7 +144,8 @@
           "name": "Rushikesh Shinde",
           "since": "2026",
           "note": "Sponsored PhD, John Deere",
-          "photo": "assets/img/23dbfd708e78.jpg",
+          "topics": "Structural vibrations, dynamics, control systems, machine learning",
+          "photo": "assets/img/rushikesh-shinde.jpg",
           "links": {
             "linkedin": "https://www.linkedin.com/in/rushi-p-shinde/"
           }
